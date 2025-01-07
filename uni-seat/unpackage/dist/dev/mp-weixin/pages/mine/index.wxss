@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.top-view {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: calc(192px + 64px + 25px);
+}
+.top-view .nav-bar {
+  display: flex;
+  width: 100%;
+  z-index: 999;
+  justify-content: center;
+  height: calc(64px + 25px);
+}
+.top-view .nav-bar .title {
+  margin-top: calc(25px + 14px);
+}
+.top-view .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.top-view .user {
+  display: flex;
+  flex: 1;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+}
+.top-view .user .content {
+  position: relative;
+  box-sizing: border-box;
+  height: 150px;
+  width: 100%;
+  background: linear-gradient(to right, #2AACDC, #003E76);
+  border-radius: 16px;
+  color: #FFF;
+  align-items: center;
+}
+.top-view .user .content .user-header {
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  margin-top: 28px;
+}
+.top-view .user .content .user-name {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.top-view .user .content .mobile {
+  margin-top: 6px;
+  font-size: 14px;
+}
+.top-view .user .content .set {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 20px;
+  right: 20px;
+}
+.my-section {
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #FFF;
+  padding: 20px;
+  justify-content: space-between;
+}
+.my-section .icon {
+  width: 44px;
+  height: 44px;
+}
+.my-section .name {
+  font-size: 16px;
+  color: #141D28;
+  margin-left: 12px;
+}
+.my-section .small_push {
+  width: 16px;
+  height: 16px;
+}
+

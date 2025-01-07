@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-app-nav-bar": "/components/uni-app-nav-bar/uni-app-nav-bar",
+    "uni-section-input": "/components/uni-section-input/uni-section-input",
+    "uni-section-code-input": "/components/uni-section-code-input/uni-section-code-input"
+  }
+}

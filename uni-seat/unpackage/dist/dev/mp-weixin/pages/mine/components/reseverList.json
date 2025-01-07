@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-load-more": "/uni_modules/uni-load-more/components/uni-load-more/uni-load-more",
+    "uni-mescroll-empty": "/components/uni-mescroll-empty/uni-mescroll-empty"
+  },
+  "component": true
+}

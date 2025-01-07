@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-app-nav-bar": "/components/uni-app-nav-bar/uni-app-nav-bar",
+    "uni-tabs": "/components/uni-tabs/uni-tabs",
+    "resever-list": "/pages/mine/components/reseverList"
+  }
+}

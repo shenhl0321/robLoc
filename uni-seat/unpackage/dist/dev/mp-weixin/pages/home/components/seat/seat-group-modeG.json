@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "seat-top": "/pages/home/components/seat/seat-position-top",
+    "seat-bottom": "/pages/home/components/seat/seat-position-bottom"
+  }
+}

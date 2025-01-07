@@ -4,31 +4,31 @@
 		
 		<view class="content" style="width: 100%;">
 			<view class="col password-view" v-if="currentLoginType == 'password'">
-				<uni-section-input style="margin-top: 70px;" v-model="mobile" placeholder="请输入手机号" :maxlength="11" inputType="number"></uni-section-input>
-				<uni-section-input style="margin-top: 20px;" v-model="password" placeholder="请输入密码" :password="true"></uni-section-input>
-				<button class="valid-btn" :class="{'active' : loginIsValid}" @click="passwrodToLogin">登录</button>
+				<uni-section-input style="margin-top: 70px;" v-model="mobile" :placeholder="$t('inputMobile')" :maxlength="11" inputType="number"></uni-section-input>
+				<uni-section-input style="margin-top: 20px;" v-model="password" :placeholder="$t('inputPassword')" :password="true"></uni-section-input>
+				<button class="valid-btn" :class="{'active' : loginIsValid}" @click="passwrodToLogin">{{$t('login')}}</button>
 				<view class="row password-section">
-					<text class="text-font" @click="forgetPassword">忘记密码?</text>
-					<text class="text-font" @click="changeLoginType('code')">验证码登录</text>
+					<text class="text-font" @click="forgetPassword">{{$t('forgetPassword') + '?'}}</text>
+					<text class="text-font" @click="changeLoginType('code')">{{$t('codeLogin')}}</text>
 				</view>
 			</view>
 			
 			<view class="col code-view" v-else>
-				<uni-section-input style="margin-top: 70px;" v-model="mobile" placeholder="请输入手机号" :maxlength="11" inputType="number"></uni-section-input>
-				<button class="valid-btn" :class="{'active' : codeIsValid}" @click="codeToLogin">获取短信验证码</button>
+				<uni-section-input style="margin-top: 70px;" v-model="mobile" :placeholder="$t('inputMobile')" :maxlength="11" inputType="number"></uni-section-input>
+				<button class="valid-btn" :class="{'active' : codeIsValid}" @click="codeToLogin">{{$t('getSmsCode')}}</button>
 				<view class="row code-section">
-					<text class="text-font" @click="changeLoginType('password')">密码登录</text>
+					<text class="text-font" @click="changeLoginType('password')">{{$t('passwordLogin')}}</text>
 				</view>
 			</view>
 		</view>
 		
 		<view class="row bottom-view">
 			<view class="row">
-				<text class="text-font" @click="languageChange">中文简体</text>
+				<text class="text-font" @click="languageChange">{{$t('simplifiedChinese')}}</text>
 				<image class="small-push-image" src="../../static/ic_push_small.png"></image>
 			</view>
 			<view class="row">
-				<text class="text-font" @click="toRegister">立即注册</text>
+				<text class="text-font" @click="toRegister">{{$t('registerRightNow')}}</text>
 				<image class="small-push-image" src="../../static/ic_push_small.png"></image>
 			</view>
 		</view>
@@ -40,7 +40,7 @@
 		data(){
 			return{
 				mobile : '15157157084',
-				password : '',
+				password : '123456',
 				currentLoginType : "password"
 			}
 		},
@@ -60,6 +60,9 @@
 			passwrodToLogin(){
 				if(this.loginIsValid){
 					console.log(this.mobile)
+					uni.reLaunch({
+						url: '/pages/home/index'
+					})
 				}
 			},
 			//获取验证码

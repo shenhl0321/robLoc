@@ -51,11 +51,16 @@
 <style lang="scss" scoped>
 	.app-nav-bar-view {
 		display: flex;
+		background-color: red;
 		flex-direction: column-reverse;
 		position: relative;
-		width: 100%;
-		//height: calc(44px + env(safe-area-inset-top));
+		width: 100vw;
+		/* #ifdef MP-WEIXIN */
+		height: calc(64px + var(--status-bar-height));
+		/* #endif */
+		/* #ifndef MP-WEIXIN */
 		height: calc(44px + var(--status-bar-height));
+		/* #endif */
 		background-color: #FFF;
 		padding: 0 4px;
 

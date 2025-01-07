@@ -1,0 +1,37 @@
+<template>
+	<view class="row seat-group">
+		<view class="row section">
+			<SeatLeft></SeatLeft>
+			<SeatRight></SeatRight>
+		</view>
+		<view class="row section" style="margin-left: 20px;">
+			<SeatLeft></SeatLeft>
+			<SeatRight></SeatRight>
+		</view>
+	</view>
+</template>
+
+<script>
+	import SeatLeft from "./seat-position-left.vue"
+	import SeatRight from "./seat-position-right.vue"
+	export default{
+		components:{
+			SeatLeft,
+			SeatRight,
+		},
+		data(){
+			return{
+				
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.seat-group{
+		height: 120px;
+		.section{
+			flex: 1;
+		}
+	}
+</style>

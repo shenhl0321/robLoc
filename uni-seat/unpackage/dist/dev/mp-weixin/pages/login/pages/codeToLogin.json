@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uni-app-nav-bar": "/components/uni-app-nav-bar/uni-app-nav-bar",
+    "xt-verify-code": "/uni_modules/xt-verify-code/components/xt-verify-code/xt-verify-code"
+  }
+}

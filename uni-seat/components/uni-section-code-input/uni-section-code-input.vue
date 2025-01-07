@@ -1,10 +1,10 @@
 <template>
 	<view class="row section-input" :class="{active: focusSelector}">
 		<input class="my-input" placeholder-class="placeholder-class"
-			v-model="inputText" placeholder="请输入验证码" @input="textDidChange"
+			v-model="inputText" :placeholder="$t('inputCode')" @input="textDidChange"
 			@focus="inputFocus" @blur="inputBlur" />
 		
-		<text class="code-text" @click="getCodeAction">{{timeCount == 0 ? '发送验证码' : timeCount+'(s)'}}</text>
+		<text class="code-text" @click="getCodeAction">{{timeCount == 0 ? $t('sendCode') : timeCount+'(s)'}}</text>
 	</view>
 </template>
 

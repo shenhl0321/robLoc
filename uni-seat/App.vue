@@ -2,6 +2,17 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			
+			
+			uni.setTabBarItem({
+			    index: 0,
+			    text: this.$t('homePage')
+			});
+			
+			uni.setTabBarItem({
+			    index: 1,
+			    text: this.$t('mine')
+			});
 		},
 		onShow: function() {
 			console.log('App Show')

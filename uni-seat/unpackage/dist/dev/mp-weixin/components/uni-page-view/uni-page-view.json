@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tabs": "/components/uni-page-view/uni-tabs"
+  }
+}

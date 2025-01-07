@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-app-nav-bar": "/components/uni-app-nav-bar/uni-app-nav-bar",
+    "uni-user-header-row": "/components/uni-user-header-row/uni-user-header-row",
+    "uni-label-input": "/components/uni-label-input/uni-label-input"
+  }
+}

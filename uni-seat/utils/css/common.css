@@ -74,7 +74,6 @@ page {
 	width: 100%;
 	height: 100%;
 	align-items: center;
-	
 }
 
 .top-nav-icon {
@@ -85,6 +84,7 @@ page {
 .list-view {
 	flex: 1;
 	overflow: auto;
+	background-color: #F5F5F5;
 }
 
 .last-view {

@@ -2,14 +2,14 @@
 	<view class="main-view">
 		<uni-app-nav-bar></uni-app-nav-bar>
 		<view class="col content">
-			<text class="code-text">忘记密码</text>
-			<uni-section-input style="margin-top: 80px;" v-model="mobile" placeholder="请输入手机号" :maxlength="11" inputType="number"></uni-section-input>
+			<text class="code-text">{{$t('forgetPassword')}}</text>
+			<uni-section-input style="margin-top: 80px;" v-model="mobile" :placeholder="$t('inputMobile')" :maxlength="11" inputType="number"></uni-section-input>
 			<uni-section-code-input style="margin-top: 20px;" v-model="code"></uni-section-code-input>
-			<uni-section-input style="margin-top: 20px;" v-model="password" placeholder="请输入密码" :password="true"></uni-section-input>
-			<button class="valid-btn" :class="{'active' : passwordSetIsValid}" @click="passwordToFixAction">确定</button>
+			<uni-section-input style="margin-top: 20px;" v-model="password" :placeholder="$t('inputPassword')" :password="true"></uni-section-input>
+			<button class="valid-btn" :class="{'active' : passwordSetIsValid}" @click="passwordToFixAction">{{$t('certain')}}</button>
 		</view>
 		<view class="row bottom-view">
-			<text class="text-font" @click="backToLogin">立即登录</text>
+			<text class="text-font" @click="backToLogin">{{$t('loginRightNow')}}</text>
 		</view>
 	</view>
 </template>

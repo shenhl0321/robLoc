@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "uni-section-input": "/components/uni-section-input/uni-section-input"
+  }
+}
