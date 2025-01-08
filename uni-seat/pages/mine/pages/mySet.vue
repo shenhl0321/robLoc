@@ -1,13 +1,13 @@
 <template>
-	<view class="main-view">
+	<view class="main-view" v-if="phone != null">
 		<uni-app-nav-bar :mTitle="$t('set')"></uni-app-nav-bar>
 		<view class="col content">
-			<uni-user-header-row></uni-user-header-row>
-			<uni-label-input :labelName="$t('nickName')" v-model="nickName"></uni-label-input>
-			<uni-label-input :labelName="$t('name')" v-model="name"></uni-label-input>
-			<uni-label-input :labelName="$t('duty')" v-model="duty"></uni-label-input>
+			<uni-user-header-row v-model="avatar"></uni-user-header-row>
+			<uni-label-input :labelName="$t('nickName')" v-model="nickname"></uni-label-input>
+			<uni-label-input :labelName="$t('name')" v-model="realname"></uni-label-input>
+			<uni-label-input :labelName="$t('duty')" v-model="position"></uni-label-input>
 			<uni-label-input :labelName="$t('companyEmail')" v-model="email"></uni-label-input>
-			<uni-label-input :labelName="$t('mobileNum')" :noFix="true" v-model="mobile"></uni-label-input>
+			<uni-label-input :labelName="$t('mobileNum')" :noFix="true" v-model="phone"></uni-label-input>
 		</view>
 		<view class="col bottom-view">
 			<button class="save-btn" @click="saveData">{{$t('save')}}</button>
@@ -19,23 +19,44 @@
 	export default{
 		data(){
 			return{
-				nickName : '',
-				name : '',
-				duty : '',
+				avatar : '',
+				nickname : '',
+				realname : '',
+				position : '',
 				email :'',
-				mobile : '15157157084'
+				phone : null
 			}
 		},
 		
-		computed : {
-			
+		onLoad() {
+			this.getUserInfo()
 		},
 		
 		methods:{
-			saveData(){
-				console.log(this.nickName)
+			
+			async getUserInfo(){
+				let res = await this.$request('/api/user')
+				this.avatar = res.data.avatar
+				this.nickname = res.data.nickname
+				this.realname = res.data.realname
+				this.position = res.data.position
+				this.email = res.data.email
+				this.phone = res.data.phone
 			},
-	
+						
+			async saveData() {
+				let res = await this.$request('/api/up_user', {
+					avatar: this.avatar,
+					nickname: this.nickname,
+					realname: this.realname,
+					position: this.position,
+					email: this.email,
+					phone: this.phone
+				})
+				if (res.result == true) {
+					this.$toast(this.$t('success'))
+				}
+			},
 		}
 	}
 </script>

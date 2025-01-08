@@ -2,8 +2,15 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			const userInfo = uni.getStorageSync('userInfo')
+			if(userInfo.token != null){
+				this.$store.state.userInfo = userInfo
+				uni.reLaunch({
+					url: '/pages/home/index',
+				})
+			}
 			
-			
+						
 			uni.setTabBarItem({
 			    index: 0,
 			    text: this.$t('homePage')

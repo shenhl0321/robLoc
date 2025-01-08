@@ -3,7 +3,7 @@
 		<uni-app-nav-bar></uni-app-nav-bar>
 		<view class="col content-view">
 			<text class="code-text">输入验证码</text>
-			<text class="code-mobile">验证码已发送至{{moble}}</text>
+			<text class="code-mobile">验证码已发送至{{mobile}}</text>
 			<xt-verify-code v-model="verifyCode" @confirm="confirm"></xt-verify-code>
 			<text class="error-text" v-if="codeError">验证码错误，请重新输入</text>
 			<view class="row timer" :class="{getCodeRest : timeCount == 0}" @click="resetGetCode">{{timeCount == 0 ? '重新获取验证码' : timeCount + '秒后重新获取验证码'}}</view>
@@ -16,7 +16,7 @@
 		data() {
 			return {
 				verifyCode: '',
-				moble: '177 5800 5488',
+				mobile: '',
 				codeError: false,
 				timeCount: 0,
 				timeNumber : 60,
@@ -25,8 +25,10 @@
 		},
 
 		onLoad(option) {
-			this.moble = option.moble
+			this.mobile = option.mobile
 			this.timeCount = this.timeNumber
+			this.toGetCode()
+			
 		},
 
 		onUnload() {
@@ -59,14 +61,29 @@
 				}
 			},
 			
-			confirm(verifyCode) {
+			async toGetCode(){
+				let res = await this.$request('/api/send_sms',{'phone' : this.mobile,'sms_type' : 1})
+				if(res.result == true){
+					console.log(res)
+				}
+			},
+			
+			async confirm(verifyCode) {
 				console.log(verifyCode)
-				uni.reLaunch({
-					url: '/pages/home/index',
-					success: () => {
-						//plus.navigator.closeSplashscreen()
-					}
-				})
+				let res = await this.$request('/api/login',{
+					'phone' : this.mobile,
+					'code' : verifyCode,
+					})
+				if(res.result == true){
+					console.log(res.data)
+					this.$store.state.userInfo = res.data
+					uni.setStorageSync('userInfo', res.data)
+					uni.reLaunch({
+						url: '/pages/home/index',
+					})
+				}
+				
+				
 			}
 		}
 	}

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 
-const baseUrl = "https://testwaterbuild.zhongcaicloud.com/api/v1"
-//const baseUrl = "https://prewaterbuild.zhongcaicloud.com/api/v1"
-//const baseUrl = "https://cf.zhongcaicloud.com/api/v1"
+const baseUrl = "http://mrt.lxiwl.vip"
+//const baseUrl = "http://sdc.mrt-reinhausen.com"
+
 
 
 
@@ -20,13 +20,10 @@ const header = {
 const request = (url = '', data = {}, loadingText, type = 'POST') => {
 	console.log('接口url:' + url)
 	console.log('接口请求参数:' + JSON.stringify(data))
-	// let token = Vue.prototype.$store.state.token
-	// let userId = Vue.prototype.$store.state.userId
-	// if(token != null){
-	// 	data['token'] = token
-	// 	data['userId'] = userId
-	// }
-	
+	let token = Vue.prototype.$store.state.userInfo.token
+	if(token != null){
+		header['token'] = token
+	}
 	if (loadingText != null) {
 		uni.showLoading({
 			title: loadingText
@@ -46,14 +43,13 @@ const request = (url = '', data = {}, loadingText, type = 'POST') => {
 				uni.stopPullDownRefresh()
 				if (res.statusCode == 200) {
 					let response = res.data
-					if (response.data.subCode == 10000) {
-						let result = response.data.result
+					if (response.code == 1) {
 						resolve({
 							result: true,
-							res: result
+							data: response.data
 						})
 					} else {
-						let subMsg = response.data.subMsg
+						let subMsg = res.data.msg
 						uni.showToast({
 							title: subMsg,
 							duration: 2000,

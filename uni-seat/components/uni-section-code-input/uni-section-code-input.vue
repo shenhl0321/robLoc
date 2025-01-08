@@ -64,6 +64,10 @@
 			},
 			
 			getCodeAction(e){
+				this.$emit('code')
+			},
+			
+			timerStart(){
 				if(this.timer == null){
 					this.timeCount = 60
 				}

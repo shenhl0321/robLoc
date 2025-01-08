@@ -2,12 +2,12 @@
 	<view class="main-view">
 		<uni-app-nav-bar></uni-app-nav-bar>
 		<view class="col content">
-			<uni-user-header-row></uni-user-header-row>
-			<uni-label-input :labelName="$t('nickName')" v-model="nickName"></uni-label-input>
-			<uni-label-input :labelName="$t('name')" v-model="name"></uni-label-input>
-			<uni-label-input :labelName="$t('duty')" v-model="duty"></uni-label-input>
+			<uni-user-header-row v-model="avatar"></uni-user-header-row>
+			<uni-label-input :labelName="$t('nickName')" v-model="nickname"></uni-label-input>
+			<uni-label-input :labelName="$t('name')" v-model="realname"></uni-label-input>
+			<uni-label-input :labelName="$t('duty')" v-model="position"></uni-label-input>
 			<uni-label-input :labelName="$t('companyEmail')" v-model="email"></uni-label-input>
-			<uni-label-input :labelName="$t('mobileNum')" :noFix="true" v-model="mobile"></uni-label-input>
+			<uni-label-input :labelName="$t('mobileNum')" :noFix="true" v-model="phone"></uni-label-input>
 		</view>
 		<view class="col bottom-view">
 			<button class="submit-btn" @click="submit">{{$t('submit')}}</button>
@@ -17,27 +17,46 @@
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				nickName : '',
-				name : '',
-				duty : '',
-				email :'',
-				mobile : '15157157084'
+	export default {
+		data() {
+			return {
+				avatar: '',
+				nickname: '',
+				realname: '',
+				position: '',
+				email: '',
+				phone: ''
 			}
 		},
-		
-		computed : {
-			
+
+		onLoad() {
+			const userInfo = uni.getStorageSync('userInfo')
+			this.avatar = userInfo.avatar
+			this.nickname = userInfo.nickname
+			this.realname = userInfo.realname
+			this.position = userInfo.position
+			this.email = userInfo.email
+			this.phone = userInfo.phone
 		},
-		
-		methods:{
-			submit(){
-				console.log(this.nickName)
+
+		methods: {
+			async submit() {
+				let res = await this.$request('/api/up_user', {
+					avatar: this.avatar,
+					nickname: this.nickname,
+					realname: this.realname,
+					position: this.position,
+					email: this.email,
+					phone: this.phone
+				})
+				if (res.result == true) {
+					uni.reLaunch({
+						url: '/pages/home/index',
+					})
+				}
 			},
-			
-			jump(){
+
+			jump() {
 				uni.reLaunch({
 					url: '/pages/home/index',
 				})
@@ -47,16 +66,17 @@
 </script>
 
 <style lang="scss" scoped>
-	.content{
+	.content {
 		flex: 1;
 		width: 100%;
 	}
 
-	.bottom-view{
+	.bottom-view {
 		width: 100%;
 		margin-bottom: calc(20px + env(safe-area-inset-bottom));
 		padding: 0 40px;
-		.submit-btn{
+
+		.submit-btn {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -67,7 +87,8 @@
 			background-color: $uni-color-primary !important;
 			font-size: 16px;
 		}
-		.jump-btn{
+
+		.jump-btn {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -78,8 +99,4 @@
 			margin-top: 20px;
 		}
 	}
-	
-
-	
-	
 </style>

@@ -4,9 +4,9 @@
 		<view class="col content">
 			<text class="code-text">{{$t('register')}}</text>
 			<uni-section-input style="margin-top: 80px;" v-model="mobile" :placeholder="$t('inputMobile')" :maxlength="11" inputType="number"></uni-section-input>
-			<uni-section-code-input style="margin-top: 20px;" v-model="code"></uni-section-code-input>
+			<uni-section-code-input ref="codeInput" style="margin-top: 20px;" v-model="code" @code="toGetCode"></uni-section-code-input>
 			<uni-section-input style="margin-top: 20px;" v-model="password" :placeholder="$t('inputPassword')" :password="true"></uni-section-input>
-			<button class="valid-btn" :class="{'active' : registerSetIsValid}" @click="registerToFixAction">{{$t('certain')}}</button>
+			<button class="valid-btn" :class="{'active' : registerSetIsValid}" @click="toRegister">{{$t('certain')}}</button>
 		</view>
 		<view class="row bottom-view">
 			<text class="text-font" @click="backToLogin">{{$t('loginRightNow')}}</text>
@@ -28,12 +28,33 @@
 			registerSetIsValid(){
 				return this.mobile.length == 11 && this.password.length > 5 && this.code.length > 0
 			},
-			
 		},
 		
 		methods:{
-			registerToFixAction(){
-				
+		
+			async toGetCode(){
+				if(this.mobile.length != 11){
+					this.$toast(this.$t('inputRightPhone'))
+				}else{
+					let res = await this.$request('/api/send_sms',{'phone' : this.mobile,'sms_type' : 2})
+					if(res.result == true){
+						this.$refs.codeInput.timerStart()
+					}
+				}
+			},
+			
+			async toRegister(){
+				if(this.registerSetIsValid){
+					let res = await this.$request('/api/register',{
+						'phone' : this.mobile,
+						'password' : this.password, 
+						'code' : this.code})
+					if(res.result == true){
+						uni.navigateTo({
+							url: `/pages/login/pages/registerVerify?iphone=${this.mobile}`
+						})
+					}
+				}
 			},
 			
 			backToLogin(){

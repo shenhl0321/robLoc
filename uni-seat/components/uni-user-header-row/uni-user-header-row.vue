@@ -1,32 +1,83 @@
 <template>
-	<view class="row user-header" @click="uploadUserHeaderIcon">
+	<view class="row user-header" @click="userHeaderIconUpload()">
 		<text>{{$t('header')}}</text>
 		<view class="row">
-			<image class="user-icon" src="/static/ic_header.png" mode="aspectFill"></image>
+			<image class="user-icon" :src="avatarUrl" mode="aspectFill"></image>
 			<image class="push-small" src="/static/ic_push_small.png"></image>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {uniConfig} from '../../utils/js/request.js'
 	export default{
-		data(){
-			return{
-				
+		props : {
+			value : {
+				type : String,
+				default : ''
 			}
 		},
 		
+		
+		data(){
+			return{
+				url : this.value
+			}
+		},
+		
+		computed : {
+			avatarUrl(){
+				if(this.url.length == 0){
+					return '/static/ic_header.png'
+				}else{
+					return uniConfig.baseUrl + this.url
+				}
+			}
+		},
+		
+		mounted() {
+			console.log(this.avatarUrl)
+		},
+		
 		methods :{
-			uploadUserHeaderIcon(){
+			userHeaderIconUpload(){
+				let that = this
 				uni.chooseImage({
-					count: 1, //默认9
-					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album','camera'], //从相册选择
+					count: 1,
+					sizeType: ['original', 'compressed'],
+					sourceType: ['album','camera'],
 					success: function (res) {
-						console.log(JSON.stringify(res.tempFilePaths));
+						uni.uploadFile({
+							url: uniConfig.baseUrl + '/api/upload',
+							filePath : res.tempFilePaths[0],
+							name : 'file',
+							success(res) {
+								let result = JSON.parse(decodeURIComponent(res.data))
+								if (result.code == 1) {
+									that.url = result.data.url
+									that.$emit('input',that.url)
+								} else {
+									uni.showToast({
+										icon:'error',
+										title: '上传失败',
+										duration: 2000,
+									})
+								}
+							},
+							fail(res) {
+								uni.showToast({
+									icon:'error',
+									title: '请检查网络设置',
+									duration: 2000,
+								})
+							}
+						})
 					}
 				});
-			}
+			
+			},
+			
+
 		}
 	}
 </script>

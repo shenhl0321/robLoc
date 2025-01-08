@@ -32,6 +32,10 @@
 				<image class="small-push-image" src="../../static/ic_push_small.png"></image>
 			</view>
 		</view>
+		
+		<uni-popup ref="popup" type="bottom">
+			<uni-action-sheet :mTitle="$t('language')" :list="languageList" @callBack="languageSelected"></uni-action-sheet>
+		</uni-popup>
 	</view>
 </template>
 
@@ -41,7 +45,12 @@
 			return{
 				mobile : '15157157084',
 				password : '123456',
-				currentLoginType : "password"
+				currentLoginType : "password",
+				languageList : [
+					{id : 'zn-CN', name : this.$t('china')},
+					{id : 'en-US', name : this.$t('english')},
+					{id : 'ge-DE', name : this.$t('germany')}
+				]
 			}
 		},
 		
@@ -57,21 +66,32 @@
 		
 		methods:{
 			//密码登录
-			passwrodToLogin(){
+			async passwrodToLogin(){
 				if(this.loginIsValid){
-					console.log(this.mobile)
-					uni.reLaunch({
-						url: '/pages/home/index'
-					})
+					let res = await this.$request('/api/login',{
+						'phone' : this.mobile,
+						'password' : this.password,
+						})
+					if(res.result == true){
+						console.log(res)
+						this.$store.state.userInfo = res.data
+						uni.setStorageSync('userInfo', res.data)
+						uni.reLaunch({
+							url: '/pages/home/index',
+						})
+					}
 				}
 			},
 			//获取验证码
 			codeToLogin(){
 				if(this.codeIsValid){
-					console.log(this.mobile)
-					uni.navigateTo({
-						url: `/pages/login/pages/codeToLogin?moble=${this.mobile}`
-					})
+					if(this.mobile.length != 11){
+						this.$toast(this.$t('inputRightPhone'))
+					}else{
+						uni.navigateTo({
+							url: `/pages/login/pages/codeToLogin?mobile=${this.mobile}`
+						})
+					}
 				}
 			},
 			//点击忘记密码
@@ -84,15 +104,22 @@
 			changeLoginType(type){
 				this.currentLoginType = type
 			},
+			
 			//点击语言切换
 			languageChange(type){
-				
+				this.$refs.popup.open()
 			},
+			
 			//去注册
 			toRegister(){
 				uni.navigateTo({
 					url: "/pages/login/pages/register"
 				})
+			},
+			
+			languageSelected(e){
+				console.log(e)
+				this.$refs.popup.close()
 			}
 			
 		}

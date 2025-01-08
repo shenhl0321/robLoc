@@ -7,9 +7,9 @@
 			</view>
 			<view class="col user">
 				<view class="col content">
-					<image class="user-header" src="/static/ic_header.png"></image>
-					<text class="user-name">吴彦祖</text>
-					<text class="mobile">15157157084</text>
+					<image class="user-header" :src="avatarUrl"></image>
+					<text class="user-name">{{realname}}</text>
+					<text class="mobile">{{phone}}</text>
 					<image class="set" src="/static/my_set.png" @click="pushToSetPage"></image>
 				</view>
 			</view>
@@ -32,31 +32,39 @@
 </template>
 
 <script>
-	
+	import {uniConfig} from '../../utils/js/request.js'
 	export default {
-		components: {
-
-		},
 		data() {
 			return {
 				sectionList : [
 					{index : 1, name : this.$t('myReserve'), src : '/static/my_resverse.png'},
 					{index : 2, name : this.$t('myMessage'), src : '/static/my_msg.png'},
-				]
+				],
+				
+				avatar : '',
+				realname : '',
+				phone : ''
 			}
 		},
 		
 		onShow() {
+			this.getUserInfo()
 			uni.setTabBarItem({
 			    index: 1,
 			    text: this.$t('mine')
 			});
 		},
 		
-		onLoad(option) {
-
+		computed : {
+			avatarUrl(){
+				if(this.avatar.length == 0){
+					return '/static/ic_header.png'
+				}else{
+					return uniConfig.baseUrl + this.avatar
+				}
+			}
 		},
-
+		
 		methods: {
 			pushToSetPage(){
 				uni.navigateTo({
@@ -77,10 +85,18 @@
 			},
 			
 			exitBtnAction(){
+				uni.removeStorageSync('userInfo')
 				uni.reLaunch({
 					url: '/pages/login/index'
 				})
-			}
+			},
+			
+			async getUserInfo(){
+				let res = await this.$request('/api/user')
+				this.avatar = res.data.avatar
+				this.realname = res.data.realname
+				this.phone = res.data.phone
+			},
 		}
 	}
 </script>

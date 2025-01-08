@@ -4,7 +4,7 @@
 		<view class="col content">
 			<text class="code-text">{{$t('forgetPassword')}}</text>
 			<uni-section-input style="margin-top: 80px;" v-model="mobile" :placeholder="$t('inputMobile')" :maxlength="11" inputType="number"></uni-section-input>
-			<uni-section-code-input style="margin-top: 20px;" v-model="code"></uni-section-code-input>
+			<uni-section-code-input ref="codeInput" style="margin-top: 20px;" @code="toGetCode" v-model="code"></uni-section-code-input>
 			<uni-section-input style="margin-top: 20px;" v-model="password" :placeholder="$t('inputPassword')" :password="true"></uni-section-input>
 			<button class="valid-btn" :class="{'active' : passwordSetIsValid}" @click="passwordToFixAction">{{$t('certain')}}</button>
 		</view>
@@ -32,8 +32,28 @@
 		},
 		
 		methods:{
-			passwordToFixAction(){
-				
+			async toGetCode(){
+				if(this.mobile.length != 11){
+					this.$toast(this.$t('inputRightPhone'))
+				}else{
+					let res = await this.$request('/api/send_sms',{'phone' : this.mobile,'sms_type' : 3})
+					if(res.result == true){
+						this.$refs.codeInput.timerStart()
+					}
+				}
+			},
+			
+			async passwordToFixAction(){
+				if(this.passwordSetIsValid){
+					let res = await this.$request('/api/up_pwd',{
+						'phone' : this.mobile,
+						'password' : this.password, 
+						'code' : this.code,
+					 })
+					if(res.result == true){
+						this.$toast(this.$t('success'))
+					}
+				}
 			},
 			
 			backToLogin(){

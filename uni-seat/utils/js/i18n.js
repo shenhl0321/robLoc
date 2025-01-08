@@ -81,9 +81,25 @@ const messages = {
 	    reserveMessage : '预定消息',
 		you : '您于',
 		reserve : '预订',
-		seatSuccess : '座位成功！'
+		seatSuccess : '座位成功！',
+		
+		inputRightPhone : '请输入正确手机号码',
+		success : '操作成功',
+		selectedRightAnswer : '请选择正确答案',
+		answerError : '答案错误',
+		networkError : '网络错误',
+		
+		language : '语言',
+		china : '中国',
+		english : '英国',
+		germany : '德国',
+
 	},
 	'en-US': {
+		login: 'login'
+	},
+	
+	'ge-DE': {
 		login: 'login'
 	},
 };

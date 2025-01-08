@@ -3,14 +3,14 @@
 		<view class="content-view">
 			<view class="top-view">
 				<view class="top-title-cell">{{mTitle}}</view>
-				<scroll-view class="list-view" scroll-y @touchmove.stop>
-					<view class="pop-cell" v-for="(item,index) in dataArray" :key="index"
-						@click="didClickItemWithIndex(index)">
+				<scroll-view class="list-view list" scroll-y @touchmove.stop>
+					<view class="pop-cell" v-for="(item,index) in list" :key="index"
+						@click="didClickItemWithIndex(item)">
 						{{item.name}}
 					</view>
 				</scroll-view>
 			</view>
-			<view class="pop-cell bottom-cancel-view" @click="didClickCancelAction()">取消</view>
+			<view class="pop-cell bottom-cancel-view" @click="didClickCancelAction()">{{$t('cancel')}}</view>
 		</view>
 	</view>
 </template>
@@ -23,32 +23,27 @@
 				default: '请选择'
 			},
 
-			baseValue: {
-				type: undefined,
+			list: {
+				type: Array,
+				default: () => {
+					return []
+				}
 			}
 		},
 
 		data() {
 			return {
 				selectorCode: this.baseValue,
-				dataArray: [{
-					id: 1,
-					name: "选项一"
-				}, {
-					id: 1,
-					name: "选项二"
-				}],
 			}
 		},
 
 		methods: {
-			didClickItemWithIndex(index) {
-				let item = this.dataArray[index]
-				this.selectorCode = item.code
+			didClickItemWithIndex(e) {
+				console.log(e)
 				this.$emit('callBack', {
 					result: true,
-					id : item.id,
-					name : item.name
+					id : e.id,
+					name : e.name
 				})
 			},
 
@@ -73,10 +68,12 @@
 		justify-content: center;
 
 		.content-view {
-			width: calc(100% - 20px);
+			width: 100%;
 			color: $uni-text-color;
 			font-size: 16px;
-
+			background-color: #F6F6F6;
+			border-top-left-radius: 16px;
+			border-top-right-radius: 16px;
 			.top-view {
 				display: flex;
 				flex-direction: column;
@@ -87,6 +84,7 @@
 			.list-view {
 				max-height: 305px;
 				overflow: hidden;
+				background-color: #FFF;
 			}
 
 			.top-title-cell {
@@ -94,24 +92,23 @@
 				align-items: center;
 				justify-content: center;
 				height: 60px;
-				color: $uni-text-color-inverse;
+				color: #959AA0;
 				font-size: 14px;
 			}
-
+			
 			.pop-cell {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				height: 60px;
-				border-top: 1px solid $uni-line-color;
+				border-top: 1px solid #F6F6F6;
 
 				&.active {
 					color: $uni-color-primary;
 				}
 
 				&.bottom-cancel-view {
-					margin: 10px 0;
-					border-radius: 16px;
+					margin-top: 10px;
 					background-color: #FFF;
 				}
 			}

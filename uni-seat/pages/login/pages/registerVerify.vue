@@ -3,13 +3,13 @@
 		<uni-app-nav-bar></uni-app-nav-bar>
 		<view class="col content">
 			<text class="verify-text">{{$t('verify')}}</text>
-			<text class="problem">问题：公司slogan是什么？</text>
+			<text class="problem">{{topic}}</text>
 			<view style="margin-top: 40px;">
 				<view class="row answer-selector" v-for="(item,index) in letterList" :key="index"
-					@click="selectedAnswer(item)">
-					<text class="selector-letter" :class="{active : result == item}">{{item}}</text>
-					<view class="answer" :class="{active : result == item}">
-						想不等于做，做不等于做到，做到不等于得到，更不等于成功
+					@click="selectedAnswer(item.answer)">
+					<text class="selector-letter" :class="{active : result == item}">{{item.answer}}</text>
+					<view class="answer" :class="{active : result == item.answer}">
+						{{item.problem}}
 					</view>
 				</view>
 			</view>
@@ -19,58 +19,113 @@
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				letterList : ['A', 'B', 'C', 'D'],
-				result : ''
+	export default {
+		data() {
+			return {
+				phone : '',
+				answer: null,
+				id: null,
+				topic: '',
+				letterList: [],
+
+				result: null,
 			}
 		},
-		
-		methods:{
-			selectedAnswer(e){
+
+		onLoad(option) {
+			this.phone = option.iphone
+			this.getProblemListPetch()
+		},
+
+
+		methods: {
+			
+			selectedAnswer(e) {
 				this.result = e
 			},
+
+			checkValid() {
+				if (this.result == null) {
+					this.$toast(this.$t('selectedRightAnswer'))
+					return false
+				}
+				if (this.answer != this.result) {
+					this.$toast(this.$t('answerError'))
+					return false
+				}
+				return true
+			},
+
+			submit() {
+				if(this.checkValid()){
+					this.selectedProblemCheckPetch()
+				}
+			},
 			
-			submit(){
-				uni.navigateTo({
-					url: '/pages/login/pages/userInfoEdit'
+			async getProblemListPetch() {
+				let res = await this.$request('/api/single')
+				if (res.result == true) {
+					this.topic = res.data.topic
+					this.letterList = res.data.option
+					this.id = res.data.id
+					this.answer = res.data.answer
+				}
+			},
+			
+			async selectedProblemCheckPetch() {
+				let res = await this.$request('/api/check_single',{
+					phone : this.phone,
+					id : this.id,
+					answer : this.result
 				})
-			}
+				if (res.result == true) {
+					console.log(res)
+					this.$store.state.userInfo = res.data
+					uni.setStorageSync('userInfo', res.data)
+					uni.navigateTo({
+						url: '/pages/login/pages/userInfoEdit'
+					})
+				}
+			},
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.content{
+	.content {
 		flex: 1;
 		width: 100%;
 		padding: 0 40px;
 		color: #141D28;
+
 		.verify-text {
 			margin-top: 40px;
 			font-size: 26px;
 			line-height: 26px;
 			font-weight: 600;
 		}
-		.problem{
+
+		.problem {
 			font-size: 16px;
 			line-height: 16px;
 			font-weight: 500;
 			margin-top: 50px;
 		}
-		
-		.answer-selector{
+
+		.answer-selector {
 			align-items: center;
 			margin-bottom: 10px;
-			.selector-letter{
+
+			.selector-letter {
 				font-size: 18px;
 				line-height: 18px;
-				&.active{
+
+				&.active {
 					color: $uni-color-primary;
 				}
 			}
-			.answer{
+
+			.answer {
 				flex: 1;
 				font-size: 14px;
 				line-height: 20px;
@@ -79,14 +134,15 @@
 				border-radius: 4px;
 				margin-left: 12px;
 				padding: 10px;
-				&.active{
+
+				&.active {
 					border: 1px solid $uni-color-primary;
 					background-color: #F3FAFF;
 				}
 			}
 		}
-		
-		.submit-btn{
+
+		.submit-btn {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -99,8 +155,4 @@
 			background-color: $uni-color-primary !important;
 		}
 	}
-	
-	
-	
-	
 </style>
