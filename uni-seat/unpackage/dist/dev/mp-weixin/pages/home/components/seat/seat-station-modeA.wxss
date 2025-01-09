@@ -61,7 +61,7 @@
   position: relative;
 }
 .station-seat .seat-main .vm-area {
-  width: 190%;
+  width: 200%;
   height: 100%;
   position: absolute !important;
   overflow: auto;
@@ -101,7 +101,7 @@
   margin-right: 20px;
 }
 .content-right {
-  width: 350px;
+  width: 400px;
   margin-top: 34px;
 }
 .content-right .bottom {
@@ -151,7 +151,7 @@
   margin: 40px 20px;
 }
 .right-door {
-  height: 326px;
+  height: 346px;
   position: relative;
 }
 .right-door .top {
@@ -167,7 +167,7 @@
 }
 .right-door .door {
   position: absolute;
-  top: 141px;
+  top: 151px;
   left: 21px;
   height: 60px;
   width: 2px;
@@ -179,6 +179,6 @@
   position: absolute;
   color: #DADEE6;
   font-size: 14px;
-  top: 160px;
+  top: 170px;
 }
 

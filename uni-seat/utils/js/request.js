@@ -20,16 +20,19 @@ const header = {
 const request = (url = '', data = {}, loadingText, type = 'POST') => {
 	console.log('接口url:' + url)
 	console.log('接口请求参数:' + JSON.stringify(data))
-	let token = Vue.prototype.$store.state.userInfo.token
-	if(token != null){
-		header['token'] = token
+	if(Vue.prototype.$store.state.userInfo != null){
+		let token = Vue.prototype.$store.state.userInfo.token
+		if(token != null){
+			header['token'] = token
+		}
 	}
+	
 	if (loadingText != null) {
 		uni.showLoading({
 			title: loadingText
 		})
 	}
-	
+
 	return new Promise((resolve, reject) => {
 		uni.request({
 			method: type,
@@ -39,7 +42,9 @@ const request = (url = '', data = {}, loadingText, type = 'POST') => {
 			dataType: "json",
 			sslVerify: false,
 			success: (res) => {
-			    uni.hideLoading()
+				if (loadingText != null) {
+					uni.hideLoading()
+				}
 				uni.stopPullDownRefresh()
 				if (res.statusCode == 200) {
 					let response = res.data

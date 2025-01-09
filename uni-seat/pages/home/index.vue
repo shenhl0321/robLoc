@@ -1,12 +1,12 @@
 <template>
 	<view class="main-view">
-		<uni-app-nav-bar :mTitle="$t('homePage')"></uni-app-nav-bar>
+		<uni-app-nav-bar :hiddenBackIcon="true" :mTitle="$t('homePage')"></uni-app-nav-bar>
 		<scroll-view class="list-view" scroll-y>
 			<uni-public-left-right></uni-public-left-right>
 			<view class="rich-text-view">
 				<rich-text id="richtext" :nodes="richText"></rich-text>
 			</view>
-			<ProductBanner style="margin-top: 10px;"></ProductBanner>
+			<ProductBanner :list="productList"></ProductBanner>
 			<view class="col reserve-cell">
 				<image class="bg" src="/static/hm_reserve_bg.png" mode="aspectFill"></image>
 				<view class="col reserve">
@@ -31,8 +31,13 @@
 
 		data() {
 			return {
+				productList : [],
 				richText: "<h1>hello uni-app x!</h1><br/><h2>uni-app x，终极跨平台方案</h2>"
 			}
+		},
+		
+		onLoad() {
+			this.getProudctListPetch()
 		},
 		
 		onShow() {
@@ -40,9 +45,21 @@
 			    index: 0,
 			    text: this.$t('homePage')
 			});
+			
+			uni.setTabBarItem({
+			    index: 1,
+			    text: this.$t('mine')
+			});
 		},
 		
 		methods:{
+			async getProudctListPetch(){
+				let res = await this.$request('/api/pro_ls')
+				if(res.result == true){
+					this.productList = res.data
+				}
+			},
+			
 			pushToSeatReserve(){
 				uni.navigateTo({
 					url: '/pages/home/pages/stationReserve'
@@ -84,6 +101,7 @@
 		border-radius: 16px;
 		background-color: #FFF;
 		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	.reserve-cell {

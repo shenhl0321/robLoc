@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "uni-section-input": "/components/uni-section-input/uni-section-input"
+    "uni-section-input": "/components/uni-section-input/uni-section-input",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "uni-action-sheet": "/components/uni-action-sheet/uni-action-sheet"
   }
 }

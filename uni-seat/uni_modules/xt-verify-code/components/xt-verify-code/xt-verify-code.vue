@@ -172,9 +172,9 @@
 
 	.xt__verify-code .xt__input {
 		height: 100%;
-		width: 200vw;
+		width: calc(200vw - 80px);
 		position: absolute;
-		left: -100vw;
+		left: calc(40px - 100vw);
 		z-index: 1;
 		color: transparent;
 		caret-color: transparent;

@@ -17,6 +17,23 @@
 					progress: {
 						color: '#0099FF'
 					}
+				},
+				
+				id : ''
+			}
+		},
+		
+		onLoad(option) {
+			this.id = option.productId
+			//this.getProductDetailPetch()
+		},
+		
+		methods : {
+			async getProductDetailPetch(){
+				let res = await this.$request('/api/pro_ls',{id : this.id})
+				console
+				if(res.result == true){
+					console.log(res)
 				}
 			}
 		}

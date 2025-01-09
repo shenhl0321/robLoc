@@ -1,7 +1,7 @@
 <template>
 	<view class="app-nav-bar-view">
 		<view class="nav-bar-view">
-			<view class="left-back-view" @click="popBack()">
+			<view class="left-back-view" @click="popBack()" v-if="hiddenBackIcon == false">
 				<image style="width:22px; height: 22px;" src="../../static/ic_back.png"></image>
 			</view>
 			<view class="center-title-view">
@@ -18,14 +18,19 @@
 	export default {
 		props: {
 			mTitle: {
-				type: String,
+				type: String || undefined,
 				default: ''
 			},
 
 			backApp: {
 				type: Boolean,
 				default: false,
-			}
+			},
+			 
+			 hiddenBackIcon : {
+				 type: Boolean,
+				 default: false,
+			 }
 		},
 		mounted() {
 			console.log(this.mTitle)

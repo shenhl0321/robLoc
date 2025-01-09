@@ -15,7 +15,7 @@
 			</image>
 			<swiper class="swiper-view" circular :current="current">
 				<swiper-item class="swiper-item" v-for="(item,index) in list" :key="index">
-					<image class="product" src="https://picx.zhimg.com/v2-f375259bab6293c5da096297302f4a6c_r.jpg?"
+					<image class="product" :src="item.logo"
 						mode="aspectFill"></image>
 				</swiper-item>
 			</swiper>
@@ -27,10 +27,18 @@
 
 <script>
 	export default {
+		props : {
+			list : {
+				type : Array,
+				default(){
+					return []
+				}
+			}
+		},
+		
 		data() {
 			return {
 				current: 0,
-				list : [1,2,3,4,5,6]
 			}
 		},
 

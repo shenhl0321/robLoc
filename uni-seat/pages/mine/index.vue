@@ -7,7 +7,7 @@
 			</view>
 			<view class="col user">
 				<view class="col content">
-					<image class="user-header" :src="avatarUrl"></image>
+					<image class="user-header" :src="avatarUrl" mode="aspectFill"></image>
 					<text class="user-name">{{realname}}</text>
 					<text class="mobile">{{phone}}</text>
 					<image class="set" src="/static/my_set.png" @click="pushToSetPage"></image>
@@ -120,13 +120,17 @@
 			justify-content: center;
 			/* #ifdef MP-WEIXIN */
 			height: calc(64px + var(--status-bar-height));
+			.title{
+				margin-top: calc(var(--status-bar-height) + 34px);
+			}
 			/* #endif */
 			/* #ifndef MP-WEIXIN */
 			height: calc(44px + var(--status-bar-height));
-			/* #endif */
 			.title{
 				margin-top: calc(var(--status-bar-height) + 14px);
 			}
+			/* #endif */
+			
 		}
 		
 		.bg{

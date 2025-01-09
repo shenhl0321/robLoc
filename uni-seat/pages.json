@@ -1,17 +1,14 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		// {
-		// 	"path": "pages/home/pages/stationReserve"
-		// },
-		// {
-		// 	"path": "pages/index/index"
-		// },
+		
 		{
 			"path": "pages/login/index"
 		},
+		
 		{
 			"path": "pages/login/pages/codeToLogin"
 		},
+		
 		{
 			"path": "pages/login/pages/forgetPassword"
 		},

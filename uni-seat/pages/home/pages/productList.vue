@@ -3,8 +3,8 @@
 		<uni-app-nav-bar :mTitle="$t('productList')"></uni-app-nav-bar>
 		<scroll-view class="list-view" scroll-y>
 			<view class="product" v-for="(item,index) in list" :key="index" @click="pushToProductDetail">
-				<image class="product-image" src="https://picx.zhimg.com/v2-f375259bab6293c5da096297302f4a6c_r.jpg?"
-					mode="aspectFill"></image>
+				<image class="product-image" :src="item.logo"
+					mode="aspectFill" @click="pushToProductDetail(item.id)"></image>
 			</view>
 		</scroll-view>
 	</view>
@@ -14,14 +14,25 @@
 	export default{
 		data(){
 			return{
-				list : [1,2,3,4]
+				list : []
 			}
 		},
 		
+		onLoad() {
+			this.getProudctListPetch()
+		},
+		
 		methods:{
-			pushToProductDetail(){
+			async getProudctListPetch(){
+				let res = await this.$request('/api/pro_ls')
+				if(res.result == true){
+					this.list = res.data
+				}
+			},
+			
+			pushToProductDetail(productId){
 				uni.navigateTo({
-					url: '/pages/home/pages/productDetail'
+					url: `/pages/home/pages/productDetail?productId=${productId}`
 				})
 			}
 		}

@@ -191,15 +191,3 @@ export const getStoreDictionaryName = (key, code) => {
 		return model.value
 	}
 }
-
-
-let isAndroid = navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1;
-let isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-
-export const postMessageToApp = (param) => {
-	if(isiOS){
-		window.webkit.messageHandlers.jsToOcWithPrams.postMessage(param);
-	}else{
-		window.handleMessage.startPage(JSON.stringify(param))  
-	}
-}

@@ -52,6 +52,7 @@
 					 })
 					if(res.result == true){
 						this.$toast(this.$t('success'))
+						uni.navigateBack()
 					}
 				}
 			},

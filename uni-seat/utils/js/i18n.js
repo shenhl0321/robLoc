@@ -24,6 +24,8 @@ const messages = {
 		loginRightNow: '立即登录',
 		inputCode: '请输入验证码',
 		sendCode: '发送验证码',
+		codeSendTo : '验证码已发送至',
+		codeError : '验证码错误，请重新输入',
 		verify: '验证',
 		jump : '跳过',
 		
@@ -93,6 +95,8 @@ const messages = {
 		china : '中国',
 		english : '英国',
 		germany : '德国',
+		resetGetCode : '重新获取验证码',
+		timeOutResetGetCode : '秒后重新获取验证码'
 
 	},
 	'en-US': {

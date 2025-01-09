@@ -63,6 +63,7 @@
   border-radius: 16px;
   background-color: #FFF;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .reserve-cell.data-v-71e217db {
   position: relative;

@@ -67,9 +67,9 @@
 		
 		methods:{
 			selectorDate(e){
+				console.log(e)
 				this.$refs.seat.date = e
 			},
-			
 			
 			seatReserveShow() {
 				this.$refs.popupInfo.open()
@@ -87,6 +87,7 @@
 				console.log(val)
 				this.$refs.popupCalendar.close()
 			},
+		
 		}
 	}
 </script>

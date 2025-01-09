@@ -3,6 +3,7 @@
 		onLaunch: function() {
 			console.log('App Launch')
 			const userInfo = uni.getStorageSync('userInfo')
+			console.log(userInfo)
 			if(userInfo.token != null){
 				this.$store.state.userInfo = userInfo
 				uni.reLaunch({
@@ -10,16 +11,15 @@
 				})
 			}
 			
-						
-			uni.setTabBarItem({
-			    index: 0,
-			    text: this.$t('homePage')
-			});
+			// uni.setTabBarItem({
+			//     index: 0,
+			//     text: this.$t('homePage')
+			// });
 			
-			uni.setTabBarItem({
-			    index: 1,
-			    text: this.$t('mine')
-			});
+			// uni.setTabBarItem({
+			//     index: 1,
+			//     text: this.$t('mine')
+			// });
 		},
 		onShow: function() {
 			console.log('App Show')

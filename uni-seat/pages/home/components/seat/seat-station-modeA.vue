@@ -142,6 +142,7 @@
 		watch : {
 			date(val){
 				console.log(val)
+				this.getAllSeatListPetch()
 			}
 		},
 		
@@ -156,6 +157,14 @@
 			//移动事件
 			onMove: function(e) {
 				this.moveX = e.detail.x
+			},
+			
+			//获取所有位置信息
+			async getAllSeatListPetch(){
+				let res = await this.$request('/api/seat_ls', {date : this.date})
+				if(res.result == true){
+					console.log(res)
+				}
 			},
 
 		}

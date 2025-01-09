@@ -38,7 +38,7 @@
   height: calc(64px + 25px);
 }
 .top-view .nav-bar .title {
-  margin-top: calc(25px + 14px);
+  margin-top: calc(25px + 34px);
 }
 .top-view .bg {
   position: absolute;
@@ -85,7 +85,12 @@
   top: 20px;
   right: 20px;
 }
-.my-section {
+.section-list {
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
+}
+.section-list .my-section {
   width: calc(100% - 40px);
   margin-left: 20px;
   margin-right: 20px;
@@ -95,17 +100,31 @@
   padding: 20px;
   justify-content: space-between;
 }
-.my-section .icon {
+.section-list .my-section .icon {
   width: 44px;
   height: 44px;
 }
-.my-section .name {
+.section-list .my-section .name {
   font-size: 16px;
   color: #141D28;
   margin-left: 12px;
 }
-.my-section .small_push {
+.section-list .my-section .small_push {
   width: 16px;
   height: 16px;
+}
+.section-list .exit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #FFF !important;
+  height: 50px;
+  color: #E94F57;
+  font-size: 16px;
 }
 

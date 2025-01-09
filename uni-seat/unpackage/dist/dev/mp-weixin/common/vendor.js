@@ -181,7 +181,44 @@ module.exports = _setPrototypeOf, module.exports.__esModule = true, module.expor
 
 /***/ }),
 
-/***/ 161:
+/***/ 17:
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/isNativeReflectConstruct.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _isNativeReflectConstruct() {
+  try {
+    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+  } catch (t) {}
+  return (module.exports = _isNativeReflectConstruct = function _isNativeReflectConstruct() {
+    return !!t;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports)();
+}
+module.exports = _isNativeReflectConstruct, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 18:
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ 19);
+var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ 20);
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ 8);
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ 21);
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 188:
 /*!************************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/config.js ***!
   \************************************************************************************************************************/
@@ -261,7 +298,7 @@ exports.propsMap = propsMap;
 
 /***/ }),
 
-/***/ 162:
+/***/ 189:
 /*!**********************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/util.js ***!
   \**********************************************************************************************************************/
@@ -293,43 +330,6 @@ var getElementRect = function getElementRect(that) {
 };
 exports.getElementRect = getElementRect;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-
-/***/ 17:
-/*!*************************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/isNativeReflectConstruct.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _isNativeReflectConstruct() {
-  try {
-    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-  } catch (t) {}
-  return (module.exports = _isNativeReflectConstruct = function _isNativeReflectConstruct() {
-    return !!t;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports)();
-}
-module.exports = _isNativeReflectConstruct, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ 18:
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ 19);
-var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ 20);
-var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ 8);
-var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ 21);
-function _toConsumableArray(arr) {
-  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
-}
-module.exports = _toConsumableArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -3363,383 +3363,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ 247:
-/*!************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/@babel/runtime/regenerator/index.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// TODO(Babel 8): Remove this file.
-
-var runtime = __webpack_require__(/*! @babel/runtime/helpers/regeneratorRuntime */ 248)();
-module.exports = runtime;
-
-/***/ }),
-
-/***/ 248:
-/*!*******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
-function _regeneratorRuntime() {
-  "use strict";
-
-  /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
-  module.exports = _regeneratorRuntime = function _regeneratorRuntime() {
-    return e;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
-  var t,
-    e = {},
-    r = Object.prototype,
-    n = r.hasOwnProperty,
-    o = Object.defineProperty || function (t, e, r) {
-      t[e] = r.value;
-    },
-    i = "function" == typeof Symbol ? Symbol : {},
-    a = i.iterator || "@@iterator",
-    c = i.asyncIterator || "@@asyncIterator",
-    u = i.toStringTag || "@@toStringTag";
-  function define(t, e, r) {
-    return Object.defineProperty(t, e, {
-      value: r,
-      enumerable: !0,
-      configurable: !0,
-      writable: !0
-    }), t[e];
-  }
-  try {
-    define({}, "");
-  } catch (t) {
-    define = function define(t, e, r) {
-      return t[e] = r;
-    };
-  }
-  function wrap(t, e, r, n) {
-    var i = e && e.prototype instanceof Generator ? e : Generator,
-      a = Object.create(i.prototype),
-      c = new Context(n || []);
-    return o(a, "_invoke", {
-      value: makeInvokeMethod(t, r, c)
-    }), a;
-  }
-  function tryCatch(t, e, r) {
-    try {
-      return {
-        type: "normal",
-        arg: t.call(e, r)
-      };
-    } catch (t) {
-      return {
-        type: "throw",
-        arg: t
-      };
-    }
-  }
-  e.wrap = wrap;
-  var h = "suspendedStart",
-    l = "suspendedYield",
-    f = "executing",
-    s = "completed",
-    y = {};
-  function Generator() {}
-  function GeneratorFunction() {}
-  function GeneratorFunctionPrototype() {}
-  var p = {};
-  define(p, a, function () {
-    return this;
-  });
-  var d = Object.getPrototypeOf,
-    v = d && d(d(values([])));
-  v && v !== r && n.call(v, a) && (p = v);
-  var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p);
-  function defineIteratorMethods(t) {
-    ["next", "throw", "return"].forEach(function (e) {
-      define(t, e, function (t) {
-        return this._invoke(e, t);
-      });
-    });
-  }
-  function AsyncIterator(t, e) {
-    function invoke(r, o, i, a) {
-      var c = tryCatch(t[r], t, o);
-      if ("throw" !== c.type) {
-        var u = c.arg,
-          h = u.value;
-        return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) {
-          invoke("next", t, i, a);
-        }, function (t) {
-          invoke("throw", t, i, a);
-        }) : e.resolve(h).then(function (t) {
-          u.value = t, i(u);
-        }, function (t) {
-          return invoke("throw", t, i, a);
-        });
-      }
-      a(c.arg);
-    }
-    var r;
-    o(this, "_invoke", {
-      value: function value(t, n) {
-        function callInvokeWithMethodAndArg() {
-          return new e(function (e, r) {
-            invoke(t, n, e, r);
-          });
-        }
-        return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
-      }
-    });
-  }
-  function makeInvokeMethod(e, r, n) {
-    var o = h;
-    return function (i, a) {
-      if (o === f) throw Error("Generator is already running");
-      if (o === s) {
-        if ("throw" === i) throw a;
-        return {
-          value: t,
-          done: !0
-        };
-      }
-      for (n.method = i, n.arg = a;;) {
-        var c = n.delegate;
-        if (c) {
-          var u = maybeInvokeDelegate(c, n);
-          if (u) {
-            if (u === y) continue;
-            return u;
-          }
-        }
-        if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) {
-          if (o === h) throw o = s, n.arg;
-          n.dispatchException(n.arg);
-        } else "return" === n.method && n.abrupt("return", n.arg);
-        o = f;
-        var p = tryCatch(e, r, n);
-        if ("normal" === p.type) {
-          if (o = n.done ? s : l, p.arg === y) continue;
-          return {
-            value: p.arg,
-            done: n.done
-          };
-        }
-        "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg);
-      }
-    };
-  }
-  function maybeInvokeDelegate(e, r) {
-    var n = r.method,
-      o = e.iterator[n];
-    if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y;
-    var i = tryCatch(o, e.iterator, r.arg);
-    if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y;
-    var a = i.arg;
-    return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y);
-  }
-  function pushTryEntry(t) {
-    var e = {
-      tryLoc: t[0]
-    };
-    1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e);
-  }
-  function resetTryEntry(t) {
-    var e = t.completion || {};
-    e.type = "normal", delete e.arg, t.completion = e;
-  }
-  function Context(t) {
-    this.tryEntries = [{
-      tryLoc: "root"
-    }], t.forEach(pushTryEntry, this), this.reset(!0);
-  }
-  function values(e) {
-    if (e || "" === e) {
-      var r = e[a];
-      if (r) return r.call(e);
-      if ("function" == typeof e.next) return e;
-      if (!isNaN(e.length)) {
-        var o = -1,
-          i = function next() {
-            for (; ++o < e.length;) {
-              if (n.call(e, o)) return next.value = e[o], next.done = !1, next;
-            }
-            return next.value = t, next.done = !0, next;
-          };
-        return i.next = i;
-      }
-    }
-    throw new TypeError(_typeof(e) + " is not iterable");
-  }
-  return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", {
-    value: GeneratorFunctionPrototype,
-    configurable: !0
-  }), o(GeneratorFunctionPrototype, "constructor", {
-    value: GeneratorFunction,
-    configurable: !0
-  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
-    var e = "function" == typeof t && t.constructor;
-    return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name));
-  }, e.mark = function (t) {
-    return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t;
-  }, e.awrap = function (t) {
-    return {
-      __await: t
-    };
-  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () {
-    return this;
-  }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) {
-    void 0 === i && (i = Promise);
-    var a = new AsyncIterator(wrap(t, r, n, o), i);
-    return e.isGeneratorFunction(r) ? a : a.next().then(function (t) {
-      return t.done ? t.value : a.next();
-    });
-  }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () {
-    return this;
-  }), define(g, "toString", function () {
-    return "[object Generator]";
-  }), e.keys = function (t) {
-    var e = Object(t),
-      r = [];
-    for (var n in e) {
-      r.push(n);
-    }
-    return r.reverse(), function next() {
-      for (; r.length;) {
-        var t = r.pop();
-        if (t in e) return next.value = t, next.done = !1, next;
-      }
-      return next.done = !0, next;
-    };
-  }, e.values = values, Context.prototype = {
-    constructor: Context,
-    reset: function reset(e) {
-      if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) {
-        "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t);
-      }
-    },
-    stop: function stop() {
-      this.done = !0;
-      var t = this.tryEntries[0].completion;
-      if ("throw" === t.type) throw t.arg;
-      return this.rval;
-    },
-    dispatchException: function dispatchException(e) {
-      if (this.done) throw e;
-      var r = this;
-      function handle(n, o) {
-        return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o;
-      }
-      for (var o = this.tryEntries.length - 1; o >= 0; --o) {
-        var i = this.tryEntries[o],
-          a = i.completion;
-        if ("root" === i.tryLoc) return handle("end");
-        if (i.tryLoc <= this.prev) {
-          var c = n.call(i, "catchLoc"),
-            u = n.call(i, "finallyLoc");
-          if (c && u) {
-            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
-            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
-          } else if (c) {
-            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
-          } else {
-            if (!u) throw Error("try statement without catch or finally");
-            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
-          }
-        }
-      }
-    },
-    abrupt: function abrupt(t, e) {
-      for (var r = this.tryEntries.length - 1; r >= 0; --r) {
-        var o = this.tryEntries[r];
-        if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) {
-          var i = o;
-          break;
-        }
-      }
-      i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null);
-      var a = i ? i.completion : {};
-      return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a);
-    },
-    complete: function complete(t, e) {
-      if ("throw" === t.type) throw t.arg;
-      return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y;
-    },
-    finish: function finish(t) {
-      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
-        var r = this.tryEntries[e];
-        if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y;
-      }
-    },
-    "catch": function _catch(t) {
-      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
-        var r = this.tryEntries[e];
-        if (r.tryLoc === t) {
-          var n = r.completion;
-          if ("throw" === n.type) {
-            var o = n.arg;
-            resetTryEntry(r);
-          }
-          return o;
-        }
-      }
-      throw Error("illegal catch attempt");
-    },
-    delegateYield: function delegateYield(e, r, n) {
-      return this.delegate = {
-        iterator: values(e),
-        resultName: r,
-        nextLoc: n
-      }, "next" === this.method && (this.arg = t), y;
-    }
-  }, e;
-}
-module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-/***/ }),
-
-/***/ 249:
-/*!*****************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/asyncToGenerator.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-      args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-      _next(undefined);
-    });
-  };
-}
-module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -9825,7 +9448,78 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 257:
+/***/ 26:
+/*!********************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/pages.json ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 274:
+/*!**************************************************************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 275));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 276));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 277));
+var _default = {
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default
+};
+exports.default = _default;
+
+/***/ }),
+
+/***/ 275:
+/*!*************************************************************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
+  \*************************************************************************************************************************/
+/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show more\",\"uni-load-more.contentrefresh\":\"loading...\",\"uni-load-more.contentnomore\":\"No more data\"}");
+
+/***/ }),
+
+/***/ 276:
+/*!******************************************************************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
+  \******************************************************************************************************************************/
+/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
+
+/***/ }),
+
+/***/ 277:
+/*!******************************************************************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
+  \******************************************************************************************************************************/
+/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
+
+/***/ }),
+
+/***/ 292:
 /*!*********************************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \*********************************************************************************************************************************/
@@ -9960,17 +9654,6 @@ function createAnimation(option, _this) {
 
 /***/ }),
 
-/***/ 26:
-/*!********************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/pages.json ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -9999,33 +9682,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-
-/***/ 313:
-/*!**************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 383));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 392));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 399));
-var _default = {
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default
-};
-exports.default = _default;
 
 /***/ }),
 
@@ -10162,6 +9818,124 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 33:
+/*!*****************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/utils/js/request.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.uniConfig = exports.default = void 0;
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
+var baseUrl = "http://mrt.lxiwl.vip";
+//const baseUrl = "http://sdc.mrt-reinhausen.com"
+
+var uniConfig = {
+  baseUrl: baseUrl,
+  setEnv: function setEnv(value) {
+    this.baseUrl = value + '/api/v1';
+  }
+};
+exports.uniConfig = uniConfig;
+var header = {
+  'Content-Type': 'application/json;charset=UTF-8'
+};
+var request = function request() {
+  var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var loadingText = arguments.length > 2 ? arguments[2] : undefined;
+  var type = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'POST';
+  console.log('接口url:' + url);
+  console.log('接口请求参数:' + JSON.stringify(data));
+  if (_vue.default.prototype.$store.state.userInfo != null) {
+    var token = _vue.default.prototype.$store.state.userInfo.token;
+    if (token != null) {
+      header['token'] = token;
+    }
+  }
+  if (loadingText != null) {
+    uni.showLoading({
+      title: loadingText
+    });
+  }
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      method: type,
+      url: uniConfig.baseUrl + url,
+      //'/h5TestApi' + url uniConfig.baseUrl + url
+      data: data,
+      header: header,
+      dataType: "json",
+      sslVerify: false,
+      success: function success(res) {
+        if (loadingText != null) {
+          uni.hideLoading();
+        }
+        uni.stopPullDownRefresh();
+        if (res.statusCode == 200) {
+          var response = res.data;
+          if (response.code == 1) {
+            resolve({
+              result: true,
+              data: response.data
+            });
+          } else {
+            var subMsg = res.data.msg;
+            uni.showToast({
+              title: subMsg,
+              duration: 2000,
+              icon: 'none'
+            });
+            resolve({
+              result: false,
+              error: subMsg
+            });
+          }
+        } else {
+          uni.showToast({
+            title: "网络请求错误",
+            duration: 2000,
+            icon: 'none'
+          });
+          resolve({
+            result: false,
+            error: "网络请求错误"
+          });
+        }
+      },
+      fail: function fail(error) {
+        uni.showToast({
+          title: "网络错误",
+          duration: 2000,
+          icon: 'none'
+        });
+        uni.hideLoading();
+        uni.stopPullDownRefresh();
+        reject(error);
+        uni.navigateTo({
+          url: '/pages/z-common/uni-networkError'
+        });
+        resolve({
+          result: false,
+          error: "网络错误"
+        });
+      }
+    });
+  });
+};
+var _default = request;
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+
+/***/ 34:
 /*!************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/store/store.js ***!
   \************************************************************************/
@@ -10177,14 +9951,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 34));
-var _i18n = _interopRequireDefault(__webpack_require__(/*! ../utils/js/i18n */ 35));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 35));
+var _i18n = _interopRequireDefault(__webpack_require__(/*! ../utils/js/i18n */ 36));
 _vue.default.use(_vuex.default);
 var store = new _vuex.default.Store({
   state: {
-    language: 'zn-CN' // 默认语言
+    language: 'zn-CN',
+    // 默认语言
+    userInfo: null
   },
-
   mutations: {
     setLanguage: function setLanguage(state, language) {
       state.language = language;
@@ -10203,7 +9978,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 34:
+/***/ 35:
 /*!**************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vuex3/dist/vuex.common.js ***!
   \**************************************************************************************/
@@ -11460,7 +11235,7 @@ module.exports = index_cjs;
 
 /***/ }),
 
-/***/ 35:
+/***/ 36:
 /*!**************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/utils/js/i18n.js ***!
   \**************************************************************************/
@@ -11477,7 +11252,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
-var _vueI18n = _interopRequireDefault(__webpack_require__(/*! vue-i18n */ 36));
+var _vueI18n = _interopRequireDefault(__webpack_require__(/*! vue-i18n */ 37));
 var _znCN;
 _vue.default.use(_vueI18n.default);
 var messages = {
@@ -11500,6 +11275,8 @@ var messages = {
     loginRightNow: '立即登录',
     inputCode: '请输入验证码',
     sendCode: '发送验证码',
+    codeSendTo: '验证码已发送至',
+    codeError: '验证码错误，请重新输入',
     verify: '验证',
     jump: '跳过',
     homePage: '首页',
@@ -11540,11 +11317,18 @@ var messages = {
     companyEmail: '公司邮箱',
     mobileNum: '手机号码',
     personal: '个人中心',
-    resevered: '已预订',
+    mine: '我的',
+    myReserve: '我的预定',
+    myMessage: '我的消息',
+    exit: '退出',
+    reserved: '已预订',
     proceed: '进行中',
     end: '已结束'
-  }, (0, _defineProperty2.default)(_znCN, "cancel", '已取消'), (0, _defineProperty2.default)(_znCN, "reseverTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reseverCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), _znCN),
+  }, (0, _defineProperty2.default)(_znCN, "cancel", '已取消'), (0, _defineProperty2.default)(_znCN, "reserveTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reserveCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), (0, _defineProperty2.default)(_znCN, "reserveMessage", '预定消息'), (0, _defineProperty2.default)(_znCN, "you", '您于'), (0, _defineProperty2.default)(_znCN, "reserve", '预订'), (0, _defineProperty2.default)(_znCN, "seatSuccess", '座位成功！'), (0, _defineProperty2.default)(_znCN, "inputRightPhone", '请输入正确手机号码'), (0, _defineProperty2.default)(_znCN, "success", '操作成功'), (0, _defineProperty2.default)(_znCN, "selectedRightAnswer", '请选择正确答案'), (0, _defineProperty2.default)(_znCN, "answerError", '答案错误'), (0, _defineProperty2.default)(_znCN, "networkError", '网络错误'), (0, _defineProperty2.default)(_znCN, "language", '语言'), (0, _defineProperty2.default)(_znCN, "china", '中国'), (0, _defineProperty2.default)(_znCN, "english", '英国'), (0, _defineProperty2.default)(_znCN, "germany", '德国'), (0, _defineProperty2.default)(_znCN, "resetGetCode", '重新获取验证码'), (0, _defineProperty2.default)(_znCN, "timeOutResetGetCode", '秒后重新获取验证码'), _znCN),
   'en-US': {
+    login: 'login'
+  },
+  'ge-DE': {
     login: 'login'
   }
 };
@@ -11558,7 +11342,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 36:
+/***/ 37:
 /*!****************************************************!*\
   !*** ./node_modules/vue-i18n/dist/vue-i18n.esm.js ***!
   \****************************************************/
@@ -13875,7 +13659,251 @@ VueI18n.version = '8.28.2';
 
 /***/ }),
 
-/***/ 37:
+/***/ 38:
+/*!****************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/utils/js/common.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.throttle = exports.showToast = exports.prePage = exports.msg = exports.isLogin = exports.getUnique = exports.getStoreDictionaryName = exports.getMpCode = exports.debounce = exports.date = exports.checkStr = void 0;
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
+var _debounceTimeout = null,
+  _throttleRunning = false;
+
+/**
+ * 防抖
+ * @param {Function} 执行函数
+ * @param {Number} delay 延时ms   
+ */
+var debounce = function debounce(fn) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  clearTimeout(_debounceTimeout);
+  _debounceTimeout = setTimeout(function () {
+    fn();
+  }, delay);
+};
+/**
+ * 节流
+ * @param {Function} 执行函数
+ * @param {Number} delay 延时ms  
+ */
+exports.debounce = debounce;
+var throttle = function throttle(fn) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  if (_throttleRunning) {
+    return;
+  }
+  _throttleRunning = true;
+  fn();
+  setTimeout(function () {
+    _throttleRunning = false;
+  }, delay);
+};
+/**
+ * toast
+ */
+exports.throttle = throttle;
+var msg = function msg() {
+  var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var param = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  if (!title) return;
+  uni.showToast({
+    title: title,
+    duration: param.duration || 1500,
+    mask: param.mask || false,
+    icon: param.icon || 'none'
+  });
+};
+/**
+ * 检查登录
+ * @return {Boolean}
+ */
+exports.msg = msg;
+var isLogin = function isLogin() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var token = uni.getStorageSync('uniIdToken');
+  if (token) {
+    return true;
+  }
+  if (options.nav !== false) {
+    uni.navigateTo({
+      url: '/pages/auth/login'
+    });
+  }
+  return false;
+};
+/**
+ * 获取页面栈
+ * @param {Number} preIndex为1时获取上一页
+ * @return {Object} 
+ */
+exports.isLogin = isLogin;
+var prePage = function prePage() {
+  var preIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+  var pages = getCurrentPages();
+  var prePage = pages[pages.length - (preIndex + 1)];
+  return prePage.$vm;
+};
+/**
+ * 格式化时间戳 Y-m-d H:i:s
+ * @param {String} format Y-m-d H:i:s
+ * @param {Number} timestamp 时间戳   
+ * @return {String}
+ */
+exports.prePage = prePage;
+var date = function date(format, timeStamp) {
+  if ('' + timeStamp.length <= 10) {
+    timeStamp = +timeStamp * 1000;
+  } else {
+    timeStamp = +timeStamp;
+  }
+  var _date = new Date(timeStamp),
+    Y = _date.getFullYear(),
+    m = _date.getMonth() + 1,
+    d = _date.getDate(),
+    H = _date.getHours(),
+    i = _date.getMinutes(),
+    s = _date.getSeconds();
+  m = m < 10 ? '0' + m : m;
+  d = d < 10 ? '0' + d : d;
+  H = H < 10 ? '0' + H : H;
+  i = i < 10 ? '0' + i : i;
+  s = s < 10 ? '0' + s : s;
+  return format.replace(/[YmdHis]/g, function (key) {
+    return {
+      Y: Y,
+      m: m,
+      d: d,
+      H: H,
+      i: i,
+      s: s
+    }[key];
+  });
+};
+//二维数组去重
+exports.date = date;
+var getUnique = function getUnique(array) {
+  var obj = {};
+  return array.filter(function (item, index) {
+    var newItem = item + JSON.stringify(item);
+    return obj.hasOwnProperty(newItem) ? false : obj[newItem] = true;
+  });
+};
+
+//获取小程序code
+exports.getUnique = getUnique;
+var getMpCode = function getMpCode(provider) {
+  return new Promise(function (resolve, reject) {
+    uni.login({
+      provider: provider,
+      success: function success(res) {
+        resolve(res.code);
+      }
+    });
+  });
+};
+// 判断类型集合
+exports.getMpCode = getMpCode;
+var checkStr = function checkStr(str, type) {
+  switch (type) {
+    case 'mobile':
+      //手机号码
+      return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str);
+    case 'tel':
+      //座机
+      return /^(0\d{2,3}-\d{7,8})(-\d{1,4})?$/.test(str);
+    case 'card':
+      //身份证
+      return /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(str);
+    case 'mobileCode':
+      //6位数字验证码
+      return /^[0-9]{6}$/.test(str);
+    case 'pwd':
+      //密码以字母开头，长度在6~18之间，只能包含字母、数字和下划线
+      return /^(?:\d|[a-zA-Z]){6,18}$/.test(str);
+    case 'payPwd':
+      //支付密码 6位纯数字
+      return /^[0-9]{6}$/.test(str);
+    case 'postal':
+      //邮政编码
+      return /[1-9]\d{5}(?!\d)/.test(str);
+    case 'QQ':
+      //QQ号
+      return /^[1-9][0-9]{4,9}$/.test(str);
+    case 'email':
+      //邮箱
+      return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str);
+    case 'money':
+      //金额(小数点2位)
+      return /^\d*(?:\.\d{0,2})?$/.test(str);
+    case 'URL':
+      //网址
+      return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(str);
+    case 'IP':
+      //IP
+      return /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/.test(str);
+    case 'date':
+      //日期时间
+      return /^(\d{4})\-(\d{2})\-(\d{2}) (\d{2})(?:\:\d{2}|:(\d{2}):(\d{2}))$/.test(str) || /^(\d{4})\-(\d{2})\-(\d{2})$/.test(str);
+    case 'number':
+      //数字
+      return /^[0-9]$/.test(str);
+    case 'english':
+      //英文
+      return /^[a-zA-Z]+$/.test(str);
+    case 'chinese':
+      //中文
+      return /^[\\u4E00-\\u9FA5]+$/.test(str);
+    case 'lower':
+      //小写
+      return /^[a-z]+$/.test(str);
+    case 'upper':
+      //大写
+      return /^[A-Z]+$/.test(str);
+    case 'HTML':
+      //HTML标记
+      return /<("[^"]*"|'[^']*'|[^'">])*>/.test(str);
+    default:
+      return true;
+  }
+};
+exports.checkStr = checkStr;
+var showToast = function showToast(title) {
+  var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2000;
+  setTimeout(function (e) {
+    uni.showToast({
+      title: title,
+      duration: time,
+      icon: 'none'
+    });
+  }, 100);
+};
+exports.showToast = showToast;
+var getStoreDictionaryName = function getStoreDictionaryName(key, code) {
+  var dataArray = _vue.default.prototype.$store.state.dictionary[key];
+  var model = dataArray.find(function (e) {
+    return e.code == code;
+  });
+  if (model == null) {
+    return '--';
+  } else {
+    return model.value;
+  }
+};
+exports.getStoreDictionaryName = getStoreDictionaryName;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+
+/***/ 39:
 /*!**********************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni.promisify.adaptor.js ***!
   \**********************************************************************************/
@@ -13900,39 +13928,6 @@ uni.addInterceptor({
 
 /***/ }),
 
-/***/ 383:
-/*!*************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
-  \*************************************************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show more\",\"uni-load-more.contentrefresh\":\"loading...\",\"uni-load-more.contentnomore\":\"No more data\"}");
-
-/***/ }),
-
-/***/ 392:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
-  \******************************************************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
-
-/***/ }),
-
-/***/ 399:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
-  \******************************************************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
-
-/***/ }),
-
 /***/ 4:
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
@@ -13946,6 +13941,383 @@ function _interopRequireDefault(obj) {
   };
 }
 module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 46:
+/*!************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/@babel/runtime/regenerator/index.js ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// TODO(Babel 8): Remove this file.
+
+var runtime = __webpack_require__(/*! @babel/runtime/helpers/regeneratorRuntime */ 47)();
+module.exports = runtime;
+
+/***/ }),
+
+/***/ 47:
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
+function _regeneratorRuntime() {
+  "use strict";
+
+  /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+  module.exports = _regeneratorRuntime = function _regeneratorRuntime() {
+    return e;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  var t,
+    e = {},
+    r = Object.prototype,
+    n = r.hasOwnProperty,
+    o = Object.defineProperty || function (t, e, r) {
+      t[e] = r.value;
+    },
+    i = "function" == typeof Symbol ? Symbol : {},
+    a = i.iterator || "@@iterator",
+    c = i.asyncIterator || "@@asyncIterator",
+    u = i.toStringTag || "@@toStringTag";
+  function define(t, e, r) {
+    return Object.defineProperty(t, e, {
+      value: r,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }), t[e];
+  }
+  try {
+    define({}, "");
+  } catch (t) {
+    define = function define(t, e, r) {
+      return t[e] = r;
+    };
+  }
+  function wrap(t, e, r, n) {
+    var i = e && e.prototype instanceof Generator ? e : Generator,
+      a = Object.create(i.prototype),
+      c = new Context(n || []);
+    return o(a, "_invoke", {
+      value: makeInvokeMethod(t, r, c)
+    }), a;
+  }
+  function tryCatch(t, e, r) {
+    try {
+      return {
+        type: "normal",
+        arg: t.call(e, r)
+      };
+    } catch (t) {
+      return {
+        type: "throw",
+        arg: t
+      };
+    }
+  }
+  e.wrap = wrap;
+  var h = "suspendedStart",
+    l = "suspendedYield",
+    f = "executing",
+    s = "completed",
+    y = {};
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+  var p = {};
+  define(p, a, function () {
+    return this;
+  });
+  var d = Object.getPrototypeOf,
+    v = d && d(d(values([])));
+  v && v !== r && n.call(v, a) && (p = v);
+  var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p);
+  function defineIteratorMethods(t) {
+    ["next", "throw", "return"].forEach(function (e) {
+      define(t, e, function (t) {
+        return this._invoke(e, t);
+      });
+    });
+  }
+  function AsyncIterator(t, e) {
+    function invoke(r, o, i, a) {
+      var c = tryCatch(t[r], t, o);
+      if ("throw" !== c.type) {
+        var u = c.arg,
+          h = u.value;
+        return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) {
+          invoke("next", t, i, a);
+        }, function (t) {
+          invoke("throw", t, i, a);
+        }) : e.resolve(h).then(function (t) {
+          u.value = t, i(u);
+        }, function (t) {
+          return invoke("throw", t, i, a);
+        });
+      }
+      a(c.arg);
+    }
+    var r;
+    o(this, "_invoke", {
+      value: function value(t, n) {
+        function callInvokeWithMethodAndArg() {
+          return new e(function (e, r) {
+            invoke(t, n, e, r);
+          });
+        }
+        return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+      }
+    });
+  }
+  function makeInvokeMethod(e, r, n) {
+    var o = h;
+    return function (i, a) {
+      if (o === f) throw Error("Generator is already running");
+      if (o === s) {
+        if ("throw" === i) throw a;
+        return {
+          value: t,
+          done: !0
+        };
+      }
+      for (n.method = i, n.arg = a;;) {
+        var c = n.delegate;
+        if (c) {
+          var u = maybeInvokeDelegate(c, n);
+          if (u) {
+            if (u === y) continue;
+            return u;
+          }
+        }
+        if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) {
+          if (o === h) throw o = s, n.arg;
+          n.dispatchException(n.arg);
+        } else "return" === n.method && n.abrupt("return", n.arg);
+        o = f;
+        var p = tryCatch(e, r, n);
+        if ("normal" === p.type) {
+          if (o = n.done ? s : l, p.arg === y) continue;
+          return {
+            value: p.arg,
+            done: n.done
+          };
+        }
+        "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg);
+      }
+    };
+  }
+  function maybeInvokeDelegate(e, r) {
+    var n = r.method,
+      o = e.iterator[n];
+    if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y;
+    var i = tryCatch(o, e.iterator, r.arg);
+    if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y;
+    var a = i.arg;
+    return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y);
+  }
+  function pushTryEntry(t) {
+    var e = {
+      tryLoc: t[0]
+    };
+    1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e);
+  }
+  function resetTryEntry(t) {
+    var e = t.completion || {};
+    e.type = "normal", delete e.arg, t.completion = e;
+  }
+  function Context(t) {
+    this.tryEntries = [{
+      tryLoc: "root"
+    }], t.forEach(pushTryEntry, this), this.reset(!0);
+  }
+  function values(e) {
+    if (e || "" === e) {
+      var r = e[a];
+      if (r) return r.call(e);
+      if ("function" == typeof e.next) return e;
+      if (!isNaN(e.length)) {
+        var o = -1,
+          i = function next() {
+            for (; ++o < e.length;) {
+              if (n.call(e, o)) return next.value = e[o], next.done = !1, next;
+            }
+            return next.value = t, next.done = !0, next;
+          };
+        return i.next = i;
+      }
+    }
+    throw new TypeError(_typeof(e) + " is not iterable");
+  }
+  return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", {
+    value: GeneratorFunctionPrototype,
+    configurable: !0
+  }), o(GeneratorFunctionPrototype, "constructor", {
+    value: GeneratorFunction,
+    configurable: !0
+  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
+    var e = "function" == typeof t && t.constructor;
+    return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name));
+  }, e.mark = function (t) {
+    return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t;
+  }, e.awrap = function (t) {
+    return {
+      __await: t
+    };
+  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () {
+    return this;
+  }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) {
+    void 0 === i && (i = Promise);
+    var a = new AsyncIterator(wrap(t, r, n, o), i);
+    return e.isGeneratorFunction(r) ? a : a.next().then(function (t) {
+      return t.done ? t.value : a.next();
+    });
+  }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () {
+    return this;
+  }), define(g, "toString", function () {
+    return "[object Generator]";
+  }), e.keys = function (t) {
+    var e = Object(t),
+      r = [];
+    for (var n in e) {
+      r.push(n);
+    }
+    return r.reverse(), function next() {
+      for (; r.length;) {
+        var t = r.pop();
+        if (t in e) return next.value = t, next.done = !1, next;
+      }
+      return next.done = !0, next;
+    };
+  }, e.values = values, Context.prototype = {
+    constructor: Context,
+    reset: function reset(e) {
+      if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) {
+        "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t);
+      }
+    },
+    stop: function stop() {
+      this.done = !0;
+      var t = this.tryEntries[0].completion;
+      if ("throw" === t.type) throw t.arg;
+      return this.rval;
+    },
+    dispatchException: function dispatchException(e) {
+      if (this.done) throw e;
+      var r = this;
+      function handle(n, o) {
+        return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o;
+      }
+      for (var o = this.tryEntries.length - 1; o >= 0; --o) {
+        var i = this.tryEntries[o],
+          a = i.completion;
+        if ("root" === i.tryLoc) return handle("end");
+        if (i.tryLoc <= this.prev) {
+          var c = n.call(i, "catchLoc"),
+            u = n.call(i, "finallyLoc");
+          if (c && u) {
+            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
+            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
+          } else if (c) {
+            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
+          } else {
+            if (!u) throw Error("try statement without catch or finally");
+            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
+          }
+        }
+      }
+    },
+    abrupt: function abrupt(t, e) {
+      for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+        var o = this.tryEntries[r];
+        if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) {
+          var i = o;
+          break;
+        }
+      }
+      i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null);
+      var a = i ? i.completion : {};
+      return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a);
+    },
+    complete: function complete(t, e) {
+      if ("throw" === t.type) throw t.arg;
+      return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y;
+    },
+    finish: function finish(t) {
+      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
+        var r = this.tryEntries[e];
+        if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y;
+      }
+    },
+    "catch": function _catch(t) {
+      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
+        var r = this.tryEntries[e];
+        if (r.tryLoc === t) {
+          var n = r.completion;
+          if ("throw" === n.type) {
+            var o = n.arg;
+            resetTryEntry(r);
+          }
+          return o;
+        }
+      }
+      throw Error("illegal catch attempt");
+    },
+    delegateYield: function delegateYield(e, r, n) {
+      return this.delegate = {
+        iterator: values(e),
+        resultName: r,
+        nextLoc: n
+      }, "next" === this.method && (this.arg = t), y;
+    }
+  }, e;
+}
+module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 48:
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/asyncToGenerator.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+      args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(undefined);
+    });
+  };
+}
+module.exports = _asyncToGenerator, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 

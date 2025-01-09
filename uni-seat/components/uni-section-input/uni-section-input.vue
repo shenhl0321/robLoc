@@ -22,7 +22,7 @@
 				default: 2000
 			},
 			value: {
-				type: String,
+				type: String || undefined,
 				default: ''
 			},
 			inputType:{

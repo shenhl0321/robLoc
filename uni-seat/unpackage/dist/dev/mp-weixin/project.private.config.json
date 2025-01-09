@@ -3,5 +3,6 @@
   "projectname": "uni-seat",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "2.20.3"
 }

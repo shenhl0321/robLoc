@@ -2,11 +2,13 @@
 	<view class="main-view">
 		<uni-app-nav-bar></uni-app-nav-bar>
 		<view class="col content-view">
-			<text class="code-text">输入验证码</text>
-			<text class="code-mobile">验证码已发送至{{mobile}}</text>
-			<xt-verify-code v-model="verifyCode" @confirm="confirm"></xt-verify-code>
-			<text class="error-text" v-if="codeError">验证码错误，请重新输入</text>
-			<view class="row timer" :class="{getCodeRest : timeCount == 0}" @click="resetGetCode">{{timeCount == 0 ? '重新获取验证码' : timeCount + '秒后重新获取验证码'}}</view>
+			<text class="code-text">{{$t('inputCode')}}</text>
+			<text class="code-mobile">{{$t('codeSendTo') + mobile}}</text>
+			<view style="width: 100%;">
+				<xt-verify-code v-model="verifyCode" @confirm="confirm"></xt-verify-code>
+			</view>
+			<text class="error-text" v-if="codeError">{{$t('codeError')}}</text>
+			<view class="row timer" :class="{getCodeRest : timeCount == 0}" @click="resetGetCode">{{timeCount == 0 ? $t('resetGetCode') : timeCount + $t('timeOutResetGetCode')}}</view>
 		</view>
 	</view>
 </template>
@@ -59,6 +61,7 @@
 				if(this.timeCount == 0){
 					this.timeCount = this.timeNumber
 				}
+				this.toGetCode()
 			},
 			
 			async toGetCode(){
@@ -70,7 +73,7 @@
 			
 			async confirm(verifyCode) {
 				console.log(verifyCode)
-				let res = await this.$request('/api/login',{
+				let res = await this.$request('/api/sms_login',{
 					'phone' : this.mobile,
 					'code' : verifyCode,
 					})
@@ -94,7 +97,7 @@
 		width: 100%;
 		padding: 0 40px;
 		color: $uni-text-color;
-
+		box-sizing: border-box;
 		.code-text {
 			margin-top: 120px;
 			font-size: 26px;
