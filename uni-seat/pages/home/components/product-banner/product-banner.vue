@@ -2,8 +2,8 @@
 	<view class="col product-banner">
 		<view class="row banner-top-title-view">
 			<view class="row left">
-				<text>{{$t('productNew')}}</text>
 				<view class="bottom-line"></view>
+				<text>{{$t('productNew')}}</text>
 			</view>
 			<view class="row right" @click="didToSeeAllProduct">
 				<text>{{$t('seeAll')}}</text>
@@ -11,15 +11,19 @@
 			</view>
 		</view>
 		<view class="row banner-view">
-			<image class="banner-left" src="/static/banner_left.png" mode="aspectFit" @click="didBannerLeftAction">
-			</image>
+			<view class="banner-left">
+				<image class="left-image"  src="/static/banner_left.png" mode="aspectFit" @click="didBannerLeftAction">
+				</image>
+			</view>
 			<swiper class="swiper-view" circular :current="current">
 				<swiper-item class="swiper-item" v-for="(item,index) in list" :key="index">
 					<image class="product" :src="item.logo"
 						mode="aspectFill"></image>
 				</swiper-item>
 			</swiper>
-			<image class="banner-right" src="/static/banner_right.png" mode="aspectFit" @click="didBannerRightAction">
+			<view class="banner-right">
+				<image class="right-image" src="/static/banner_right.png" mode="aspectFit" @click="didBannerRightAction">
+			</view>
 			</image>
 		</view>
 	</view>
@@ -73,7 +77,7 @@
 		width: 100%;
 		background-color: #FFF;
 		border-radius: 16px;
-		padding: 20px;
+		padding: 20px 0;
 		box-sizing: border-box;
 	}
 
@@ -81,6 +85,7 @@
 		justify-content: space-between;
 		width: 100%;
 		height: 20px;
+		padding: 0 20px;
 
 		.left {
 			position: relative;
@@ -96,7 +101,7 @@
 				width: 100%;
 				border-radius: 3px;
 				background: linear-gradient(to left, #2AACDC, #003E76);
-				opacity: 0.8;
+				opacity: 0.5;
 			}
 		}
 
@@ -118,21 +123,32 @@
 		margin-top: 20px;
 
 		.banner-left {
+			display: flex;
 			position: absolute;
-			width: 20px;
+			justify-content: flex-end;
+			width: 40px;
 			height: 100%;
 			left: 0;
 			top: 0;
 			z-index: 999;
+			.left-image{
+				width: 20px;
+				height: 100%;
+			}
 		}
 
 		.banner-right {
+			display: flex;
 			position: absolute;
-			width: 20px;
+			width: 40px;
 			height: 100%;
 			top: 0;
 			right: 0;
 			z-index: 999;
+			.right-image{
+				width: 20px;
+				height: 100%;
+			}
 		}
 
 		.swiper-view {

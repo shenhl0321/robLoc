@@ -4,8 +4,6 @@ const baseUrl = "http://mrt.lxiwl.vip"
 //const baseUrl = "http://sdc.mrt-reinhausen.com"
 
 
-
-
 export const uniConfig = {
 	baseUrl: baseUrl,
 	setEnv: function(value) {

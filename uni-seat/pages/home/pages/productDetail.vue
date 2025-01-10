@@ -8,7 +8,6 @@
 				</swiper-item>
 			</swiper>
 			
-
 			<view class="web-rich">
 				<rich-text id="richtext" :nodes="detail.describe"></rich-text>
 			</view>

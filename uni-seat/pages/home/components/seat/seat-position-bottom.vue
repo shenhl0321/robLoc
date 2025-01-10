@@ -1,12 +1,14 @@
 <template>
-	<view class="col seat-left" @click="didTapSeat">
-		<view class="col top">
+	<view class="col seat-left" @click="didTapSeat" v-if="val != null">
+		<view class="row top">
 			<view class="left" :class="statusClassName"></view>
 			<view class="right" :class="statusClassName"></view>
-			<view class="seat-number" :class="statusClassName">19</view>
+			<view class="seat-number" :class="statusClassName">{{val.seat_code}}</view>
 		</view>
 		<view class="col bottom">
-			<view class="userIcon" :class="statusClassName"></view>
+			<view class="userIcon" :class="statusClassName">
+				<image class="icon" :src="iconPath"></image>
+			</view>
 			<view class="line" :class="statusClassName"></view>
 		</view>
 	</view>
@@ -17,12 +19,6 @@
 	
 	export default{
 		mixins:[seatPositionMx],
-		props:{
-			state : {
-				type : String,
-				default : 'enable', //'normal'  'enable'  'ownerSelected'  'otherSelected' 'otherTopSelected' 'otherBottomSelected'
-			}
-		},
 		data(){
 			return{
 				
@@ -49,7 +45,7 @@
 				&.enable{
 					background-color: #DADEE6;
 				}
-				&.selected{
+				&.selected, &.upSelected, &.downSelected{
 					background-color: #E29494;
 				}
 				&.normal{
@@ -60,6 +56,7 @@
 				border-radius: 3px;
 				width: 20px;
 				height: 20px;
+				margin-top: 4px;
 				.icon{
 					width: 100%;
 					height: 100%;
@@ -72,7 +69,7 @@
 					background-color: #F2F4F7;
 					border: 1px solid #DADEE6;
 				}
-				&.selected{
+				&.selected, &.upSelected, &.downSelected{
 					background-color: #FFF0F0;
 					border: 1px solid #E29494;
 				}
@@ -89,53 +86,55 @@
 			position: relative;
 			.left{
 				flex: 1;
+				height: 100%;
 				border-top-left-radius: 3px;
-				border-top-right-radius: 3px;
+				border-bottom-left-radius: 3px;
 				&.ownerSelected{
 					background-color: #0099FF;
 					border: 1px solid #0076C4;
-					border-bottom: none;
+					border-right: none;
 				}
 				&.enable{
 					background-color: #F2F4F7;
 					border: 1px solid #DADEE6;
-					border-bottom: none;
+					border-right: none;
 				}
-				&.selected{
+				&.selected, &.upSelected{
 					background-color: #FFF0F0;
 					border: 1px solid #E29494;
-					border-bottom: none;
+					border-right: none;
 				}
-				&.normal{
+				&.normal,&.downSelected{
 					border: 1px solid #DADEE6;
 					background-color: #FFF;
-					border-bottom: none;
+					border-right: none;
 				}
 			}
 			
 			.right{
 				flex: 1;
-				border-bottom-left-radius: 3px;
+				height: 100%;
+				border-top-right-radius: 3px;
 				border-bottom-right-radius: 3px;
 				&.ownerSelected{
 					background-color: #0099FF;
 					border: 1px solid #0076C4;
-					border-top: none;
+					border-left: none;
 				}
 				&.enable{
 					background-color: #F2F4F7;
 					border: 1px solid #DADEE6;
-					border-top: none;
+					border-left: none;
 				}
-				&.selected{
+				&.selected,&.downSelected{
 					background-color: #FFF0F0;
 					border: 1px solid #E29494;
-					border-top: none;
+					border-left: none;
 				}
-				&.normal{
+				&.normal, &.upSelected{
 					border: 1px solid #DADEE6;
 					background-color: #FFF;
-					border-top: none;
+					border-left: none;
 				}
 			}
 		}
@@ -158,7 +157,7 @@
 		&.enable{
 			color: #DADEE6;
 		}
-		&.selected{
+		&.selected, &.upSelected, &.downSelected{
 			color: #E29494;
 		}
 		&.normal{

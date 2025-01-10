@@ -8,21 +8,21 @@
 			<view class="row seat-reserve">
 				<view class="row seat-num">
 					<text>{{$t('seatNum')}}：</text>
-					<text class="num">13号</text>
+					<text class="num">{{seatNumCode}}</text>
 				</view>
 				<view class="row seat-status">
 					<text>{{$t('seatStatus')}}：</text>
-					<view class="status" :class="statusClass">-</view>
+					<view class="status" :class="seatStatusClass">{{seatStatusName}}</view>
 				</view>
 			</view>
-			<button class="valid-btn">{{$t('seatCertain')}}</button>
+			<button class="valid-btn" @click="didSelectedSeat">{{$t('seatCertain')}}</button>
 		</view>
 		<uni-popup ref="popupInfo" type="center">
 			<SeatReserveInfo @closed="seatReserveClosed"></SeatReserveInfo>
 		</uni-popup>
 		
 		<uni-popup ref="popupCalendar" type="bottom">
-			<SeatReserveCalendar @closed="seatCalendarClosed"></SeatReserveCalendar>
+			<SeatReserveCalendar :id='selectedSeat.id' :date="date" @closed="seatCalendarClosed"></SeatReserveCalendar>
 		</uni-popup>
 	</view>
 </template>
@@ -42,23 +42,65 @@
 		},
 		data(){
 			return{
-				
+				date : null
 			}
 		},
 		
 		computed:{
-			statusClass(){
-				return ''
+			selectedSeat(){
+				return this.$store.state.seat
+			},
+			
+			seatNumCode(){
+				if(this.selectedSeat == null){
+					return '未选择'
+				}else{
+					return this.selectedSeat.seat_code
+				}
+			},
+			
+			seatStatusName(){
+				if(this.selectedSeat == null){
+					return '-'
+				}else{
+					if(this.selectedSeat.date_type == 1){
+						return '可预订下午'
+					}else if(this.selectedSeat.date_type == 2){
+						return '可预订上午'
+					}else if(this.selectedSeat.date_type == 3){
+						return '已预定满'
+					}else{
+						return '可预订全天'
+					}
+				}
+			},
+			
+			seatStatusClass(){
+				if(this.selectedSeat == null){
+					return 'reserve-unselected'
+				}else{
+					if(this.selectedSeat.date_type == 1){
+						return 'reserve-noon'
+					}else if(this.selectedSeat.date_type == 2){
+						return 'reserve-morning'
+					}else if(this.selectedSeat.date_type == 3){
+						return 'reserve-no'
+					}else{
+						return 'reserve-day'
+					}
+				}
 			}
 		},
 		
 		onLoad() {
 			let that = this
 			uni.$on('seatDidChange', res => {
-				that.$store.state.seat = res
-				//that.$refs.seatStation.seat = res
+				console.log(res)
+				if(res.status != 2){
+					that.$store.state.seat = res
+				}	
 				//that.seatReserveShow()
-				//that.seatCalendarShow()
+				//
 			})
 		},
 		
@@ -70,7 +112,16 @@
 		methods:{
 			selectorDate(e){
 				console.log(e)
+				this.date = e
 				this.$refs.seatStation.date = e
+			},
+			
+			didSelectedSeat(){
+				if(this.selectedSeat.id == null){
+					this.$toast('请选择位置')
+				}else{
+					this.seatCalendarShow()	
+				}
 			},
 			
 			seatReserveShow() {
@@ -86,8 +137,11 @@
 			},
 			
 			seatCalendarClosed(val){
-				console.log(val)
 				this.$refs.popupCalendar.close()
+				if(val.result == true){
+					this.$store.state.seat = null
+					this.$refs.seatStation.getAllSeatListPetch()
+				}
 			},
 		
 		}
@@ -125,17 +179,20 @@
 				border-radius: 2px;
 				background-color: #F2F4F7;
 				color: #959AA0;
-				&.reserved{
+				&.reserve-no{
 					background-color: #FFF0F0;
 					color: #E29494;
 				}
-				&.day{
+				&.reserve-day{
 					background-color: #E5FFE4;
 					color: #006D18;
 				}
-				&.halfday{
+				&.reserve-noon,&.reserve-noon{
 					background-color: #E4F8FF;
 					color: #083C70;
+				}
+				&.reserve-unselected{
+					color: $uni-text-color;
 				}
 			}
 		}
@@ -148,11 +205,8 @@
 			border-radius: 25px;
 			color: #FFF;
 			font-size: 16px;
-			background-color: $uni-btn-enable-bg-color !important;
+			background-color: $uni-color-primary !important;
 			margin-bottom: 10px;
-			&.active{
-				background-color: $uni-color-primary !important;
-			}
 		}
 	}
 	

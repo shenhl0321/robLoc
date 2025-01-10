@@ -4,8 +4,8 @@
 			<SeatZone style="height: 120px;"></SeatZone>
 		</view>
 		<view class="col section">
-			<SeatRight></SeatRight>
-			<SeatRight></SeatRight>
+			<SeatRight :val="list[0]"></SeatRight>
+			<SeatRight :val="list[1]"></SeatRight>
 		</view>
 	</view>
 </template>

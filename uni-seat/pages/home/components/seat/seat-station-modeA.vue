@@ -1,5 +1,5 @@
 <template>
-	<view class="station-seat">
+	<view class="station-seat" v-if="dataList.length > 0">
 		<!-- top -->
 		<view class="row seat-head-hint">
 			<view class="row">
@@ -31,38 +31,38 @@
 							<view class="col content-left">
 								<view class="row">
 									<view class="group-col">
-										<SeatGroupModeA :list="[1,2,3,4,5,6]"></SeatGroupModeA>
+										<SeatGroupModeA :list="group1"></SeatGroupModeA>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeB :list="[7,8,9,10,11]"></SeatGroupModeB>
+										<SeatGroupModeB :list="group2"></SeatGroupModeB>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeA :list="[12,13,14,15,16,17]"></SeatGroupModeA>
+										<SeatGroupModeA :list="group3"></SeatGroupModeA>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeA :list="[18,19,20,21,22,23]"></SeatGroupModeA>
+										<SeatGroupModeA :list="group4"></SeatGroupModeA>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 								</view>
 							
 								<view class="row">
 									<view class="group-col">
-										<SeatGroupModeC></SeatGroupModeC>
+										<SeatGroupModeC :list="group7"></SeatGroupModeC>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeD></SeatGroupModeD>
+										<SeatGroupModeD :list="group8"></SeatGroupModeD>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeE></SeatGroupModeE>
+										<SeatGroupModeE :list="group9"></SeatGroupModeE>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeF></SeatGroupModeF>
+										<SeatGroupModeF :list="group10"></SeatGroupModeF>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 								</view>
@@ -78,14 +78,14 @@
 										<view class="wall wall-B"></view>
 										
 										<view class="group-col" style="margin-left: 20px;">
-											<SeatGroupModeH></SeatGroupModeH>
+											<SeatGroupModeH :list="group6"></SeatGroupModeH>
 										</view>
 										
 										<view class="door-out"></view> 
 									</view>
 									
 									<view class="group">
-										<SeatGroupModeG></SeatGroupModeG>
+										<SeatGroupModeG :list="group5"></SeatGroupModeG>
 									</view>
 								</view>
 							</view>
@@ -136,8 +136,19 @@
 				moveX: 0, //水平移动偏移量
 				scale: 1, //放大倍数
 				
-				
 				date : '',
+				dataList : [],
+				group1 : [],
+				group2 : [],
+				group3 : [],
+				group4 : [],
+				group5 : [],
+				group6 : [],
+				group7 : [],
+				group8 : [],
+				group9 : [],
+				group10 : [],
+				
 				seat : null,
 			};
 		},
@@ -170,7 +181,19 @@
 			async getAllSeatListPetch(){
 				let res = await this.$request('/api/seat_ls', {date : this.date})
 				if(res.result == true){
-					console.log(res)
+					this.dataList = res.data
+					this.group1 = this.dataList.slice(0,6)
+					this.group2 = this.dataList.slice(6,11)
+					this.group3 = this.dataList.slice(11,17)
+					this.group4 = this.dataList.slice(17,23)
+					
+					this.group5 = this.dataList.slice(23,31)
+					this.group6 = this.dataList.slice(31,35)
+					
+					this.group7 = this.dataList.slice(35,37)
+					this.group8 = this.dataList.slice(37,40)
+					this.group9 = this.dataList.slice(40,44)
+					this.group10 = this.dataList.slice(44,46)
 				}
 			},
 

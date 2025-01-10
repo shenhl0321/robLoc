@@ -1,12 +1,12 @@
 <template>
 	<view class="col seat-group">
 		<view class="row section">
-			<SeatLeft></SeatLeft>
-			<SeatRight></SeatRight>
+			<SeatLeft :val="list[0]"></SeatLeft>
+			<SeatRight :val="list[1]"></SeatRight>
 		</view>
 		<view class="row section">
 			<SeatZone style="height: 60px;"></SeatZone>
-			<SeatRight></SeatRight>
+			<SeatRight :val="list[2]"></SeatRight>
 		</view>
 	</view>
 </template>

@@ -1,13 +1,13 @@
 <template>
-	<view class="main-view">
+	<view class="main-view" v-if="detail != null">
 		<uni-app-nav-bar :hiddenBackIcon="true" :mTitle="$t('homePage')"></uni-app-nav-bar>
 		<scroll-view class="list-view" scroll-y>
 			<!-- <uni-public-left-right></uni-public-left-right> -->
-			<uni-public-up-down></uni-public-up-down>
+			<uni-public-up-down :list="detail.notice_list"></uni-public-up-down>
 			<view class="rich-text-view">
-				<rich-text id="richtext" :nodes="richText"></rich-text>
+				<rich-text id="richtext" :nodes="detail.introduce"></rich-text>
 			</view> 
-			<ProductBanner :list="productList"></ProductBanner>
+			<ProductBanner :list="detail.product_list"></ProductBanner>
 			<view class="col reserve-cell">
 				<image class="bg" src="/static/hm_reserve_bg.png" mode="aspectFill"></image>
 				<view class="col reserve">
@@ -32,8 +32,7 @@
 
 		data() {
 			return {
-				productList : [],
-				richText: "<h1>hello uni-app x!</h1><br/><h2>uni-app x，终极跨平台方案</h2>"
+				detail : null
 			}
 		},
 		
@@ -55,10 +54,10 @@
 		
 		methods:{
 			async getProudctListPetch(){
-				let res = await this.$request('/api/user/register')
+				let res = await this.$request('/api/home')
 				if(res.result == true){
 					console.log(res)
-					this.productList = res.data.list
+					this.detail = res.data
 				}
 			},
 			

@@ -1,12 +1,14 @@
 <template>
-	<view class="row seat-right" @click="didTapSeat">
+	<view class="row seat-right" @click="didTapSeat" v-if="val != null">
 		<view class="col left">
 			<view class="top" :class="statusClassName"></view>
 			<view class="bottom" :class="statusClassName"></view>
-			<view class="seat-number" :class="statusClassName">{{val}}</view>
+			<view class="seat-number" :class="statusClassName">{{val.seat_code}}</view>
 		</view>
 		<view class="row right">
-			<view class="userIcon" :class="statusClassName"></view>
+			<view class="userIcon" :class="statusClassName">
+				<image class="icon" :src="iconPath"></image>
+			</view>
 			<view class="line" :class="statusClassName"></view>
 		</view>
 	</view>
@@ -17,12 +19,6 @@
 	
 	export default{
 		mixins:[seatPositionMx],
-		props:{
-			state : {
-				type : String,
-				default : 'normal', //'normal'  'enable'  'ownerSelected'  'otherSelected' 'otherTopSelected' 'otherBottomSelected'
-			}
-		},
 		data(){
 			return{
 				
@@ -49,7 +45,7 @@
 				&.enable{
 					background-color: #DADEE6;
 				}
-				&.selected{
+				&.selected, &.upSelected, &.downSelected{
 					background-color: #E29494;
 				}
 				&.normal{
@@ -72,7 +68,7 @@
 					background-color: #F2F4F7;
 					border: 1px solid #DADEE6;
 				}
-				&.selected{
+				&.selected, &.upSelected, &.downSelected{
 					background-color: #FFF0F0;
 					border: 1px solid #E29494;
 				}
@@ -101,12 +97,12 @@
 					border: 1px solid #DADEE6;
 					border-bottom: none;
 				}
-				&.selected{
+				&.selected,&.upSelected{
 					background-color: #FFF0F0;
 					border: 1px solid #E29494;
 					border-bottom: none;
 				}
-				&.normal{
+				&.normal,&.downSelected{
 					border: 1px solid #DADEE6;
 					background-color: #FFF;
 					border-bottom: none;
@@ -127,12 +123,12 @@
 					border: 1px solid #DADEE6;
 					border-top: none;
 				}
-				&.selected{
+				&.selected,&.downSelected{
 					background-color: #FFF0F0;
 					border: 1px solid #E29494;
 					border-top: none;
 				}
-				&.normal{
+				&.normal,&.upSelected{
 					border: 1px solid #DADEE6;
 					background-color: #FFF;
 					border-top: none;
@@ -158,7 +154,7 @@
 		&.enable{
 			color: #DADEE6;
 		}
-		&.selected{
+		&.selected, &.upSelected, &.downSelected{
 			color: #E29494;
 		}
 		&.normal{

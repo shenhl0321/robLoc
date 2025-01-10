@@ -7,9 +7,9 @@
 		</view>
         <view class="scroll_box"> 
             <swiper class="swiper" circular vertical autoplay 
-			display-multiple-items="1" :interval="interval" :duration="duration" v-if="list.length > 1">
-                <swiper-item v-for="(item,index) in list" :key="index">
-                    <view class="public-text-view">{{item}}</view>
+			display-multiple-items="1" :interval="interval" :duration="duration">
+                <swiper-item v-for="(item,index) in noticeList" :key="index">
+                    <view class="public-text-view">{{item.notice}}</view>
                 </swiper-item>
             </swiper>
         </view>
@@ -18,16 +18,31 @@
 
 <script>
     export default{
+		props : {
+			list : {
+				type : Array,
+				default(){
+					return []
+				}
+			}
+		},
+		
         data(){
             return{
                 interval:4000,
                 duration:2000,
-                list:[
-					'请点击发行菜单进行发布',
-					'请点击发行菜单进行发布',
-                ],
+                noticeList:[],
             }
         },
+		
+		mounted() {
+			if(this.list.length > 0){
+				this.noticeList = this.list
+				if(this.list.length == 1){
+					this.noticeList.push(this.list[0])
+				}
+			}
+		}
     }
 </script>
 

@@ -44,7 +44,7 @@
 			},
 			
 			onRestore() {
-				this.isRefresher = 'restore'; // 需要重置
+				this.isRefresher = 'restore';
 			},
 			
 			async getProudctListPetch(reload = true){
@@ -60,6 +60,7 @@
 				if(res.result == true){
 					this.list = res.data.list
 					let count = res.data.count
+					console.log(res)
 					this.isRefresher = false
 					this.loadStatus = this.list.length < count ? 'more' : 'no-more'
 				}
