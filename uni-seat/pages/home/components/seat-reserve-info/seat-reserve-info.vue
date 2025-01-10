@@ -1,19 +1,25 @@
 <template>
-	<view class="col seat-info">
-		<text class="title">工位预定信息</text>
-		<image class="header" src="/static/ic_header.png"></image>
-		<text class="name">吴彦祖</text>
+	<view class="col seat-info" v-if="userInfo != null">
+		<text class="title">{{$t('seatInfo')}}</text>
+		<image class="header" :src="userInfo.avatar"></image>
+		<text class="name">{{userInfo.nickname}}</text>
 		<view class="row phone">
-			<text>15157157084</text>
+			<text>{{userInfo.phone}}</text>
 			<image class="tel-icon" src="/static/ic_tel.png"></image>
 		</view>
-		<button class="certain-btn" @click="closed()">确定</button>
+		<button class="certain-btn" @click="closed()">{{$t('certain')}}</button>
 	</view>
 </template>
 
 <script>
 	
 	export default{
+		props : {
+			userInfo : {
+				type : Object
+			}
+		},
+		
 		data(){
 			return{
 				

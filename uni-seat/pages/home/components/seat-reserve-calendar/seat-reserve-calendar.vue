@@ -112,6 +112,7 @@
 
 			dayBlockClassName(e) {
 				if (e.date == this.selectedDate) {
+					console.log(e)
 					return 'ownerSelected'
 				} else if (e.date_type == 1) {
 					return 'topSelected'
@@ -157,7 +158,7 @@
 			certain: async function() {
 			
 				if(this.selectedDateType == null){
-					this.$toast('请选择预定时间')
+					this.$toast(this.$t('timeSelected'))
 				}else{
 					let res = await this.$request('/api/reserve', {
 						seat_id: this.id,

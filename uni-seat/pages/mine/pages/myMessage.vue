@@ -8,10 +8,11 @@
 			<view class="col message-item" v-for="(item,index) in dataArray" :key="index">
 				<view class="row top">
 					<text>{{$t('reserveMessage')}}</text>
-					<text class="time">2024-09-11 19:29</text>
+					<text class="time">{{item.create_time}}</text>
 				</view>
 				<view class="content">
-					{{$t('you')}}<text class="value">2024年12月26日上午</text>{{$t('reserve')}}<text class="value">8号</text> {{$t('seatSuccess')}}
+					{{$t('you')}}<text class="value">{{item.reserve_date
+ + timeTypeName(item.date_type)}}</text>{{$t('reserve')}}<text class="value">{{item.seat_code}}</text> {{$t('seatSuccess')}}
 				</view>
 			</view>
 			
@@ -57,6 +58,16 @@
 				this.isRefresher = 'restore'; // 需要重置
 			},
 			
+			timeTypeName(dateType){
+				if(dateType == 1){
+					return this.$t('morning')
+				}else if(dateType == 2){
+					return this.$t('noon')
+				}else{
+					return this.$t('allDay')
+				}
+			},
+			
 			getMessageListPetch: async function(reload = true) {
 				if (reload) {
 					this.pageNumber = 1
@@ -65,21 +76,14 @@
 					this.pageNumber++
 					this.loadStatus = 'loading'
 				}
-				let that = this
-				setTimeout(function() {
-					that.isRefresher = false
-					that.loadStatus = 'no-more'
-					that.dataArray = [1,2]
-				}, 2000)
-				// let response = await this.$request('cba/awardAccount/list',param)
-				// this.isRefresher = false
-				// if(response.result == true){
-				// 	let res = response.res
-				// 	let total = res.total
-				// 	this.dataArray = this.dataArray.concat(res.records)
-				// 	let hasNext = this.dataArray.length < total
-				// 	this.loadStatus = hasNext ? 'more' : 'no-more'
-				// }
+				let res = await this.$request('/api/msg_ls',{page : this.pageNumber, limit : 10})
+				this.isRefresher = false
+				if(res.result == true){
+					console.log(res)
+					let count = res.data.count
+					this.dataArray = this.dataArray.concat(res.data.list)
+					this.loadStatus = this.dataArray.length < count ? 'more' : 'no-more'
+				}
 			}
 		}
 	}

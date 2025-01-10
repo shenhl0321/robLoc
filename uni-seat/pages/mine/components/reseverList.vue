@@ -7,18 +7,18 @@
 			<view class="row num-row">
 				<view class="row">
 					<text>{{$t('seatNum')}}：</text>
-					<text class="num">13号</text>
+					<text class="num">{{item.seat_code}}</text>
 				</view>
 				<text class="status-text" :class="statusClassName">{{statusName}}</text>
 			</view>
 			<view class="row time-row">
 				<text>{{$t('reserveTime')}}：</text>
-				<text class="date">2024年02月24日</text>
-				<view class="time" :class="dateTimeClassName">上午</view>
+				<text class="date">{{item.select_date}}</text>
+				<view class="time" :class="dateTimeClassName(item.date_type)">{{timeTypeName(item.date_type)}}</view>
 			</view>
 			
 			<view class="row bottom-view" v-if="type == 1">
-				<button class="cancel-btn" @click="cancelReseverAction">{{$t('reserveCancel')}}</button>
+				<button class="cancel-btn" @click="cancelReseverAction(item.id)">{{$t('reserveCancel')}}</button>
 			</view>
 		</view>
 		
@@ -44,7 +44,6 @@
 		},
 
 		mounted() {
-			console.log(this.type)
 			switch (this.type) {
 				case 1:
 					this.statusName  = this.$t('reserved')
@@ -61,7 +60,15 @@
 				default:
 					break;
 			}
-			this.getReseverListPetch()
+			let that = this
+			uni.$on('reseverDidChange', res => {
+				that.onRefresh()
+			})
+			this.onRefresh()
+		},
+		
+		destroyed() {
+			uni.$off('reseverDidChange')
 		},
 
 		computed: {
@@ -79,10 +86,6 @@
 						return ''
 				}
 			},
-
-			dateTimeClassName() {
-				return  'morning'   //'morning'  'noon'  'allDay'
-			}
 		},
 
 		methods: {
@@ -101,10 +104,26 @@
 				this.isRefresher = 'restore'; // 需要重置
 			},
 			
-			cancelReseverAction(){
-				
+			timeTypeName(dateType){
+				if(dateType == 1){
+					return this.$t('morning')
+				}else if(dateType == 2){
+					return this.$t('noon')
+				}else{
+					return this.$t('allDay')
+				}
 			},
-
+			
+			dateTimeClassName(dateType) {
+				if(dateType == 1){
+					return 'morning'
+				}else if(dateType == 2){
+					return 'noon'
+				}else{
+					return 'allDay'
+				}  
+			},
+			
 			getReseverListPetch: async function(reload = true) {
 				if (reload) {
 					this.pageNumber = 1
@@ -113,22 +132,23 @@
 					this.pageNumber++
 					this.loadStatus = 'loading'
 				}
-				let that = this
-				setTimeout(function() {
-					that.isRefresher = false
-					that.loadStatus = 'no-more'
-					that.dataArray = [1,2]
-				}, 2000)
-				// let response = await this.$request('cba/awardAccount/list',param)
-				// this.isRefresher = false
-				// if(response.result == true){
-				// 	let res = response.res
-				// 	let total = res.total
-				// 	this.dataArray = this.dataArray.concat(res.records)
-				// 	let hasNext = this.dataArray.length < total
-				// 	this.loadStatus = hasNext ? 'more' : 'no-more'
-				// }
-			}
+		
+				let res = await this.$request('/api/reserve_ls',{status : this.type,page : this.pageNumber, limit : 10})
+				this.isRefresher = false
+				if(res.result == true){
+					let count = res.data.count
+					this.dataArray = this.dataArray.concat(res.data.list)
+					this.loadStatus = this.dataArray.length < count ? 'more' : 'no-more'
+				}
+			},
+			
+			async cancelReseverAction(id){
+				let res = await this.$request('/api/cancellation',{reserve_id : id}, this.$t('loading'))
+				if(res.result == true){
+					this.$toast(this.$t('success'))
+					uni.$emit('reseverDidChange', {refresh : true})
+				}
+			},
 		}
 	}
 </script>

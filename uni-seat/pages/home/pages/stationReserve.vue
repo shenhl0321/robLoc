@@ -18,7 +18,7 @@
 			<button class="valid-btn" @click="didSelectedSeat">{{$t('seatCertain')}}</button>
 		</view>
 		<uni-popup ref="popupInfo" type="center">
-			<SeatReserveInfo @closed="seatReserveClosed"></SeatReserveInfo>
+			<SeatReserveInfo :userInfo="userInfo" @closed="seatReserveClosed"></SeatReserveInfo>
 		</uni-popup>
 		
 		<uni-popup ref="popupCalendar" type="bottom">
@@ -42,7 +42,8 @@
 		},
 		data(){
 			return{
-				date : null
+				date : null,
+				userInfo : null,
 			}
 		},
 		
@@ -99,14 +100,19 @@
 				if(res.status != 2){
 					that.$store.state.seat = res
 				}	
-				//that.seatReserveShow()
-				//
+			})
+			
+			uni.$on('userInfo', res => {
+				console.log(res)
+				that.userInfo = res
+				that.seatReserveShow()
 			})
 		},
 		
 		onUnload() {
 			this.$store.state.seat = null
 			uni.$off('seatDidChange')
+			uni.$off('userInfo')
 		},
 		
 		methods:{
@@ -118,7 +124,7 @@
 			
 			didSelectedSeat(){
 				if(this.selectedSeat.id == null){
-					this.$toast('请选择位置')
+					this.$toast(this.$t('seatSelected'))
 				}else{
 					this.seatCalendarShow()	
 				}

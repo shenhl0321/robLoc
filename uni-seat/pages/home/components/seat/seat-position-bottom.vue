@@ -1,11 +1,11 @@
 <template>
-	<view class="col seat-left" @click="didTapSeat" v-if="val != null">
-		<view class="row top">
+	<view class="col seat-left" v-if="val != null">
+		<view class="row top" @click="didDeskTapSeat">
 			<view class="left" :class="statusClassName"></view>
 			<view class="right" :class="statusClassName"></view>
 			<view class="seat-number" :class="statusClassName">{{val.seat_code}}</view>
 		</view>
-		<view class="col bottom">
+		<view class="col bottom" @click="didUserHeaderIcon">
 			<view class="userIcon" :class="statusClassName">
 				<image class="icon" :src="iconPath"></image>
 			</view>

@@ -57,11 +57,11 @@
 				}
 				
 				let res = await this.$request('/api/pro_ls',{page : this.pageNumber , limit : 10})
+				console.log(res)
+				this.isRefresher = false
 				if(res.result == true){
-					this.list = res.data.list
+					this.list = this.list.concat(res.data.list)
 					let count = res.data.count
-					console.log(res)
-					this.isRefresher = false
 					this.loadStatus = this.list.length < count ? 'more' : 'no-more'
 				}
 			},

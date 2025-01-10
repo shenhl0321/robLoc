@@ -96,9 +96,11 @@ const messages = {
 		selectedRightAnswer : '请选择正确答案',
 		answerError : '答案错误',
 		networkError : '网络错误',
+		loading : '加载中...',
+		seatInfo : '工位预定信息',
+		timeSelected : '请选择预定时间',
+		seatSelected : '请选择位置',
 		
-		
-
 	},
 	'en-US': {
 		login: 'login'

@@ -16,22 +16,18 @@ export default {
 	},
 	
 	mounted() {
-		if(this.val != null &&  this.val.user != null && this.val.user.length > 0){
-			this.list = this.val.user
-			this.list.map(function(e){
-				e.avatar = uniConfig.baseUrl + e.avatar
-			})
-			if(this.list.length == 2){
-				this.animation = true
-				this.iconChange()
-			}
-			this.icon = this.list[0].avatar
-		}
-		
+		this.reloadData()
 	},
 	
 	destroyed() {
 		this.animation = false
+	},
+	
+	
+	watch : {
+		val(e){
+			this.reloadData()
+		}
 	},
 	
 	computed:{
@@ -65,6 +61,29 @@ export default {
 	},
 	
 	methods:{
+		reloadData(){
+			if(this.val != null &&  this.val.user != null){
+				if(this.val.user.length > 0){
+					this.list = this.val.user
+					this.list.map(function(e){
+						e.avatar = uniConfig.baseUrl + e.avatar
+					})
+					this.icon = this.list[0].avatar
+					if(this.list.length == 2){
+						this.animation = true
+						this.iconChange()
+					}else{
+						this.animation = false
+					}
+					
+				}else{
+					this.list = this.val.user
+					this.icon = ''
+					this.animation = false
+				}
+			}
+		},
+		
 		iconChange(){
 			let that = this
 			setTimeout(function(){
@@ -73,18 +92,26 @@ export default {
 				}else{
 					that.icon = that.list[0].avatar
 				}
-				console.log(that.icon)
 				if(that.animation == true){
 					that.iconChange()
 				}
 			}, 1000)
 		},
 		
-		didUserHeaderIcon : function(){
-			console.log(this.icon)
+		didUserHeaderIcon : function(e){
+			if(this.icon.length > 0){
+				let that = this
+				let userInfo = this.list.find(function(e){
+					return that.icon == e.avatar
+				})
+				uni.$emit('userInfo', userInfo)
+			}else{
+				uni.$emit('seatDidChange', this.val)
+			}
+			
 		},
 		
-		didTapSeat : function(e){
+		didDeskTapSeat : function(e){
 			uni.$emit('seatDidChange', this.val)
 		}
 	}

@@ -60,7 +60,7 @@
 				if(this.avatar.length == 0){
 					return '/static/ic_header.png'
 				}else{
-					return uniConfig.baseUrl + this.avatar
+					return this.avatar
 				}
 			}
 		},
