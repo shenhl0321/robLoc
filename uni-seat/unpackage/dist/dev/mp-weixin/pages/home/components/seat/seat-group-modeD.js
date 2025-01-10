@@ -121,31 +121,37 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var SeatLeft = function SeatLeft() {
-  __webpack_require__.e(/*! require.ensure | pages/home/components/seat/seat-position-left */ "pages/home/components/seat/seat-position-left").then((function () {
+  Promise.all(/*! require.ensure | pages/home/components/seat/seat-position-left */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/home/components/seat/seat-position-left")]).then((function () {
     return resolve(__webpack_require__(/*! ./seat-position-left.vue */ 349));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SeatRight = function SeatRight() {
-  __webpack_require__.e(/*! require.ensure | pages/home/components/seat/seat-position-right */ "pages/home/components/seat/seat-position-right").then((function () {
-    return resolve(__webpack_require__(/*! ./seat-position-right.vue */ 356));
+  Promise.all(/*! require.ensure | pages/home/components/seat/seat-position-right */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/home/components/seat/seat-position-right")]).then((function () {
+    return resolve(__webpack_require__(/*! ./seat-position-right.vue */ 357));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SeatZone = function SeatZone() {
   __webpack_require__.e(/*! require.ensure | pages/home/components/seat/seat-position-zone */ "pages/home/components/seat/seat-position-zone").then((function () {
-    return resolve(__webpack_require__(/*! ./seat-position-zone.vue */ 363));
+    return resolve(__webpack_require__(/*! ./seat-position-zone.vue */ 364));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
-var _default = {
+var _default2 = {
   components: {
     SeatLeft: SeatLeft,
     SeatRight: SeatRight,
     SeatZone: SeatZone
   },
+  props: {
+    list: Array,
+    default: function _default() {
+      return [];
+    }
+  },
   data: function data() {
     return {};
   }
 };
-exports.default = _default;
+exports.default = _default2;
 
 /***/ }),
 

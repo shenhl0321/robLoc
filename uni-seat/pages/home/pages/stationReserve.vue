@@ -3,7 +3,7 @@
 		<uni-app-nav-bar :mTitle="$t('seatReserve')"></uni-app-nav-bar>
 		<WeekDateSelector @selectorDate="selectorDate"></WeekDateSelector>
 		</scroll-view>
-		<SeatStationModeA ref="seat" style="flex: 1; width: 100%;"></SeatStationModeA>
+		<SeatStationModeA ref="seatStation" style="flex: 1; width: 100%;"></SeatStationModeA>
 		<view class="col bottom-view">
 			<view class="row seat-reserve">
 				<view class="row seat-num">
@@ -55,20 +55,22 @@
 		onLoad() {
 			let that = this
 			uni.$on('seatDidChange', res => {
-				console.log(res)
+				that.$store.state.seat = res
+				//that.$refs.seatStation.seat = res
 				//that.seatReserveShow()
-				that.seatCalendarShow()
+				//that.seatCalendarShow()
 			})
 		},
 		
 		onUnload() {
-			uni.$off('seatDidChange');
+			this.$store.state.seat = null
+			uni.$off('seatDidChange')
 		},
 		
 		methods:{
 			selectorDate(e){
 				console.log(e)
-				this.$refs.seat.date = e
+				this.$refs.seatStation.date = e
 			},
 			
 			seatReserveShow() {

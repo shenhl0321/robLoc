@@ -30,7 +30,6 @@
 		height: 40px;
 		align-items: center;
 		background-color: #FFF;
-		
 	}
 	
 	.public-view{

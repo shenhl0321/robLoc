@@ -37,7 +37,7 @@
 					},
 					{
 						type: 4,
-						name: this.$t('cancel')
+						name: this.$t('canceled')
 					},
 				],
 			}

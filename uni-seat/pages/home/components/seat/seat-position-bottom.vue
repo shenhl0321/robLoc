@@ -13,7 +13,10 @@
 </template>
 
 <script>
+	import seatPositionMx from './seat-position.js'
+	
 	export default{
+		mixins:[seatPositionMx],
 		props:{
 			state : {
 				type : String,
@@ -25,25 +28,6 @@
 				
 			}
 		},
-		computed:{
-			statusClassName(){
-				if(this.state == 'ownerSelected'){
-					return 'ownerSelected'
-				}else if(this.state == 'enable'){
-					return 'enable'
-				}else if(this.state == 'otherSelected' || this.state == 'otherTopSelected' || this.state == 'otherBottomSelected'){
-					return 'selected'
-				}else{
-					return 'normal'
-				}
-			},
-		},
-		
-		methods:{
-			didTapSeat : function(e){
-				uni.$emit('seatDidChange', '111111')
-			}
-		}
 	}
 
 </script>
@@ -76,8 +60,12 @@
 				border-radius: 3px;
 				width: 20px;
 				height: 20px;
+				.icon{
+					width: 100%;
+					height: 100%;
+				}
 				&.ownerSelected{
-					background-color: #0076C4;
+					background-color: #0099FF;
 					border: 1px solid #0076C4;
 				}
 				&.enable{

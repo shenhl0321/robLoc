@@ -1,11 +1,16 @@
 <template>
 	<view class="main-view">
 		<uni-app-nav-bar :mTitle="$t('productList')"></uni-app-nav-bar>
-		<scroll-view class="list-view" scroll-y>
-			<view class="product" v-for="(item,index) in list" :key="index" @click="pushToProductDetail">
+		<scroll-view class="list-view" scroll-y :refresher-enabled="true" refresher-background="transparent"
+		:refresher-triggered="isRefresher" @refresherrefresh="onRefresh" @refresherrestore="onRestore"
+		@scrolltolower="scrolltolower">
+			<view class="product" v-for="(item,index) in list" :key="index" @click="pushToProductDetail(item)">
 				<image class="product-image" :src="item.logo"
-					mode="aspectFill" @click="pushToProductDetail(item.id)"></image>
+					mode="aspectFill"></image>
 			</view>
+			
+			<uni-load-more :status="loadStatus" v-if="loadStatus != null && list.length > 0"></uni-load-more>
+			<uni-mescroll-empty v-if="list.length == 0"></uni-mescroll-empty>
 		</scroll-view>
 	</view>
 </template>
@@ -14,25 +19,55 @@
 	export default{
 		data(){
 			return{
-				list : []
+				isRefresher: true,
+				loadStatus: null,
+				pageNumber: 1,
+				list : [],
 			}
 		},
 		
 		onLoad() {
-			this.getProudctListPetch()
+			this.onRefresh()
 		},
 		
 		methods:{
-			async getProudctListPetch(){
-				let res = await this.$request('/api/pro_ls')
-				if(res.result == true){
-					this.list = res.data
+			
+			onRefresh() {
+				this.getProudctListPetch()
+			},
+			
+			//上拉加载
+			scrolltolower() {
+				if (this.loadStatus != 'no-more') {
+					this.getReseverListPetch(false)
 				}
 			},
 			
-			pushToProductDetail(productId){
+			onRestore() {
+				this.isRefresher = 'restore'; // 需要重置
+			},
+			
+			async getProudctListPetch(reload = true){
+				if (reload) {
+					this.pageNumber = 1
+					this.list = []
+				} else {
+					this.pageNumber++
+					this.loadStatus = 'loading'
+				}
+				
+				let res = await this.$request('/api/pro_ls',{page : this.pageNumber , limit : 10})
+				if(res.result == true){
+					this.list = res.data.list
+					let count = res.data.count
+					this.isRefresher = false
+					this.loadStatus = this.list.length < count ? 'more' : 'no-more'
+				}
+			},
+			
+			pushToProductDetail(e){
 				uni.navigateTo({
-					url: `/pages/home/pages/productDetail?productId=${productId}`
+					url: `/pages/home/pages/productDetail?id=${e.id}`
 				})
 			}
 		}

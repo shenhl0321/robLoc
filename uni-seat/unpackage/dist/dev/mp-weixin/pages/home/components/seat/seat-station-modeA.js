@@ -217,13 +217,18 @@ var _default = {
       //水平移动偏移量
       scale: 1,
       //放大倍数
-      date: ''
+
+      date: '',
+      seat: null
     };
   },
   watch: {
     date: function date(val) {
       console.log(val);
       this.getAllSeatListPetch();
+    },
+    seat: function seat(val) {
+      console.log(val);
     }
   },
   methods: {

@@ -31,19 +31,19 @@
 							<view class="col content-left">
 								<view class="row">
 									<view class="group-col">
-										<SeatGroupModeA></SeatGroupModeA>
+										<SeatGroupModeA :list="[1,2,3,4,5,6]"></SeatGroupModeA>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeB></SeatGroupModeB>
+										<SeatGroupModeB :list="[7,8,9,10,11]"></SeatGroupModeB>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeA></SeatGroupModeA>
+										<SeatGroupModeA :list="[12,13,14,15,16,17]"></SeatGroupModeA>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 									<view class="group-col">
-										<SeatGroupModeA></SeatGroupModeA>
+										<SeatGroupModeA :list="[18,19,20,21,22,23]"></SeatGroupModeA>
 										<text class="out-text">{{$t('road')}}</text>
 									</view>
 								</view>
@@ -135,7 +135,10 @@
 			return {
 				moveX: 0, //水平移动偏移量
 				scale: 1, //放大倍数
+				
+				
 				date : '',
+				seat : null,
 			};
 		},
 		
@@ -143,6 +146,10 @@
 			date(val){
 				console.log(val)
 				this.getAllSeatListPetch()
+			},
+			
+			seat(val){
+				console.log(val)
 			}
 		},
 		

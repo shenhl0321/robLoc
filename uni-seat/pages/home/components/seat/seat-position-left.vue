@@ -2,48 +2,38 @@
 	<view class="row seat-left" @click="didTapSeat">
 		<view class="row left">
 			<view class="line" :class="statusClassName"></view>
-			<view class="userIcon" :class="statusClassName"></view>
+			<view class="userIcon" :class="statusClassName">
+				<image class="icon" :src="iconPath"></image>
+			</view>
 		</view>
 		<view class="col right">
 			<view class="top" :class="statusClassName"></view>
 			<view class="bottom" :class="statusClassName"></view>
-			<view class="seat-number" :class="statusClassName">19</view>
+			<view class="seat-number" :class="statusClassName">{{val}}</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import seatPositionMx from './seat-position.js'
+	
 	export default{
+		mixins:[seatPositionMx],
+		
 		props:{
 			state : {
 				type : String,
 				default : 'normal', //'normal'  'enable'  'ownerSelected'  'otherSelected' 'otherTopSelected' 'otherBottomSelected'
 			}
 		},
+		
 		data(){
 			return{
 				
 			}
 		},
-		computed:{
-			statusClassName(){
-				if(this.state == 'ownerSelected'){
-					return 'ownerSelected'
-				}else if(this.state == 'enable'){
-					return 'enable'
-				}else if(this.state == 'otherSelected' || this.state == 'otherTopSelected' || this.state == 'otherBottomSelected'){
-					return 'selected'
-				}else{
-					return 'normal'
-				}
-			},
-		},
 		
-		methods:{
-			didTapSeat : function(e){
-				uni.$emit('seatDidChange', '111111')
-			}
-		}
+
 	}
 
 </script>
@@ -76,8 +66,12 @@
 				border-radius: 3px;
 				width: 20px;
 				height: 20px;
+				.icon{
+					width: 100%;
+					height: 100%;
+				}
 				&.ownerSelected{
-					background-color: #0076C4;
+					background-color: #0099FF;
 					border: 1px solid #0076C4;
 				}
 				&.enable{

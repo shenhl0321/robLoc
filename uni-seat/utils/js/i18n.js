@@ -8,6 +8,12 @@ const messages = {
 	'zn-CN': {
 		simplifiedChinese: '中文简体',
 		english: '英文',
+		language : '语言',
+		china : '中国',
+		english : '英国',
+		germany : '德国',
+		resetGetCode : '重新获取验证码',
+		timeOutResetGetCode : '秒后重新获取验证码',
 		login: '登录',
 		register: '注册',
 		inputMobile: '请输入手机号',
@@ -75,7 +81,7 @@ const messages = {
 		reserved : '已预订',
 		proceed : '进行中',
 		end : '已结束',
-		cancel : '已取消',
+		canceled : '已取消',
 		reserveTime : '预定时间',
 		reserveCancel : '取消预定',
 		noData : '暂无数据',
@@ -91,12 +97,7 @@ const messages = {
 		answerError : '答案错误',
 		networkError : '网络错误',
 		
-		language : '语言',
-		china : '中国',
-		english : '英国',
-		germany : '德国',
-		resetGetCode : '重新获取验证码',
-		timeOutResetGetCode : '秒后重新获取验证码'
+		
 
 	},
 	'en-US': {

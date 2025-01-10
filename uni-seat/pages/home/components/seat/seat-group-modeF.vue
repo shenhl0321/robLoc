@@ -17,6 +17,15 @@
 			SeatLeft,
 			SeatRight,
 		},
+		
+		props : {
+			list : Array,
+			default(){
+				return[]
+			}
+		},
+		
+		
 		data(){
 			return{
 				

@@ -1,16 +1,16 @@
 <template>
 	<view class="col seat-group">
 		<view class="row section">
-			<SeatLeft></SeatLeft>
-			<SeatRight></SeatRight>
+			<SeatLeft :val="list[0]"></SeatLeft>
+			<SeatRight :val="list[3]"></SeatRight>
 		</view>
 		<view class="row section">
-			<SeatLeft></SeatLeft>
-			<SeatRight></SeatRight>
+			<SeatLeft :val="list[1]"></SeatLeft>
+			<SeatRight :val="list[4]"></SeatRight>
 		</view>
 		<view class="row section">
-			<SeatLeft></SeatLeft>
-			<SeatRight></SeatRight>
+			<SeatLeft :val="list[2]"></SeatLeft>
+			<SeatRight :val="list[5]"></SeatRight>
 		</view>
 	</view>
 </template>
@@ -23,6 +23,16 @@
 			SeatLeft,
 			SeatRight
 		},
+		
+		props : {
+			list : {
+				type : Array,
+				default(){
+					return[]
+				}
+			}
+		},
+		
 		data(){
 			return{
 				

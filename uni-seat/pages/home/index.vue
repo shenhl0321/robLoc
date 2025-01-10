@@ -2,10 +2,11 @@
 	<view class="main-view">
 		<uni-app-nav-bar :hiddenBackIcon="true" :mTitle="$t('homePage')"></uni-app-nav-bar>
 		<scroll-view class="list-view" scroll-y>
-			<uni-public-left-right></uni-public-left-right>
+			<!-- <uni-public-left-right></uni-public-left-right> -->
+			<uni-public-up-down></uni-public-up-down>
 			<view class="rich-text-view">
 				<rich-text id="richtext" :nodes="richText"></rich-text>
-			</view>
+			</view> 
 			<ProductBanner :list="productList"></ProductBanner>
 			<view class="col reserve-cell">
 				<image class="bg" src="/static/hm_reserve_bg.png" mode="aspectFill"></image>
@@ -54,9 +55,10 @@
 		
 		methods:{
 			async getProudctListPetch(){
-				let res = await this.$request('/api/pro_ls')
+				let res = await this.$request('/api/user/register')
 				if(res.result == true){
-					this.productList = res.data
+					console.log(res)
+					this.productList = res.data.list
 				}
 			},
 			

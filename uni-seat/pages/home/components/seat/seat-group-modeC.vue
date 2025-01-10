@@ -18,6 +18,14 @@
 			SeatRight,
 			SeatZone
 		},
+		
+		props : {
+			list : Array,
+			default(){
+				return[]
+			}
+		},
+		
 		data(){
 			return{
 				

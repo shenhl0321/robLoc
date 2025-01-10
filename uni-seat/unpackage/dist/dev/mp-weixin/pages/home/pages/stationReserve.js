@@ -199,9 +199,10 @@ var _default = {
   onLoad: function onLoad() {
     var that = this;
     uni.$on('seatDidChange', function (res) {
-      console.log(res);
+      that.$store.state.seat = res;
+      //that.$refs.seatStation.seat = res
       //that.seatReserveShow()
-      that.seatCalendarShow();
+      //that.seatCalendarShow()
     });
   },
   onUnload: function onUnload() {
@@ -210,7 +211,7 @@ var _default = {
   methods: {
     selectorDate: function selectorDate(e) {
       console.log(e);
-      this.$refs.seat.date = e;
+      this.$refs.seatStation.date = e;
     },
     seatReserveShow: function seatReserveShow() {
       this.$refs.popupInfo.open();

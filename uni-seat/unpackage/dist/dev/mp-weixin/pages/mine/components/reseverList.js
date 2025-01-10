@@ -222,7 +222,7 @@ var _default = {
         this.statusName = this.$t('end');
         break;
       case 4:
-        this.statusName = this.$t('cancel');
+        this.statusName = this.$t('canceled');
         break;
       default:
         break;

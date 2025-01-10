@@ -199,7 +199,7 @@ var _default = {
         name: this.$t('end')
       }, {
         type: 4,
-        name: this.$t('cancel')
+        name: this.$t('canceled')
       }]
     };
   },

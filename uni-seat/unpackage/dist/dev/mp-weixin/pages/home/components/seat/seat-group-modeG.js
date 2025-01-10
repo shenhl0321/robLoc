@@ -121,25 +121,31 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var SeatTop = function SeatTop() {
-  __webpack_require__.e(/*! require.ensure | pages/home/components/seat/seat-position-top */ "pages/home/components/seat/seat-position-top").then((function () {
-    return resolve(__webpack_require__(/*! ./seat-position-top.vue */ 370));
+  Promise.all(/*! require.ensure | pages/home/components/seat/seat-position-top */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/home/components/seat/seat-position-top")]).then((function () {
+    return resolve(__webpack_require__(/*! ./seat-position-top.vue */ 371));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SeatBottom = function SeatBottom() {
-  __webpack_require__.e(/*! require.ensure | pages/home/components/seat/seat-position-bottom */ "pages/home/components/seat/seat-position-bottom").then((function () {
-    return resolve(__webpack_require__(/*! ./seat-position-bottom.vue */ 377));
+  Promise.all(/*! require.ensure | pages/home/components/seat/seat-position-bottom */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/home/components/seat/seat-position-bottom")]).then((function () {
+    return resolve(__webpack_require__(/*! ./seat-position-bottom.vue */ 378));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
-var _default = {
+var _default2 = {
   components: {
     SeatTop: SeatTop,
     SeatBottom: SeatBottom
+  },
+  props: {
+    list: Array,
+    default: function _default() {
+      return [];
+    }
   },
   data: function data() {
     return {};
   }
 };
-exports.default = _default;
+exports.default = _default2;
 
 /***/ }),
 

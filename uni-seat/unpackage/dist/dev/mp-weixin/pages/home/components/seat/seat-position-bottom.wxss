@@ -54,8 +54,12 @@
   width: 20px;
   height: 20px;
 }
+.seat-left .bottom .userIcon .icon.data-v-61c7829f {
+  width: 100%;
+  height: 100%;
+}
 .seat-left .bottom .userIcon.ownerSelected.data-v-61c7829f {
-  background-color: #0076C4;
+  background-color: #0099FF;
   border: 1px solid #0076C4;
 }
 .seat-left .bottom .userIcon.enable.data-v-61c7829f {

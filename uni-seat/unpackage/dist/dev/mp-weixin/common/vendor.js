@@ -9867,7 +9867,7 @@ var request = function request() {
   return new Promise(function (resolve, reject) {
     uni.request({
       method: type,
-      url: uniConfig.baseUrl + url,
+      url: '/h5TestApi' + url,
       //'/h5TestApi' + url uniConfig.baseUrl + url
       data: data,
       header: header,
@@ -9958,7 +9958,8 @@ var store = new _vuex.default.Store({
   state: {
     language: 'zn-CN',
     // 默认语言
-    userInfo: null
+    userInfo: null,
+    seat: Number
   },
   mutations: {
     setLanguage: function setLanguage(state, language) {
@@ -11235,6 +11236,84 @@ module.exports = index_cjs;
 
 /***/ }),
 
+/***/ 354:
+/*!*****************************************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/pages/home/components/seat/seat-position.js ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  props: {
+    val: {
+      type: Number
+    }
+  },
+  data: function data() {
+    return {
+      list: ['/static/ic_header.png', '/static/logo.png'],
+      animation: false,
+      icon: ''
+    };
+  },
+  mounted: function mounted() {
+    this.animation = true;
+    //this.iconChange()
+  },
+  destroyed: function destroyed() {
+    this.animation = false;
+  },
+  computed: {
+    iconPath: function iconPath() {
+      if (this.$store.state.seat == this.val) {
+        return '/static/hm_seat_sel.png';
+      } else {
+        return this.icon;
+      }
+    },
+    statusClassName: function statusClassName() {
+      if (this.$store.state.seat == this.val) {
+        return 'ownerSelected';
+      } else if (this.state == 'enable') {
+        return 'enable';
+      } else if (this.state == 'otherSelected' || this.state == 'otherTopSelected' || this.state == 'otherBottomSelected') {
+        return 'selected';
+      } else {
+        return 'normal';
+      }
+    }
+  },
+  methods: {
+    iconChange: function iconChange() {
+      var that = this;
+      setTimeout(function () {
+        if (that.icon == that.list[0]) {
+          that.icon = that.list[1];
+        } else {
+          that.icon = that.list[0];
+        }
+        if (that.animation == true) {
+          that.iconChange();
+        }
+      }, 1000);
+    },
+    didTapSeat: function didTapSeat(e) {
+      uni.$emit('seatDidChange', this.val);
+    }
+  }
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+
 /***/ 36:
 /*!**************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/utils/js/i18n.js ***!
@@ -11259,72 +11338,9 @@ var messages = {
   'zn-CN': (_znCN = {
     simplifiedChinese: '中文简体',
     english: '英文',
-    login: '登录',
-    register: '注册',
-    inputMobile: '请输入手机号',
-    inputPassword: '请输入密码',
-    forgetPassword: '忘记密码',
-    codeLogin: '验证码登录',
-    getSmsCode: '获取短信验证码',
-    passwordLogin: '密码登录',
-    registerRightNow: '立即注册',
-    certain: '确定',
-    cancel: '取消',
-    submit: '提交',
-    save: '保存',
-    loginRightNow: '立即登录',
-    inputCode: '请输入验证码',
-    sendCode: '发送验证码',
-    codeSendTo: '验证码已发送至',
-    codeError: '验证码错误，请重新输入',
-    verify: '验证',
-    jump: '跳过',
-    homePage: '首页',
-    startReserve: '立即预定',
-    ableReserve: '可预定',
-    hadReserved: '已预定',
-    noReserve: '不可预订',
-    windows: '靠窗',
-    road: '过道',
-    income: '入口',
-    today: '今天',
-    Monday: '周一',
-    Tuesday: '周二',
-    Wednesday: '周三',
-    Thursday: '周四',
-    Friday: '周五',
-    Saturday: '周六',
-    Sunday: '周日',
-    seatReserve: '工位预定',
-    reserveMorning: '预定上午',
-    reserveNoon: '预定下午',
-    reserveDay: '预定全天',
-    morning: '上午',
-    noon: '下午',
-    allDay: '全天',
-    seatNum: '工位号',
-    seatStatus: '状态',
-    seatCertain: '确定抢位',
-    productNew: '最新产品',
-    seeAll: '查看全部',
-    productList: '产品列表',
-    productDetail: '产品详情',
-    set: '设置',
-    header: '头像',
-    nickName: '昵称',
-    name: '姓名',
-    duty: '职位',
-    companyEmail: '公司邮箱',
-    mobileNum: '手机号码',
-    personal: '个人中心',
-    mine: '我的',
-    myReserve: '我的预定',
-    myMessage: '我的消息',
-    exit: '退出',
-    reserved: '已预订',
-    proceed: '进行中',
-    end: '已结束'
-  }, (0, _defineProperty2.default)(_znCN, "cancel", '已取消'), (0, _defineProperty2.default)(_znCN, "reserveTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reserveCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), (0, _defineProperty2.default)(_znCN, "reserveMessage", '预定消息'), (0, _defineProperty2.default)(_znCN, "you", '您于'), (0, _defineProperty2.default)(_znCN, "reserve", '预订'), (0, _defineProperty2.default)(_znCN, "seatSuccess", '座位成功！'), (0, _defineProperty2.default)(_znCN, "inputRightPhone", '请输入正确手机号码'), (0, _defineProperty2.default)(_znCN, "success", '操作成功'), (0, _defineProperty2.default)(_znCN, "selectedRightAnswer", '请选择正确答案'), (0, _defineProperty2.default)(_znCN, "answerError", '答案错误'), (0, _defineProperty2.default)(_znCN, "networkError", '网络错误'), (0, _defineProperty2.default)(_znCN, "language", '语言'), (0, _defineProperty2.default)(_znCN, "china", '中国'), (0, _defineProperty2.default)(_znCN, "english", '英国'), (0, _defineProperty2.default)(_znCN, "germany", '德国'), (0, _defineProperty2.default)(_znCN, "resetGetCode", '重新获取验证码'), (0, _defineProperty2.default)(_znCN, "timeOutResetGetCode", '秒后重新获取验证码'), _znCN),
+    language: '语言',
+    china: '中国'
+  }, (0, _defineProperty2.default)(_znCN, "english", '英国'), (0, _defineProperty2.default)(_znCN, "germany", '德国'), (0, _defineProperty2.default)(_znCN, "resetGetCode", '重新获取验证码'), (0, _defineProperty2.default)(_znCN, "timeOutResetGetCode", '秒后重新获取验证码'), (0, _defineProperty2.default)(_znCN, "login", '登录'), (0, _defineProperty2.default)(_znCN, "register", '注册'), (0, _defineProperty2.default)(_znCN, "inputMobile", '请输入手机号'), (0, _defineProperty2.default)(_znCN, "inputPassword", '请输入密码'), (0, _defineProperty2.default)(_znCN, "forgetPassword", '忘记密码'), (0, _defineProperty2.default)(_znCN, "codeLogin", '验证码登录'), (0, _defineProperty2.default)(_znCN, "getSmsCode", '获取短信验证码'), (0, _defineProperty2.default)(_znCN, "passwordLogin", '密码登录'), (0, _defineProperty2.default)(_znCN, "registerRightNow", '立即注册'), (0, _defineProperty2.default)(_znCN, "certain", '确定'), (0, _defineProperty2.default)(_znCN, "cancel", '取消'), (0, _defineProperty2.default)(_znCN, "submit", '提交'), (0, _defineProperty2.default)(_znCN, "save", '保存'), (0, _defineProperty2.default)(_znCN, "loginRightNow", '立即登录'), (0, _defineProperty2.default)(_znCN, "inputCode", '请输入验证码'), (0, _defineProperty2.default)(_znCN, "sendCode", '发送验证码'), (0, _defineProperty2.default)(_znCN, "codeSendTo", '验证码已发送至'), (0, _defineProperty2.default)(_znCN, "codeError", '验证码错误，请重新输入'), (0, _defineProperty2.default)(_znCN, "verify", '验证'), (0, _defineProperty2.default)(_znCN, "jump", '跳过'), (0, _defineProperty2.default)(_znCN, "homePage", '首页'), (0, _defineProperty2.default)(_znCN, "startReserve", '立即预定'), (0, _defineProperty2.default)(_znCN, "ableReserve", '可预定'), (0, _defineProperty2.default)(_znCN, "hadReserved", '已预定'), (0, _defineProperty2.default)(_znCN, "noReserve", '不可预订'), (0, _defineProperty2.default)(_znCN, "windows", '靠窗'), (0, _defineProperty2.default)(_znCN, "road", '过道'), (0, _defineProperty2.default)(_znCN, "income", '入口'), (0, _defineProperty2.default)(_znCN, "today", '今天'), (0, _defineProperty2.default)(_znCN, "Monday", '周一'), (0, _defineProperty2.default)(_znCN, "Tuesday", '周二'), (0, _defineProperty2.default)(_znCN, "Wednesday", '周三'), (0, _defineProperty2.default)(_znCN, "Thursday", '周四'), (0, _defineProperty2.default)(_znCN, "Friday", '周五'), (0, _defineProperty2.default)(_znCN, "Saturday", '周六'), (0, _defineProperty2.default)(_znCN, "Sunday", '周日'), (0, _defineProperty2.default)(_znCN, "seatReserve", '工位预定'), (0, _defineProperty2.default)(_znCN, "reserveMorning", '预定上午'), (0, _defineProperty2.default)(_znCN, "reserveNoon", '预定下午'), (0, _defineProperty2.default)(_znCN, "reserveDay", '预定全天'), (0, _defineProperty2.default)(_znCN, "morning", '上午'), (0, _defineProperty2.default)(_znCN, "noon", '下午'), (0, _defineProperty2.default)(_znCN, "allDay", '全天'), (0, _defineProperty2.default)(_znCN, "seatNum", '工位号'), (0, _defineProperty2.default)(_znCN, "seatStatus", '状态'), (0, _defineProperty2.default)(_znCN, "seatCertain", '确定抢位'), (0, _defineProperty2.default)(_znCN, "productNew", '最新产品'), (0, _defineProperty2.default)(_znCN, "seeAll", '查看全部'), (0, _defineProperty2.default)(_znCN, "productList", '产品列表'), (0, _defineProperty2.default)(_znCN, "productDetail", '产品详情'), (0, _defineProperty2.default)(_znCN, "set", '设置'), (0, _defineProperty2.default)(_znCN, "header", '头像'), (0, _defineProperty2.default)(_znCN, "nickName", '昵称'), (0, _defineProperty2.default)(_znCN, "name", '姓名'), (0, _defineProperty2.default)(_znCN, "duty", '职位'), (0, _defineProperty2.default)(_znCN, "companyEmail", '公司邮箱'), (0, _defineProperty2.default)(_znCN, "mobileNum", '手机号码'), (0, _defineProperty2.default)(_znCN, "personal", '个人中心'), (0, _defineProperty2.default)(_znCN, "mine", '我的'), (0, _defineProperty2.default)(_znCN, "myReserve", '我的预定'), (0, _defineProperty2.default)(_znCN, "myMessage", '我的消息'), (0, _defineProperty2.default)(_znCN, "exit", '退出'), (0, _defineProperty2.default)(_znCN, "reserved", '已预订'), (0, _defineProperty2.default)(_znCN, "proceed", '进行中'), (0, _defineProperty2.default)(_znCN, "end", '已结束'), (0, _defineProperty2.default)(_znCN, "canceled", '已取消'), (0, _defineProperty2.default)(_znCN, "reserveTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reserveCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), (0, _defineProperty2.default)(_znCN, "reserveMessage", '预定消息'), (0, _defineProperty2.default)(_znCN, "you", '您于'), (0, _defineProperty2.default)(_znCN, "reserve", '预订'), (0, _defineProperty2.default)(_znCN, "seatSuccess", '座位成功！'), (0, _defineProperty2.default)(_znCN, "inputRightPhone", '请输入正确手机号码'), (0, _defineProperty2.default)(_znCN, "success", '操作成功'), (0, _defineProperty2.default)(_znCN, "selectedRightAnswer", '请选择正确答案'), (0, _defineProperty2.default)(_znCN, "answerError", '答案错误'), (0, _defineProperty2.default)(_znCN, "networkError", '网络错误'), _znCN),
   'en-US': {
     login: 'login'
   },
