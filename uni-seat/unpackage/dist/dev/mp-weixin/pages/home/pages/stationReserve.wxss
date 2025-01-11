@@ -56,17 +56,20 @@
   background-color: #F2F4F7;
   color: #959AA0;
 }
-.bottom-view .seat-reserve .status.reserved.data-v-5167be1a {
+.bottom-view .seat-reserve .status.reserve-no.data-v-5167be1a {
   background-color: #FFF0F0;
   color: #E29494;
 }
-.bottom-view .seat-reserve .status.day.data-v-5167be1a {
+.bottom-view .seat-reserve .status.reserve-day.data-v-5167be1a {
   background-color: #E5FFE4;
   color: #006D18;
 }
-.bottom-view .seat-reserve .status.halfday.data-v-5167be1a {
+.bottom-view .seat-reserve .status.reserve-noon.data-v-5167be1a, .bottom-view .seat-reserve .status.reserve-noon.data-v-5167be1a {
   background-color: #E4F8FF;
   color: #083C70;
+}
+.bottom-view .seat-reserve .status.reserve-unselected.data-v-5167be1a {
+  color: #141D28;
 }
 .bottom-view .valid-btn.data-v-5167be1a {
   display: flex;
@@ -77,10 +80,7 @@
   border-radius: 25px;
   color: #FFF;
   font-size: 16px;
-  background-color: #8AD4FF !important;
-  margin-bottom: 10px;
-}
-.bottom-view .valid-btn.active.data-v-5167be1a {
   background-color: #0099FF !important;
+  margin-bottom: 10px;
 }
 

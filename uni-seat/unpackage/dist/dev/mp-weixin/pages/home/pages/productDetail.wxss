@@ -24,13 +24,25 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.content.data-v-0cf16ade {
-  display: flex;
-  flex: 1;
+.swiper-view.data-v-0cf16ade {
   width: 100%;
+  height: 300px;
 }
-.content .web-view.data-v-0cf16ade {
-  margin-top: 100px;
-  margin-top: calc(64px + 25px);
+.swiper-view .productImage.data-v-0cf16ade {
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.web-rich.data-v-0cf16ade {
+  display: flex;
+  padding: 20px;
+  background-color: #FFF;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border-radius: 16px;
+}
+.web-rich .richtext.data-v-0cf16ade {
+  width: 100%;
 }
 

@@ -42,7 +42,7 @@
 .seat-left .left .line.enable.data-v-33af617b {
   background-color: #DADEE6;
 }
-.seat-left .left .line.selected.data-v-33af617b {
+.seat-left .left .line.selected.data-v-33af617b, .seat-left .left .line.upSelected.data-v-33af617b, .seat-left .left .line.downSelected.data-v-33af617b {
   background-color: #E29494;
 }
 .seat-left .left .line.normal.data-v-33af617b {
@@ -65,7 +65,7 @@
   background-color: #F2F4F7;
   border: 1px solid #DADEE6;
 }
-.seat-left .left .userIcon.selected.data-v-33af617b {
+.seat-left .left .userIcon.selected.data-v-33af617b, .seat-left .left .userIcon.upSelected.data-v-33af617b, .seat-left .left .userIcon.downSelected.data-v-33af617b {
   background-color: #FFF0F0;
   border: 1px solid #E29494;
 }
@@ -93,12 +93,12 @@
   border: 1px solid #DADEE6;
   border-bottom: none;
 }
-.seat-left .right .top.selected.data-v-33af617b {
+.seat-left .right .top.selected.data-v-33af617b, .seat-left .right .top.upSelected.data-v-33af617b {
   background-color: #FFF0F0;
   border: 1px solid #E29494;
   border-bottom: none;
 }
-.seat-left .right .top.normal.data-v-33af617b {
+.seat-left .right .top.normal.data-v-33af617b, .seat-left .right .top.downSelected.data-v-33af617b {
   border: 1px solid #DADEE6;
   background-color: #FFF;
   border-bottom: none;
@@ -118,12 +118,12 @@
   border: 1px solid #DADEE6;
   border-top: none;
 }
-.seat-left .right .bottom.selected.data-v-33af617b {
+.seat-left .right .bottom.selected.data-v-33af617b, .seat-left .right .bottom.downSelected.data-v-33af617b {
   background-color: #FFF0F0;
   border: 1px solid #E29494;
   border-top: none;
 }
-.seat-left .right .bottom.normal.data-v-33af617b {
+.seat-left .right .bottom.normal.data-v-33af617b, .seat-left .right .bottom.upSelected.data-v-33af617b {
   border: 1px solid #DADEE6;
   background-color: #FFF;
   border-top: none;
@@ -146,7 +146,7 @@
 .seat-number.enable.data-v-33af617b {
   color: #DADEE6;
 }
-.seat-number.selected.data-v-33af617b {
+.seat-number.selected.data-v-33af617b, .seat-number.upSelected.data-v-33af617b, .seat-number.downSelected.data-v-33af617b {
   color: #E29494;
 }
 .seat-number.normal.data-v-33af617b {

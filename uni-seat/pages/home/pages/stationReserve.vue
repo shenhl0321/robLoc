@@ -21,7 +21,7 @@
 			<SeatReserveInfo :userInfo="userInfo" @closed="seatReserveClosed"></SeatReserveInfo>
 		</uni-popup>
 		
-		<uni-popup ref="popupCalendar" type="bottom">
+		<uni-popup ref="popupCalendar" type="bottom" v-if="selectedSeat != null">
 			<SeatReserveCalendar :seat='selectedSeat' :date="date" @closed="seatCalendarClosed"></SeatReserveCalendar>
 		</uni-popup>
 	</view>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-const baseUrl = "http://mrt.lxiwl.vip"
+const baseUrl = "https://mrt.lxiwl.vip"
 //const baseUrl = "http://sdc.mrt-reinhausen.com"
 
 

@@ -17,9 +17,9 @@
 			<view class="day" v-for="(item,index) in list" :key="index">
 				<view v-if="item == 'block'"></view>
 				<view class="day-block" @click="didSelectorDate(item)" v-else>
-					<view class="left" :class="dayBlockClassName(item)"></view>
-					<view class="right" :class="dayBlockClassName(item)"></view>
-					<text class="day-text" :class="dayBlockClassName(item)">{{item.day}}</text>
+					<view class="left" :class="[dayBlockClassName(item)]"></view>
+					<view class="right" :class="[dayBlockClassName(item)]"></view>
+					<text class="day-text" :class="[dayBlockClassName(item)]">{{item.day}}</text>
 				</view>
 			</view>
 		</view>
@@ -76,6 +76,7 @@
 		},
 
 		mounted() {
+			console.log(this.dateSeatInfo)
 			this.setBaseDateData()
 		},
 

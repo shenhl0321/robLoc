@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "uni-app-nav-bar": "/components/uni-app-nav-bar/uni-app-nav-bar",
-    "uni-public-left-right": "/components/uni-public-left-right/uni-public-left-right",
+    "uni-public-up-down": "/components/uni-public-up-down/uni-public-up-down",
     "product-banner": "/pages/home/components/product-banner/product-banner"
   }
 }

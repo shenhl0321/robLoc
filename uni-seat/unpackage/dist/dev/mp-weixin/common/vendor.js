@@ -219,9 +219,9 @@ module.exports = _toConsumableArray, module.exports.__esModule = true, module.ex
 /***/ }),
 
 /***/ 188:
-/*!************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/config.js ***!
-  \************************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/config.js ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -299,9 +299,9 @@ exports.propsMap = propsMap;
 /***/ }),
 
 /***/ 189:
-/*!**********************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/util.js ***!
-  \**********************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/util.js ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -656,6 +656,10 @@ var promiseInterceptor = {
     }
     return new Promise(function (resolve, reject) {
       res.then(function (res) {
+        if (!res) {
+          resolve(res);
+          return;
+        }
         if (res[0]) {
           reject(res[0]);
         } else {
@@ -665,7 +669,7 @@ var promiseInterceptor = {
     });
   }
 };
-var SYNC_API_RE = /^\$|Window$|WindowStyle$|sendHostEvent|sendNativeEvent|restoreGlobal|requireGlobal|getCurrentSubNVue|getMenuButtonBoundingClientRect|^report|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64|getLocale|setLocale|invokePushCallback|getWindowInfo|getDeviceInfo|getAppBaseInfo|getSystemSetting|getAppAuthorizeSetting|initUTS|requireUTS|registerUTS/;
+var SYNC_API_RE = /^\$|Window$|WindowStyle$|sendHostEvent|sendNativeEvent|restoreGlobal|requireGlobal|getCurrentSubNVue|getMenuButtonBoundingClientRect|^report|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|rpx2px|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64|getLocale|setLocale|invokePushCallback|getWindowInfo|getDeviceInfo|getAppBaseInfo|getSystemSetting|getAppAuthorizeSetting|initUTS|requireUTS|registerUTS/;
 var CONTEXT_API_RE = /^create|Manager$/;
 
 // Context例外情况
@@ -738,10 +742,12 @@ var isIOS = false;
 var deviceWidth = 0;
 var deviceDPR = 0;
 function checkDeviceWidth() {
-  var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
-    platform = _wx$getSystemInfoSync.platform,
-    pixelRatio = _wx$getSystemInfoSync.pixelRatio,
-    windowWidth = _wx$getSystemInfoSync.windowWidth; // uni=>wx runtime 编译目标是 uni 对象，内部不允许直接使用 uni
+  var _Object$assign = Object.assign({}, wx.getWindowInfo(), {
+      platform: wx.getDeviceInfo().platform
+    }),
+    windowWidth = _Object$assign.windowWidth,
+    pixelRatio = _Object$assign.pixelRatio,
+    platform = _Object$assign.platform; // uni=>wx runtime 编译目标是 uni 对象，内部不允许直接使用 uni
 
   deviceWidth = windowWidth;
   deviceDPR = pixelRatio;
@@ -777,7 +783,7 @@ var LOCALE_ES = 'es';
 var messages = {};
 var locale;
 {
-  locale = normalizeLocale(wx.getSystemInfoSync().language) || LOCALE_EN;
+  locale = normalizeLocale(wx.getAppBaseInfo().language) || LOCALE_EN;
 }
 function initI18nMessages() {
   if (!isEnableLocale()) {
@@ -899,7 +905,7 @@ function getLocale$1() {
       return app.$vm.$locale;
     }
   }
-  return normalizeLocale(wx.getSystemInfoSync().language) || LOCALE_EN;
+  return normalizeLocale(wx.getAppBaseInfo().language) || LOCALE_EN;
 }
 function setLocale$1(locale) {
   var app = isFn(getApp) ? getApp() : false;
@@ -933,6 +939,7 @@ var interceptors = {
 var baseApi = /*#__PURE__*/Object.freeze({
   __proto__: null,
   upx2px: upx2px,
+  rpx2px: upx2px,
   getLocale: getLocale$1,
   setLocale: setLocale$1,
   onLocaleChange: onLocaleChange,
@@ -1075,7 +1082,7 @@ function populateParameters(result) {
   var _SDKVersion = SDKVersion;
 
   // hostLanguage
-  var hostLanguage = language.replace(/_/g, '-');
+  var hostLanguage = (language || '').replace(/_/g, '-');
 
   // wx.getAccountInfoSync
 
@@ -1085,8 +1092,9 @@ function populateParameters(result) {
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
-    uniCompileVersion: "4.29",
-    uniRuntimeVersion: "4.29",
+    uniCompileVersion: "4.45",
+    uniCompilerVersion: "4.45",
+    uniRuntimeVersion: "4.45",
     uniPlatform: undefined || "mp-weixin",
     deviceBrand: deviceBrand,
     deviceModel: model,
@@ -1109,7 +1117,8 @@ function populateParameters(result) {
     ua: undefined,
     hostPackageName: undefined,
     browserName: undefined,
-    browserVersion: undefined
+    browserVersion: undefined,
+    isUniAppX: false
   };
   Object.assign(result, parameters, extraParam);
 }
@@ -1177,7 +1186,7 @@ var getAppBaseInfo = {
       SDKVersion = _result.SDKVersion,
       theme = _result.theme;
     var _hostName = getHostName(result);
-    var hostLanguage = language.replace('_', '-');
+    var hostLanguage = (language || '').replace('_', '-');
     result = sortObject(Object.assign(result, {
       appId: "__UNI__3265C0C",
       appName: "uni-seat",
@@ -1188,7 +1197,12 @@ var getAppBaseInfo = {
       hostLanguage: hostLanguage,
       hostName: _hostName,
       hostSDKVersion: SDKVersion,
-      hostTheme: theme
+      hostTheme: theme,
+      isUniAppX: false,
+      uniPlatform: undefined || "mp-weixin",
+      uniCompileVersion: "4.45",
+      uniCompilerVersion: "4.45",
+      uniRuntimeVersion: "4.45"
     }));
   }
 };
@@ -2415,7 +2429,7 @@ function parseBaseApp(vm, _ref4) {
       appOptions[name] = methods[name];
     });
   }
-  initAppLocale(_vue.default, vm, normalizeLocale(wx.getSystemInfoSync().language) || LOCALE_EN);
+  initAppLocale(_vue.default, vm, normalizeLocale(wx.getAppBaseInfo().language) || LOCALE_EN);
   initHooks(appOptions, hooks);
   initUnknownHooks(appOptions, vm.$options);
   return appOptions;
@@ -3377,7 +3391,7 @@ module.exports = _createClass, module.exports.__esModule = true, module.exports[
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/*!
  * Vue.js v2.6.11
- * (c) 2014-2023 Evan You
+ * (c) 2014-2024 Evan You
  * Released under the MIT License.
  */
 /*  */
@@ -3890,7 +3904,7 @@ var hasProto = '__proto__' in {};
 var inBrowser = typeof window !== 'undefined';
 var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
 var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
-var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+var UA = inBrowser && window.navigator && window.navigator.userAgent.toLowerCase();
 var isIE = UA && /msie|trident/.test(UA);
 var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
 var isEdge = UA && UA.indexOf('edge/') > 0;
@@ -9449,9 +9463,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 26:
-/*!********************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/pages.json ***!
-  \********************************************************************/
+/*!***************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/pages.json ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9459,10 +9473,10 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 274:
-/*!**************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
-  \**************************************************************************************************************************/
+/***/ 260:
+/*!*********************************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9474,9 +9488,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 275));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 276));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 277));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 261));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 262));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 263));
 var _default = {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -9486,10 +9500,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 275:
-/*!*************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
-  \*************************************************************************************************************************/
+/***/ 261:
+/*!********************************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
+  \********************************************************************************************************************/
 /*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
 /***/ (function(module) {
 
@@ -9497,10 +9511,10 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show mo
 
 /***/ }),
 
-/***/ 276:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
-  \******************************************************************************************************************************/
+/***/ 262:
+/*!*************************************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
+  \*************************************************************************************************************************/
 /*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
 /***/ (function(module) {
 
@@ -9508,10 +9522,10 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多
 
 /***/ }),
 
-/***/ 277:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
-  \******************************************************************************************************************************/
+/***/ 263:
+/*!*************************************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
+  \*************************************************************************************************************************/
 /*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
 /***/ (function(module) {
 
@@ -9520,9 +9534,9 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多
 /***/ }),
 
 /***/ 292:
-/*!*********************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
-  \*********************************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9818,9 +9832,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 33:
-/*!*****************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/utils/js/request.js ***!
-  \*****************************************************************************/
+/*!************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/utils/js/request.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9833,7 +9847,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.uniConfig = exports.default = void 0;
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
-var baseUrl = "http://mrt.lxiwl.vip";
+var baseUrl = "https://mrt.lxiwl.vip";
 //const baseUrl = "http://sdc.mrt-reinhausen.com"
 
 var uniConfig = {
@@ -9867,7 +9881,7 @@ var request = function request() {
   return new Promise(function (resolve, reject) {
     uni.request({
       method: type,
-      url: '/h5TestApi' + url,
+      url: uniConfig.baseUrl + url,
       //'/h5TestApi' + url uniConfig.baseUrl + url
       data: data,
       header: header,
@@ -9936,9 +9950,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 34:
-/*!************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/store/store.js ***!
-  \************************************************************************/
+/*!*******************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/store/store.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11237,9 +11251,9 @@ module.exports = index_cjs;
 /***/ }),
 
 /***/ 354:
-/*!*****************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/pages/home/components/seat/seat-position.js ***!
-  \*****************************************************************************************************/
+/*!************************************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/pages/home/components/seat/seat-position.js ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11250,61 +11264,106 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _request = __webpack_require__(/*! ../../../../utils/js/request.js */ 33);
 var _default = {
   props: {
     val: {
-      type: Number
+      type: Object
     }
   },
   data: function data() {
     return {
-      list: ['/static/ic_header.png', '/static/logo.png'],
+      list: [],
       animation: false,
       icon: ''
     };
   },
   mounted: function mounted() {
-    this.animation = true;
-    //this.iconChange()
+    this.reloadData();
   },
   destroyed: function destroyed() {
     this.animation = false;
   },
+  watch: {
+    val: function val(e) {
+      this.reloadData();
+    }
+  },
   computed: {
     iconPath: function iconPath() {
-      if (this.$store.state.seat == this.val) {
+      if (this.$store.state.seat != null && this.$store.state.seat.id == this.val.id) {
         return '/static/hm_seat_sel.png';
       } else {
         return this.icon;
       }
     },
     statusClassName: function statusClassName() {
-      if (this.$store.state.seat == this.val) {
+      if (this.$store.state.seat != null && this.$store.state.seat.id == this.val.id) {
         return 'ownerSelected';
-      } else if (this.state == 'enable') {
-        return 'enable';
-      } else if (this.state == 'otherSelected' || this.state == 'otherTopSelected' || this.state == 'otherBottomSelected') {
-        return 'selected';
       } else {
-        return 'normal';
+        if (this.val.status == 2) {
+          return 'enable';
+        } else {
+          if (this.val.date_type == 1) {
+            return 'upSelected';
+          } else if (this.val.date_type == 2) {
+            return 'downSelected';
+          } else if (this.val.date_type == 3) {
+            return 'selected';
+          } else {
+            return 'normal';
+          }
+        }
       }
     }
   },
   methods: {
+    reloadData: function reloadData() {
+      if (this.val != null && this.val.user != null) {
+        if (this.val.user.length > 0) {
+          this.list = this.val.user;
+          this.list.map(function (e) {
+            e.avatar = _request.uniConfig.baseUrl + e.avatar;
+          });
+          this.icon = this.list[0].avatar;
+          if (this.list.length == 2) {
+            this.animation = true;
+            this.iconChange();
+          } else {
+            this.animation = false;
+          }
+        } else {
+          this.list = this.val.user;
+          this.icon = '';
+          this.animation = false;
+        }
+      }
+    },
     iconChange: function iconChange() {
       var that = this;
       setTimeout(function () {
-        if (that.icon == that.list[0]) {
-          that.icon = that.list[1];
+        if (that.icon === that.list[0].avatar) {
+          that.icon = that.list[1].avatar;
         } else {
-          that.icon = that.list[0];
+          that.icon = that.list[0].avatar;
         }
         if (that.animation == true) {
           that.iconChange();
         }
       }, 1000);
     },
-    didTapSeat: function didTapSeat(e) {
+    didUserHeaderIcon: function didUserHeaderIcon(e) {
+      if (this.icon.length > 0) {
+        var that = this;
+        var userInfo = this.list.find(function (e) {
+          return that.icon == e.avatar;
+        });
+        uni.$emit('userInfo', userInfo);
+      } else {
+        uni.$emit('seatDidChange', this.val);
+      }
+    },
+    didDeskTapSeat: function didDeskTapSeat(e) {
       uni.$emit('seatDidChange', this.val);
     }
   }
@@ -11315,9 +11374,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 36:
-/*!**************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/utils/js/i18n.js ***!
-  \**************************************************************************/
+/*!*********************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/utils/js/i18n.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11340,7 +11399,7 @@ var messages = {
     english: '英文',
     language: '语言',
     china: '中国'
-  }, (0, _defineProperty2.default)(_znCN, "english", '英国'), (0, _defineProperty2.default)(_znCN, "germany", '德国'), (0, _defineProperty2.default)(_znCN, "resetGetCode", '重新获取验证码'), (0, _defineProperty2.default)(_znCN, "timeOutResetGetCode", '秒后重新获取验证码'), (0, _defineProperty2.default)(_znCN, "login", '登录'), (0, _defineProperty2.default)(_znCN, "register", '注册'), (0, _defineProperty2.default)(_znCN, "inputMobile", '请输入手机号'), (0, _defineProperty2.default)(_znCN, "inputPassword", '请输入密码'), (0, _defineProperty2.default)(_znCN, "forgetPassword", '忘记密码'), (0, _defineProperty2.default)(_znCN, "codeLogin", '验证码登录'), (0, _defineProperty2.default)(_znCN, "getSmsCode", '获取短信验证码'), (0, _defineProperty2.default)(_znCN, "passwordLogin", '密码登录'), (0, _defineProperty2.default)(_znCN, "registerRightNow", '立即注册'), (0, _defineProperty2.default)(_znCN, "certain", '确定'), (0, _defineProperty2.default)(_znCN, "cancel", '取消'), (0, _defineProperty2.default)(_znCN, "submit", '提交'), (0, _defineProperty2.default)(_znCN, "save", '保存'), (0, _defineProperty2.default)(_znCN, "loginRightNow", '立即登录'), (0, _defineProperty2.default)(_znCN, "inputCode", '请输入验证码'), (0, _defineProperty2.default)(_znCN, "sendCode", '发送验证码'), (0, _defineProperty2.default)(_znCN, "codeSendTo", '验证码已发送至'), (0, _defineProperty2.default)(_znCN, "codeError", '验证码错误，请重新输入'), (0, _defineProperty2.default)(_znCN, "verify", '验证'), (0, _defineProperty2.default)(_znCN, "jump", '跳过'), (0, _defineProperty2.default)(_znCN, "homePage", '首页'), (0, _defineProperty2.default)(_znCN, "startReserve", '立即预定'), (0, _defineProperty2.default)(_znCN, "ableReserve", '可预定'), (0, _defineProperty2.default)(_znCN, "hadReserved", '已预定'), (0, _defineProperty2.default)(_znCN, "noReserve", '不可预订'), (0, _defineProperty2.default)(_znCN, "windows", '靠窗'), (0, _defineProperty2.default)(_znCN, "road", '过道'), (0, _defineProperty2.default)(_znCN, "income", '入口'), (0, _defineProperty2.default)(_znCN, "today", '今天'), (0, _defineProperty2.default)(_znCN, "Monday", '周一'), (0, _defineProperty2.default)(_znCN, "Tuesday", '周二'), (0, _defineProperty2.default)(_znCN, "Wednesday", '周三'), (0, _defineProperty2.default)(_znCN, "Thursday", '周四'), (0, _defineProperty2.default)(_znCN, "Friday", '周五'), (0, _defineProperty2.default)(_znCN, "Saturday", '周六'), (0, _defineProperty2.default)(_znCN, "Sunday", '周日'), (0, _defineProperty2.default)(_znCN, "seatReserve", '工位预定'), (0, _defineProperty2.default)(_znCN, "reserveMorning", '预定上午'), (0, _defineProperty2.default)(_znCN, "reserveNoon", '预定下午'), (0, _defineProperty2.default)(_znCN, "reserveDay", '预定全天'), (0, _defineProperty2.default)(_znCN, "morning", '上午'), (0, _defineProperty2.default)(_znCN, "noon", '下午'), (0, _defineProperty2.default)(_znCN, "allDay", '全天'), (0, _defineProperty2.default)(_znCN, "seatNum", '工位号'), (0, _defineProperty2.default)(_znCN, "seatStatus", '状态'), (0, _defineProperty2.default)(_znCN, "seatCertain", '确定抢位'), (0, _defineProperty2.default)(_znCN, "productNew", '最新产品'), (0, _defineProperty2.default)(_znCN, "seeAll", '查看全部'), (0, _defineProperty2.default)(_znCN, "productList", '产品列表'), (0, _defineProperty2.default)(_znCN, "productDetail", '产品详情'), (0, _defineProperty2.default)(_znCN, "set", '设置'), (0, _defineProperty2.default)(_znCN, "header", '头像'), (0, _defineProperty2.default)(_znCN, "nickName", '昵称'), (0, _defineProperty2.default)(_znCN, "name", '姓名'), (0, _defineProperty2.default)(_znCN, "duty", '职位'), (0, _defineProperty2.default)(_znCN, "companyEmail", '公司邮箱'), (0, _defineProperty2.default)(_znCN, "mobileNum", '手机号码'), (0, _defineProperty2.default)(_znCN, "personal", '个人中心'), (0, _defineProperty2.default)(_znCN, "mine", '我的'), (0, _defineProperty2.default)(_znCN, "myReserve", '我的预定'), (0, _defineProperty2.default)(_znCN, "myMessage", '我的消息'), (0, _defineProperty2.default)(_znCN, "exit", '退出'), (0, _defineProperty2.default)(_znCN, "reserved", '已预订'), (0, _defineProperty2.default)(_znCN, "proceed", '进行中'), (0, _defineProperty2.default)(_znCN, "end", '已结束'), (0, _defineProperty2.default)(_znCN, "canceled", '已取消'), (0, _defineProperty2.default)(_znCN, "reserveTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reserveCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), (0, _defineProperty2.default)(_znCN, "reserveMessage", '预定消息'), (0, _defineProperty2.default)(_znCN, "you", '您于'), (0, _defineProperty2.default)(_znCN, "reserve", '预订'), (0, _defineProperty2.default)(_znCN, "seatSuccess", '座位成功！'), (0, _defineProperty2.default)(_znCN, "inputRightPhone", '请输入正确手机号码'), (0, _defineProperty2.default)(_znCN, "success", '操作成功'), (0, _defineProperty2.default)(_znCN, "selectedRightAnswer", '请选择正确答案'), (0, _defineProperty2.default)(_znCN, "answerError", '答案错误'), (0, _defineProperty2.default)(_znCN, "networkError", '网络错误'), _znCN),
+  }, (0, _defineProperty2.default)(_znCN, "english", '英国'), (0, _defineProperty2.default)(_znCN, "germany", '德国'), (0, _defineProperty2.default)(_znCN, "resetGetCode", '重新获取验证码'), (0, _defineProperty2.default)(_znCN, "timeOutResetGetCode", '秒后重新获取验证码'), (0, _defineProperty2.default)(_znCN, "login", '登录'), (0, _defineProperty2.default)(_znCN, "register", '注册'), (0, _defineProperty2.default)(_znCN, "inputMobile", '请输入手机号'), (0, _defineProperty2.default)(_znCN, "inputPassword", '请输入密码'), (0, _defineProperty2.default)(_znCN, "forgetPassword", '忘记密码'), (0, _defineProperty2.default)(_znCN, "codeLogin", '验证码登录'), (0, _defineProperty2.default)(_znCN, "getSmsCode", '获取短信验证码'), (0, _defineProperty2.default)(_znCN, "passwordLogin", '密码登录'), (0, _defineProperty2.default)(_znCN, "registerRightNow", '立即注册'), (0, _defineProperty2.default)(_znCN, "certain", '确定'), (0, _defineProperty2.default)(_znCN, "cancel", '取消'), (0, _defineProperty2.default)(_znCN, "submit", '提交'), (0, _defineProperty2.default)(_znCN, "save", '保存'), (0, _defineProperty2.default)(_znCN, "loginRightNow", '立即登录'), (0, _defineProperty2.default)(_znCN, "inputCode", '请输入验证码'), (0, _defineProperty2.default)(_znCN, "sendCode", '发送验证码'), (0, _defineProperty2.default)(_znCN, "codeSendTo", '验证码已发送至'), (0, _defineProperty2.default)(_znCN, "codeError", '验证码错误，请重新输入'), (0, _defineProperty2.default)(_znCN, "verify", '验证'), (0, _defineProperty2.default)(_znCN, "jump", '跳过'), (0, _defineProperty2.default)(_znCN, "homePage", '首页'), (0, _defineProperty2.default)(_znCN, "startReserve", '立即预定'), (0, _defineProperty2.default)(_znCN, "ableReserve", '可预定'), (0, _defineProperty2.default)(_znCN, "hadReserved", '已预定'), (0, _defineProperty2.default)(_znCN, "noReserve", '不可预订'), (0, _defineProperty2.default)(_znCN, "windows", '靠窗'), (0, _defineProperty2.default)(_znCN, "road", '过道'), (0, _defineProperty2.default)(_znCN, "income", '入口'), (0, _defineProperty2.default)(_znCN, "today", '今天'), (0, _defineProperty2.default)(_znCN, "Monday", '周一'), (0, _defineProperty2.default)(_znCN, "Tuesday", '周二'), (0, _defineProperty2.default)(_znCN, "Wednesday", '周三'), (0, _defineProperty2.default)(_znCN, "Thursday", '周四'), (0, _defineProperty2.default)(_znCN, "Friday", '周五'), (0, _defineProperty2.default)(_znCN, "Saturday", '周六'), (0, _defineProperty2.default)(_znCN, "Sunday", '周日'), (0, _defineProperty2.default)(_znCN, "seatReserve", '工位预定'), (0, _defineProperty2.default)(_znCN, "reserveMorning", '预定上午'), (0, _defineProperty2.default)(_znCN, "reserveNoon", '预定下午'), (0, _defineProperty2.default)(_znCN, "reserveDay", '预定全天'), (0, _defineProperty2.default)(_znCN, "morning", '上午'), (0, _defineProperty2.default)(_znCN, "noon", '下午'), (0, _defineProperty2.default)(_znCN, "allDay", '全天'), (0, _defineProperty2.default)(_znCN, "seatNum", '工位号'), (0, _defineProperty2.default)(_znCN, "seatStatus", '状态'), (0, _defineProperty2.default)(_znCN, "seatCertain", '确定抢位'), (0, _defineProperty2.default)(_znCN, "productNew", '最新产品'), (0, _defineProperty2.default)(_znCN, "seeAll", '查看全部'), (0, _defineProperty2.default)(_znCN, "productList", '产品列表'), (0, _defineProperty2.default)(_znCN, "productDetail", '产品详情'), (0, _defineProperty2.default)(_znCN, "set", '设置'), (0, _defineProperty2.default)(_znCN, "header", '头像'), (0, _defineProperty2.default)(_znCN, "nickName", '昵称'), (0, _defineProperty2.default)(_znCN, "name", '姓名'), (0, _defineProperty2.default)(_znCN, "duty", '职位'), (0, _defineProperty2.default)(_znCN, "companyEmail", '公司邮箱'), (0, _defineProperty2.default)(_znCN, "mobileNum", '手机号码'), (0, _defineProperty2.default)(_znCN, "personal", '个人中心'), (0, _defineProperty2.default)(_znCN, "mine", '我的'), (0, _defineProperty2.default)(_znCN, "myReserve", '我的预定'), (0, _defineProperty2.default)(_znCN, "myMessage", '我的消息'), (0, _defineProperty2.default)(_znCN, "exit", '退出'), (0, _defineProperty2.default)(_znCN, "reserved", '已预订'), (0, _defineProperty2.default)(_znCN, "proceed", '进行中'), (0, _defineProperty2.default)(_znCN, "end", '已结束'), (0, _defineProperty2.default)(_znCN, "canceled", '已取消'), (0, _defineProperty2.default)(_znCN, "reserveTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reserveCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), (0, _defineProperty2.default)(_znCN, "reserveMessage", '预定消息'), (0, _defineProperty2.default)(_znCN, "you", '您于'), (0, _defineProperty2.default)(_znCN, "reserve", '预订'), (0, _defineProperty2.default)(_znCN, "seatSuccess", '座位成功！'), (0, _defineProperty2.default)(_znCN, "inputRightPhone", '请输入正确手机号码'), (0, _defineProperty2.default)(_znCN, "success", '操作成功'), (0, _defineProperty2.default)(_znCN, "selectedRightAnswer", '请选择正确答案'), (0, _defineProperty2.default)(_znCN, "answerError", '答案错误'), (0, _defineProperty2.default)(_znCN, "networkError", '网络错误'), (0, _defineProperty2.default)(_znCN, "loading", '加载中...'), (0, _defineProperty2.default)(_znCN, "seatInfo", '工位预定信息'), (0, _defineProperty2.default)(_znCN, "timeSelected", '请选择预定时间'), (0, _defineProperty2.default)(_znCN, "seatSelected", '请选择位置'), _znCN),
   'en-US': {
     login: 'login'
   },
@@ -13676,9 +13735,9 @@ VueI18n.version = '8.28.2';
 /***/ }),
 
 /***/ 38:
-/*!****************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/utils/js/common.js ***!
-  \****************************************************************************/
+/*!***********************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/utils/js/common.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13920,9 +13979,9 @@ exports.getStoreDictionaryName = getStoreDictionaryName;
 /***/ }),
 
 /***/ 39:
-/*!**********************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni.promisify.adaptor.js ***!
-  \**********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** /Users/hongliangshen/Desktop/robLoc/uni-seat/uni.promisify.adaptor.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

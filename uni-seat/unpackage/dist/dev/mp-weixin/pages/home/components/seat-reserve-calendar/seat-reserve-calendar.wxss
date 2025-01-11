@@ -60,7 +60,8 @@
   color: #FFF;
   background-color: #0099FF !important;
 }
-.weekdays-view, .day-list {
+.weekdays-view,
+.day-list {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(7, 1fr);
@@ -69,14 +70,20 @@
   padding: 0 7px;
   margin-top: 10px;
 }
-.weekdays-view .week-day, .weekdays-view .day, .day-list .week-day, .day-list .day {
+.weekdays-view .week-day,
+.weekdays-view .day,
+.day-list .week-day,
+.day-list .day {
   display: flex;
   position: relative;
   padding-bottom: 100%;
   height: 0;
   overflow: hidden;
 }
-.weekdays-view .week-day .week-day-block, .weekdays-view .day .week-day-block, .day-list .week-day .week-day-block, .day-list .day .week-day-block {
+.weekdays-view .week-day .week-day-block,
+.weekdays-view .day .week-day-block,
+.day-list .week-day .week-day-block,
+.day-list .day .week-day-block {
   display: flex;
   position: absolute;
   width: 100%;
@@ -86,7 +93,10 @@
   font-size: 12px;
   color: #656673;
 }
-.weekdays-view .week-day .day-block, .weekdays-view .day .day-block, .day-list .week-day .day-block, .day-list .day .day-block {
+.weekdays-view .week-day .day-block,
+.weekdays-view .day .day-block,
+.day-list .week-day .day-block,
+.day-list .day .day-block {
   display: flex;
   position: absolute;
   width: 100%;
@@ -96,7 +106,10 @@
   font-size: 14px;
   color: #242D34;
 }
-.weekdays-view .week-day .day-block .left, .weekdays-view .day .day-block .left, .day-list .week-day .day-block .left, .day-list .day .day-block .left {
+.weekdays-view .week-day .day-block .left,
+.weekdays-view .day .day-block .left,
+.day-list .week-day .day-block .left,
+.day-list .day .day-block .left {
   position: absolute;
   width: 50%;
   height: 100%;
@@ -115,12 +128,18 @@
   background-color: #FFF0F0;
   border-right: 0;
 }
-.weekdays-view .week-day .day-block .left.ownerSelected, .weekdays-view .day .day-block .left.ownerSelected, .day-list .week-day .day-block .left.ownerSelected, .day-list .day .day-block .left.ownerSelected {
+.weekdays-view .week-day .day-block .left.ownerSelected,
+.weekdays-view .day .day-block .left.ownerSelected,
+.day-list .week-day .day-block .left.ownerSelected,
+.day-list .day .day-block .left.ownerSelected {
   border: 1px solid #0076C4;
   background-color: #0099FF;
   border-right: 0;
 }
-.weekdays-view .week-day .day-block .right, .weekdays-view .day .day-block .right, .day-list .week-day .day-block .right, .day-list .day .day-block .right {
+.weekdays-view .week-day .day-block .right,
+.weekdays-view .day .day-block .right,
+.day-list .week-day .day-block .right,
+.day-list .day .day-block .right {
   position: absolute;
   width: 50%;
   height: 100%;
@@ -142,10 +161,26 @@
   background-color: #FFF0F0;
   border-left: 0;
 }
-.weekdays-view .week-day .day-block .right.ownerSelected, .weekdays-view .day .day-block .right.ownerSelected, .day-list .week-day .day-block .right.ownerSelected, .day-list .day .day-block .right.ownerSelected {
+.weekdays-view .week-day .day-block .right.ownerSelected,
+.weekdays-view .day .day-block .right.ownerSelected,
+.day-list .week-day .day-block .right.ownerSelected,
+.day-list .day .day-block .right.ownerSelected {
   border: 1px solid #0076C4;
   background-color: #0099FF;
   border-left: 0;
+}
+.weekdays-view .week-day .day-block .day-text,
+.weekdays-view .day .day-block .day-text,
+.day-list .week-day .day-block .day-text,
+.day-list .day .day-block .day-text {
+  z-index: 999;
+  color: #141D28;
+}
+.weekdays-view .week-day .day-block .day-text.ownerSelected,
+.weekdays-view .day .day-block .day-text.ownerSelected,
+.day-list .week-day .day-block .day-text.ownerSelected,
+.day-list .day .day-block .day-text.ownerSelected {
+  color: #FFF;
 }
 .bottom-view {
   width: 100%;
@@ -174,12 +209,16 @@
   margin: 0 10px;
 }
 .bottom-view .btn.day {
-  background-color: #0099FF !important;
-  color: #FFF;
+  border: 1px solid #E9E9EA;
+  color: #14202D;
 }
-.bottom-view .btn.noAble {
+.bottom-view .btn.enable {
   border: 1px solid #DADEE6;
   color: #DADEE6;
-  background-color: #F2F4F7;
+  background-color: #F2F4F7 !important;
+}
+.bottom-view .btn.active {
+  background-color: #0099FF !important;
+  color: #FFF;
 }
 

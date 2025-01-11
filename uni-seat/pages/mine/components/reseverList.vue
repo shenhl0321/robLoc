@@ -14,7 +14,7 @@
 			<view class="row time-row">
 				<text>{{$t('reserveTime')}}：</text>
 				<text class="date">{{item.select_date}}</text>
-				<view class="time" :class="dateTimeClassName(item.date_type)">{{timeTypeName(item.date_type)}}</view>
+				<view class="time" :class="[dateTimeClassName(item.date_type)]">{{timeTypeName(item.date_type)}}</view>
 			</view>
 			
 			<view class="row bottom-view" v-if="type == 1">
