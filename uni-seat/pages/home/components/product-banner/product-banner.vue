@@ -49,7 +49,7 @@
 		methods: {
 			didToSeeAllProduct() {
 				uni.navigateTo({
-					url: '/pages/home/pages/productList'
+					url: '/package_home/pages/productList'
 				})
 			},
 

@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "seat-group-mode-a": "/package_home/components/seat/seat-group-modeA",
+    "seat-group-mode-b": "/package_home/components/seat/seat-group-modeB",
+    "seat-group-mode-c": "/package_home/components/seat/seat-group-modeC",
+    "seat-group-mode-d": "/package_home/components/seat/seat-group-modeD",
+    "seat-group-mode-e": "/package_home/components/seat/seat-group-modeE",
+    "seat-group-mode-f": "/package_home/components/seat/seat-group-modeF",
+    "seat-group-mode-g": "/package_home/components/seat/seat-group-modeG",
+    "seat-group-mode-h": "/package_home/components/seat/seat-group-modeH"
+  }
+}
