@@ -39,9 +39,8 @@
 	//date_type 0：没有预定 1:预定了上午,2:预定了下午,3:预定了全天 
 	export default {
 		props: {
-			id: {
-				type: Number,
-				default: 0
+			seat: {
+				type: Object
 			},
 
 			date: {
@@ -93,14 +92,13 @@
 					blockDays.push('block')
 				}
 				let res = await this.$request('/api/seat', {
-					seat_id: this.id
+					seat_id: this.seat.id
 				})
 				if (res.result == true) {
 					let that = this
 					this.dateSeatInfo = res.data.find(function(e) {
-						return e.date = that.selectedDate
+						return e.date == that.selectedDate
 					})
-					console.log(this.dateSeatInfo)
 					this.list = [...blockDays, ...res.data]
 				}
 			},
@@ -112,7 +110,6 @@
 
 			dayBlockClassName(e) {
 				if (e.date == this.selectedDate) {
-					console.log(e)
 					return 'ownerSelected'
 				} else if (e.date_type == 1) {
 					return 'topSelected'
@@ -161,7 +158,7 @@
 					this.$toast(this.$t('timeSelected'))
 				}else{
 					let res = await this.$request('/api/reserve', {
-						seat_id: this.id,
+						seat_id: this.seat.id,
 						select_date: this.selectedDate,
 						date_type : this.selectedDateType
 					},'加载中...')

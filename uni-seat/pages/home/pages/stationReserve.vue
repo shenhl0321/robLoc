@@ -22,7 +22,7 @@
 		</uni-popup>
 		
 		<uni-popup ref="popupCalendar" type="bottom">
-			<SeatReserveCalendar :id='selectedSeat.id' :date="date" @closed="seatCalendarClosed"></SeatReserveCalendar>
+			<SeatReserveCalendar :seat='selectedSeat' :date="date" @closed="seatCalendarClosed"></SeatReserveCalendar>
 		</uni-popup>
 	</view>
 </template>
@@ -123,7 +123,7 @@
 			},
 			
 			didSelectedSeat(){
-				if(this.selectedSeat.id == null){
+				if(this.selectedSeat == null){
 					this.$toast(this.$t('seatSelected'))
 				}else{
 					this.seatCalendarShow()	
