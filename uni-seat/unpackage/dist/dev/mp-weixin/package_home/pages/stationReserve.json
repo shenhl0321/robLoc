@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "uni-app-nav-bar": "/components/uni-app-nav-bar/uni-app-nav-bar",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "week-date-selector": "/package_home/components/week-date-selector/week-date-selector",
+    "seat-station-mode-a": "/package_home/components/seat/seat-station-modeA",
+    "seat-reserve-info": "/package_home/components/seat-reserve-info/seat-reserve-info",
+    "seat-reserve-calendar": "/package_home/components/seat-reserve-calendar/seat-reserve-calendar"
+  }
+}

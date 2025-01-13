@@ -30,7 +30,7 @@
 				if(this.url.length == 0){
 					return '/static/ic_header.png'
 				}else{
-					return uniConfig.baseUrl + this.url
+					return this.url
 				}
 			}
 		},
@@ -54,8 +54,8 @@
 							success(res) {
 								let result = JSON.parse(decodeURIComponent(res.data))
 								if (result.code == 1) {
-									that.url = result.data.url
-									that.$emit('input',that.url)
+									that.url = result.data.path_url
+									that.$emit('input',result.data.url)
 								} else {
 									uni.showToast({
 										icon:'error',

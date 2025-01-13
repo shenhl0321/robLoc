@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "seat-top": "/package_home/components/seat/seat-position-top",
+    "seat-bottom": "/package_home/components/seat/seat-position-bottom"
+  }
+}

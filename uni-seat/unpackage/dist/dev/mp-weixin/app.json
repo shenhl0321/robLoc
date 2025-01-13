@@ -1,21 +1,37 @@
 {
   "pages": [
     "pages/login/index",
-    "pages/login/pages/codeToLogin",
-    "pages/login/pages/forgetPassword",
-    "pages/login/pages/register",
-    "pages/login/pages/registerVerify",
-    "pages/login/pages/userInfoEdit",
     "pages/home/index",
-    "pages/home/pages/stationReserve",
-    "pages/home/pages/productList",
-    "pages/home/pages/productDetail",
-    "pages/mine/index",
-    "pages/mine/pages/mySet",
-    "pages/mine/pages/myResever",
-    "pages/mine/pages/myMessage"
+    "pages/mine/index"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "package_home",
+      "pages": [
+        "pages/stationReserve",
+        "pages/productList",
+        "pages/productDetail"
+      ]
+    },
+    {
+      "root": "package_mine",
+      "pages": [
+        "pages/mySet",
+        "pages/myResever",
+        "pages/myMessage"
+      ]
+    },
+    {
+      "root": "package_login",
+      "pages": [
+        "pages/codeToLogin",
+        "pages/forgetPassword",
+        "pages/register",
+        "pages/registerVerify",
+        "pages/userInfoEdit"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

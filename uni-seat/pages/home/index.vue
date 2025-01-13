@@ -63,7 +63,7 @@
 			
 			pushToSeatReserve(){
 				uni.navigateTo({
-					url: '/pages/home/pages/stationReserve'
+					url : '/package_home/pages/stationReserve'
 				})
 			},
 		}

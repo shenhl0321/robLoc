@@ -1,55 +1,66 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		
+
 		{
 			"path": "pages/login/index"
 		},
-		
-		{
-			"path": "pages/login/pages/codeToLogin"
-		},
-		
-		{
-			"path": "pages/login/pages/forgetPassword"
-		},
-		{
-			"path": "pages/login/pages/register"
-		},
-		{
-			"path": "pages/login/pages/registerVerify"
-		},
-		{
-			"path": "pages/login/pages/userInfoEdit"
-		},
-		
+
 		{
 			"path": "pages/home/index"
 		},
+
 		{
-			"path": "pages/home/pages/stationReserve"
-		} ,
-		{
-			"path": "pages/home/pages/productList"
-		} ,
-		{
-			"path": "pages/home/pages/productDetail"
-		} ,
-		
-		{
-			"path": "pages/mine/index",
-			"app-plus": {
-				"bounce": "none"
-			}
+			"path": "pages/mine/index"
+		}
+	],
+
+	"subPackages": [{
+			"root": "package_home",
+			"pages": [{
+					"path": "pages/stationReserve"
+				},
+				{
+					"path": "pages/productList"
+				},
+				{
+					"path": "pages/productDetail"
+				}
+			]
 		},
-		
+
 		{
-			"path": "pages/mine/pages/mySet"
+			"root": "package_mine",
+			"pages": [{
+					"path": "pages/mySet"
+				},
+				{
+					"path": "pages/myResever"
+				},
+				{
+					"path": "pages/myMessage"
+				}
+			]
 		},
+
 		{
-			"path": "pages/mine/pages/myResever"
-		},
-		{
-			"path": "pages/mine/pages/myMessage"
+			"root": "package_login",
+			"pages": [{
+					"path": "pages/codeToLogin"
+				},
+
+				{
+					"path": "pages/forgetPassword"
+				},
+				{
+					"path": "pages/register"
+				},
+				{
+					"path": "pages/registerVerify"
+				},
+				{
+					"path": "pages/userInfoEdit"
+				}
+			]
 		}
 	],
 

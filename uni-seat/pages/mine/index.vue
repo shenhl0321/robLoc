@@ -60,7 +60,7 @@
 				if(this.avatar.length == 0){
 					return '/static/ic_header.png'
 				}else{
-					return uniConfig.baseUrl + this.avatar
+					return this.avatar
 				}
 			}
 		},
@@ -68,18 +68,18 @@
 		methods: {
 			pushToSetPage(){
 				uni.navigateTo({
-					url: "/pages/mine/pages/mySet"
+					url: "/package_mine/pages/mySet"
 				})
 			},
 			
 			didClickSection(e){
 				if(e.index == 1){
 					uni.navigateTo({
-						url: '/pages/mine/pages/myResever'
+						url: '/package_mine/pages/myResever'
 					})
 				}else{
 					uni.navigateTo({
-						url: '/pages/mine/pages/myMessage'
+						url: '/package_mine/pages/myMessage'
 					})
 				}
 			},

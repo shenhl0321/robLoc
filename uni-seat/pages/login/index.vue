@@ -89,7 +89,7 @@
 						this.$toast(this.$t('inputRightPhone'))
 					}else{
 						uni.navigateTo({
-							url: `/pages/login/pages/codeToLogin?mobile=${this.mobile}`
+							url: `/package_login/pages/codeToLogin?mobile=${this.mobile}`
 						})
 					}
 				}
@@ -97,7 +97,7 @@
 			//点击忘记密码
 			forgetPassword(){
 				uni.navigateTo({
-					url:'/pages/login/pages/forgetPassword'
+					url:'/package_login/pages/forgetPassword'
 				})
 			},
 			//点击切换登录方式
@@ -113,7 +113,7 @@
 			//去注册
 			toRegister(){
 				uni.navigateTo({
-					url: "/pages/login/pages/register"
+					url: "/package_login/pages/register"
 				})
 			},
 			

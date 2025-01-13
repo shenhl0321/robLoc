@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "seat-left": "/package_home/components/seat/seat-position-left",
+    "seat-right": "/package_home/components/seat/seat-position-right",
+    "seat-zone": "/package_home/components/seat/seat-position-zone"
+  }
+}

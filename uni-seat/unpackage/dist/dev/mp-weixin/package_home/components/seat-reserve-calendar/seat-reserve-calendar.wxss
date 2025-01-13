@@ -1,0 +1,224 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.seat-calendar {
+  width: 100vw;
+  background-color: #FFF;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-sizing: border-box;
+}
+.top {
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.top .title {
+  color: #141D28;
+  font-size: 16px;
+  font-weight: bold;
+}
+.top .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 34px;
+  font-size: 14px;
+  border-radius: 17px;
+}
+.top .btn.cancel {
+  color: #141D28;
+  border: 1px solid #E9E9EA;
+}
+.top .btn.certain {
+  color: #FFF;
+  background-color: #0099FF !important;
+}
+.weekdays-view,
+.day-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  grid-row-gap: 10px;
+  grid-column-gap: 16px;
+  padding: 0 7px;
+  margin-top: 10px;
+}
+.weekdays-view .week-day,
+.weekdays-view .day,
+.day-list .week-day,
+.day-list .day {
+  display: flex;
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.weekdays-view .week-day .week-day-block,
+.weekdays-view .day .week-day-block,
+.day-list .week-day .week-day-block,
+.day-list .day .week-day-block {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #656673;
+}
+.weekdays-view .week-day .day-block,
+.weekdays-view .day .day-block,
+.day-list .week-day .day-block,
+.day-list .day .day-block {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #242D34;
+}
+.weekdays-view .week-day .day-block .left,
+.weekdays-view .day .day-block .left,
+.day-list .week-day .day-block .left,
+.day-list .day .day-block .left {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.weekdays-view .week-day .day-block .left.normal, .weekdays-view .week-day .day-block .left.bottomSelected, .weekdays-view .day .day-block .left.normal, .weekdays-view .day .day-block .left.bottomSelected, .day-list .week-day .day-block .left.normal, .day-list .week-day .day-block .left.bottomSelected, .day-list .day .day-block .left.normal, .day-list .day .day-block .left.bottomSelected {
+  border: 1px solid #DADEE6;
+  background-color: #FFF;
+  border-right: 0;
+}
+.weekdays-view .week-day .day-block .left.selected, .weekdays-view .week-day .day-block .left.topSelected, .weekdays-view .day .day-block .left.selected, .weekdays-view .day .day-block .left.topSelected, .day-list .week-day .day-block .left.selected, .day-list .week-day .day-block .left.topSelected, .day-list .day .day-block .left.selected, .day-list .day .day-block .left.topSelected {
+  border: 1px solid #E29494;
+  background-color: #FFF0F0;
+  border-right: 0;
+}
+.weekdays-view .week-day .day-block .left.ownerSelected,
+.weekdays-view .day .day-block .left.ownerSelected,
+.day-list .week-day .day-block .left.ownerSelected,
+.day-list .day .day-block .left.ownerSelected {
+  border: 1px solid #0076C4;
+  background-color: #0099FF;
+  border-right: 0;
+}
+.weekdays-view .week-day .day-block .right,
+.weekdays-view .day .day-block .right,
+.day-list .week-day .day-block .right,
+.day-list .day .day-block .right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border: 1px solid #DADEE6;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #DADEE6;
+  background-color: #FFF;
+}
+.weekdays-view .week-day .day-block .right.normal, .weekdays-view .week-day .day-block .right.topSelected, .weekdays-view .day .day-block .right.normal, .weekdays-view .day .day-block .right.topSelected, .day-list .week-day .day-block .right.normal, .day-list .week-day .day-block .right.topSelected, .day-list .day .day-block .right.normal, .day-list .day .day-block .right.topSelected {
+  border: 1px solid #DADEE6;
+  background-color: #FFF;
+  border-left: 0;
+}
+.weekdays-view .week-day .day-block .right.selected, .weekdays-view .week-day .day-block .right.bottomSelected, .weekdays-view .day .day-block .right.selected, .weekdays-view .day .day-block .right.bottomSelected, .day-list .week-day .day-block .right.selected, .day-list .week-day .day-block .right.bottomSelected, .day-list .day .day-block .right.selected, .day-list .day .day-block .right.bottomSelected {
+  border: 1px solid #E29494;
+  background-color: #FFF0F0;
+  border-left: 0;
+}
+.weekdays-view .week-day .day-block .right.ownerSelected,
+.weekdays-view .day .day-block .right.ownerSelected,
+.day-list .week-day .day-block .right.ownerSelected,
+.day-list .day .day-block .right.ownerSelected {
+  border: 1px solid #0076C4;
+  background-color: #0099FF;
+  border-left: 0;
+}
+.weekdays-view .week-day .day-block .day-text,
+.weekdays-view .day .day-block .day-text,
+.day-list .week-day .day-block .day-text,
+.day-list .day .day-block .day-text {
+  z-index: 999;
+  color: #141D28;
+}
+.weekdays-view .week-day .day-block .day-text.ownerSelected,
+.weekdays-view .day .day-block .day-text.ownerSelected,
+.day-list .week-day .day-block .day-text.ownerSelected,
+.day-list .day .day-block .day-text.ownerSelected {
+  color: #FFF;
+}
+.bottom-view {
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+  margin-bottom: env(safe-area-inset-bottom);
+}
+.bottom-view .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  flex: 1;
+  height: 50px;
+  border-radius: 25px;
+}
+.bottom-view .btn.morning {
+  border: 1px solid #E9E9EA;
+  color: #14202D;
+}
+.bottom-view .btn.noon {
+  border: 1px solid #E9E9EA;
+  color: #14202D;
+  margin: 0 10px;
+}
+.bottom-view .btn.day {
+  border: 1px solid #E9E9EA;
+  color: #14202D;
+}
+.bottom-view .btn.enable {
+  border: 1px solid #DADEE6;
+  color: #DADEE6;
+  background-color: #F2F4F7 !important;
+}
+.bottom-view .btn.active {
+  background-color: #0099FF !important;
+  color: #FFF;
+}
+
