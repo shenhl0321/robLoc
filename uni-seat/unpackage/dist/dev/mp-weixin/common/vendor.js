@@ -966,7 +966,7 @@ function populateParameters(result) {
 
   var parameters = {
     appId: "__UNI__3265C0C",
-    appName: "uni-seat",
+    appName: "MRT灵活办公",
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
@@ -1065,7 +1065,7 @@ var getAppBaseInfo = {
     var hostLanguage = language.replace('_', '-');
     result = sortObject(Object.assign(result, {
       appId: "__UNI__3265C0C",
-      appName: "uni-seat",
+      appName: "MRT灵活办公",
       appVersion: "1.0.0",
       appVersionCode: "100",
       appLanguage: getAppLanguage(hostLanguage),
@@ -1747,7 +1747,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uni-seat","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"MRT灵活办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -3222,7 +3222,7 @@ module.exports = _classCallCheck, module.exports.__esModule = true, module.expor
 
 /***/ }),
 
-/***/ 230:
+/***/ 238:
 /*!**************************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
   \**************************************************************************************************************************/
@@ -3237,9 +3237,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 231));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 232));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 233));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 239));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 240));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 241));
 var _default = {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -3249,7 +3249,7 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 231:
+/***/ 239:
 /*!*************************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
   \*************************************************************************************************************************/
@@ -3257,28 +3257,6 @@ exports.default = _default;
 /***/ (function(module) {
 
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show more\",\"uni-load-more.contentrefresh\":\"loading...\",\"uni-load-more.contentnomore\":\"No more data\"}");
-
-/***/ }),
-
-/***/ 232:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
-  \******************************************************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
-
-/***/ }),
-
-/***/ 233:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
-  \******************************************************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
 
 /***/ }),
 
@@ -3308,6 +3286,28 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ 240:
+/*!******************************************************************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
+  \******************************************************************************************************************************/
+/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
+
+/***/ }),
+
+/***/ 241:
+/*!******************************************************************************************************************************!*\
+  !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
+  \******************************************************************************************************************************/
+/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
 
 /***/ }),
 
@@ -8850,7 +8850,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uni-seat","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"MRT灵活办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8871,14 +8871,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uni-seat","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"MRT灵活办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uni-seat","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"MRT灵活办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8974,7 +8974,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"uni-seat","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"MRT灵活办公","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9404,7 +9404,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 276:
+/***/ 284:
 /*!************************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/config.js ***!
   \************************************************************************************************************************/
@@ -9484,7 +9484,7 @@ exports.propsMap = propsMap;
 
 /***/ }),
 
-/***/ 277:
+/***/ 285:
 /*!**********************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/xt-verify-code/components/xt-verify-code/util.js ***!
   \**********************************************************************************************************************/
@@ -9519,7 +9519,38 @@ exports.getElementRect = getElementRect;
 
 /***/ }),
 
-/***/ 292:
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 300:
 /*!*********************************************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \*********************************************************************************************************************************/
@@ -9651,37 +9682,6 @@ function createAnimation(option, _this) {
   return new MPAnimation(option, _this);
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-
-/***/ 3:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
 
 /***/ }),
 
@@ -11262,19 +11262,19 @@ var messages = {
     english: '英文',
     language: '语言',
     china: '中国'
-  }, (0, _defineProperty2.default)(_znCN, "english", '英国'), (0, _defineProperty2.default)(_znCN, "germany", '德国'), (0, _defineProperty2.default)(_znCN, "resetGetCode", '重新获取验证码'), (0, _defineProperty2.default)(_znCN, "timeOutResetGetCode", '秒后重新获取验证码'), (0, _defineProperty2.default)(_znCN, "login", '登录'), (0, _defineProperty2.default)(_znCN, "register", '注册'), (0, _defineProperty2.default)(_znCN, "inputMobile", '请输入手机号'), (0, _defineProperty2.default)(_znCN, "inputPassword", '请输入密码'), (0, _defineProperty2.default)(_znCN, "forgetPassword", '忘记密码'), (0, _defineProperty2.default)(_znCN, "codeLogin", '验证码登录'), (0, _defineProperty2.default)(_znCN, "getSmsCode", '获取短信验证码'), (0, _defineProperty2.default)(_znCN, "passwordLogin", '密码登录'), (0, _defineProperty2.default)(_znCN, "registerRightNow", '立即注册'), (0, _defineProperty2.default)(_znCN, "certain", '确定'), (0, _defineProperty2.default)(_znCN, "cancel", '取消'), (0, _defineProperty2.default)(_znCN, "submit", '提交'), (0, _defineProperty2.default)(_znCN, "save", '保存'), (0, _defineProperty2.default)(_znCN, "loginRightNow", '立即登录'), (0, _defineProperty2.default)(_znCN, "inputCode", '请输入验证码'), (0, _defineProperty2.default)(_znCN, "sendCode", '发送验证码'), (0, _defineProperty2.default)(_znCN, "codeSendTo", '验证码已发送至'), (0, _defineProperty2.default)(_znCN, "codeError", '验证码错误，请重新输入'), (0, _defineProperty2.default)(_znCN, "verify", '验证'), (0, _defineProperty2.default)(_znCN, "jump", '跳过'), (0, _defineProperty2.default)(_znCN, "homePage", '首页'), (0, _defineProperty2.default)(_znCN, "startReserve", '立即预定'), (0, _defineProperty2.default)(_znCN, "ableReserve", '可预定'), (0, _defineProperty2.default)(_znCN, "hadReserved", '已预定'), (0, _defineProperty2.default)(_znCN, "noReserve", '不可预订'), (0, _defineProperty2.default)(_znCN, "windows", '靠窗'), (0, _defineProperty2.default)(_znCN, "road", '过道'), (0, _defineProperty2.default)(_znCN, "income", '入口'), (0, _defineProperty2.default)(_znCN, "today", '今天'), (0, _defineProperty2.default)(_znCN, "Monday", '周一'), (0, _defineProperty2.default)(_znCN, "Tuesday", '周二'), (0, _defineProperty2.default)(_znCN, "Wednesday", '周三'), (0, _defineProperty2.default)(_znCN, "Thursday", '周四'), (0, _defineProperty2.default)(_znCN, "Friday", '周五'), (0, _defineProperty2.default)(_znCN, "Saturday", '周六'), (0, _defineProperty2.default)(_znCN, "Sunday", '周日'), (0, _defineProperty2.default)(_znCN, "seatReserve", '工位预定'), (0, _defineProperty2.default)(_znCN, "reserveMorning", '预定上午'), (0, _defineProperty2.default)(_znCN, "reserveNoon", '预定下午'), (0, _defineProperty2.default)(_znCN, "reserveDay", '预定全天'), (0, _defineProperty2.default)(_znCN, "morning", '上午'), (0, _defineProperty2.default)(_znCN, "noon", '下午'), (0, _defineProperty2.default)(_znCN, "allDay", '全天'), (0, _defineProperty2.default)(_znCN, "seatNum", '工位号'), (0, _defineProperty2.default)(_znCN, "seatStatus", '状态'), (0, _defineProperty2.default)(_znCN, "seatCertain", '确定抢位'), (0, _defineProperty2.default)(_znCN, "productNew", '最新产品'), (0, _defineProperty2.default)(_znCN, "seeAll", '查看全部'), (0, _defineProperty2.default)(_znCN, "productList", '产品列表'), (0, _defineProperty2.default)(_znCN, "productDetail", '产品详情'), (0, _defineProperty2.default)(_znCN, "set", '设置'), (0, _defineProperty2.default)(_znCN, "header", '头像'), (0, _defineProperty2.default)(_znCN, "nickName", '昵称'), (0, _defineProperty2.default)(_znCN, "name", '姓名'), (0, _defineProperty2.default)(_znCN, "duty", '职位'), (0, _defineProperty2.default)(_znCN, "companyEmail", '公司邮箱'), (0, _defineProperty2.default)(_znCN, "mobileNum", '手机号码'), (0, _defineProperty2.default)(_znCN, "personal", '个人中心'), (0, _defineProperty2.default)(_znCN, "mine", '我的'), (0, _defineProperty2.default)(_znCN, "myReserve", '我的预定'), (0, _defineProperty2.default)(_znCN, "myMessage", '我的消息'), (0, _defineProperty2.default)(_znCN, "exit", '退出'), (0, _defineProperty2.default)(_znCN, "reserved", '已预订'), (0, _defineProperty2.default)(_znCN, "proceed", '进行中'), (0, _defineProperty2.default)(_znCN, "end", '已结束'), (0, _defineProperty2.default)(_znCN, "reserveTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reserveCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), (0, _defineProperty2.default)(_znCN, "reserveMessage", '预定消息'), (0, _defineProperty2.default)(_znCN, "you", '您于'), (0, _defineProperty2.default)(_znCN, "reserve", '预订'), (0, _defineProperty2.default)(_znCN, "inputRightPhone", '请输入正确手机号码'), (0, _defineProperty2.default)(_znCN, "success", '操作成功'), (0, _defineProperty2.default)(_znCN, "selectedRightAnswer", '请选择正确答案'), (0, _defineProperty2.default)(_znCN, "answerError", '答案错误'), (0, _defineProperty2.default)(_znCN, "networkError", '网络错误'), (0, _defineProperty2.default)(_znCN, "loading", '加载中...'), (0, _defineProperty2.default)(_znCN, "seatInfo", '工位预定信息'), (0, _defineProperty2.default)(_znCN, "timeSelected", '请选择预定时间'), (0, _defineProperty2.default)(_znCN, "seatSelected", '请选择位置'), (0, _defineProperty2.default)(_znCN, "reserveDay", '可预订全天'), (0, _defineProperty2.default)(_znCN, "reserveMorning", '可预订上午'), (0, _defineProperty2.default)(_znCN, "reserveNoon", '可预订下午'), (0, _defineProperty2.default)(_znCN, "reserveFull", '已预定满'), (0, _defineProperty2.default)(_znCN, "seat", '座位'), (0, _defineProperty2.default)(_znCN, "success", '已成功'), (0, _defineProperty2.default)(_znCN, "start", '已开始'), (0, _defineProperty2.default)(_znCN, "end", '已结束'), (0, _defineProperty2.default)(_znCN, "canceled", '已取消'), _znCN),
+  }, (0, _defineProperty2.default)(_znCN, "english", '英国'), (0, _defineProperty2.default)(_znCN, "germany", '德国'), (0, _defineProperty2.default)(_znCN, "resetGetCode", '重新获取验证码'), (0, _defineProperty2.default)(_znCN, "timeOutResetGetCode", '秒后重新获取验证码'), (0, _defineProperty2.default)(_znCN, "login", '登录'), (0, _defineProperty2.default)(_znCN, "register", '注册'), (0, _defineProperty2.default)(_znCN, "inputMobile", '请输入手机号'), (0, _defineProperty2.default)(_znCN, "inputPassword", '请输入密码'), (0, _defineProperty2.default)(_znCN, "forgetPassword", '忘记密码'), (0, _defineProperty2.default)(_znCN, "codeLogin", '验证码登录'), (0, _defineProperty2.default)(_znCN, "getSmsCode", '获取短信验证码'), (0, _defineProperty2.default)(_znCN, "passwordLogin", '密码登录'), (0, _defineProperty2.default)(_znCN, "registerRightNow", '立即注册'), (0, _defineProperty2.default)(_znCN, "certain", '确定'), (0, _defineProperty2.default)(_znCN, "cancel", '取消'), (0, _defineProperty2.default)(_znCN, "submit", '提交'), (0, _defineProperty2.default)(_znCN, "save", '保存'), (0, _defineProperty2.default)(_znCN, "loginRightNow", '立即登录'), (0, _defineProperty2.default)(_znCN, "inputCode", '请输入验证码'), (0, _defineProperty2.default)(_znCN, "sendCode", '发送验证码'), (0, _defineProperty2.default)(_znCN, "codeSendTo", '验证码已发送至'), (0, _defineProperty2.default)(_znCN, "codeError", '验证码错误，请重新输入'), (0, _defineProperty2.default)(_znCN, "verify", '验证'), (0, _defineProperty2.default)(_znCN, "jump", '跳过'), (0, _defineProperty2.default)(_znCN, "homePage", '首页'), (0, _defineProperty2.default)(_znCN, "startReserve", '立即预定'), (0, _defineProperty2.default)(_znCN, "ableReserve", '可预定'), (0, _defineProperty2.default)(_znCN, "hadReserved", '已预定'), (0, _defineProperty2.default)(_znCN, "noReserve", '不可预订'), (0, _defineProperty2.default)(_znCN, "windows", '靠窗'), (0, _defineProperty2.default)(_znCN, "road", '过道'), (0, _defineProperty2.default)(_znCN, "income", '入口'), (0, _defineProperty2.default)(_znCN, "today", '今天'), (0, _defineProperty2.default)(_znCN, "Monday", '周一'), (0, _defineProperty2.default)(_znCN, "Tuesday", '周二'), (0, _defineProperty2.default)(_znCN, "Wednesday", '周三'), (0, _defineProperty2.default)(_znCN, "Thursday", '周四'), (0, _defineProperty2.default)(_znCN, "Friday", '周五'), (0, _defineProperty2.default)(_znCN, "Saturday", '周六'), (0, _defineProperty2.default)(_znCN, "Sunday", '周日'), (0, _defineProperty2.default)(_znCN, "seatReserve", '工位预定'), (0, _defineProperty2.default)(_znCN, "reserveMorning", '预定上午'), (0, _defineProperty2.default)(_znCN, "reserveNoon", '预定下午'), (0, _defineProperty2.default)(_znCN, "reserveDay", '预定全天'), (0, _defineProperty2.default)(_znCN, "morning", '上午'), (0, _defineProperty2.default)(_znCN, "noon", '下午'), (0, _defineProperty2.default)(_znCN, "allDay", '全天'), (0, _defineProperty2.default)(_znCN, "seatNum", '工位号'), (0, _defineProperty2.default)(_znCN, "seatStatus", '状态'), (0, _defineProperty2.default)(_znCN, "seatCertain", '确定抢位'), (0, _defineProperty2.default)(_znCN, "productNew", '最新产品'), (0, _defineProperty2.default)(_znCN, "seeAll", '查看全部'), (0, _defineProperty2.default)(_znCN, "productList", '产品列表'), (0, _defineProperty2.default)(_znCN, "productDetail", '产品详情'), (0, _defineProperty2.default)(_znCN, "set", '设置'), (0, _defineProperty2.default)(_znCN, "header", '头像'), (0, _defineProperty2.default)(_znCN, "nickName", '昵称'), (0, _defineProperty2.default)(_znCN, "name", '姓名'), (0, _defineProperty2.default)(_znCN, "duty", '职位'), (0, _defineProperty2.default)(_znCN, "companyEmail", '公司邮箱'), (0, _defineProperty2.default)(_znCN, "mobileNum", '手机号码'), (0, _defineProperty2.default)(_znCN, "personal", '个人中心'), (0, _defineProperty2.default)(_znCN, "mine", '我的'), (0, _defineProperty2.default)(_znCN, "myReserve", '我的预定'), (0, _defineProperty2.default)(_znCN, "myMessage", '我的消息'), (0, _defineProperty2.default)(_znCN, "exit", '退出'), (0, _defineProperty2.default)(_znCN, "reserved", '已预订'), (0, _defineProperty2.default)(_znCN, "proceed", '进行中'), (0, _defineProperty2.default)(_znCN, "end", '已结束'), (0, _defineProperty2.default)(_znCN, "reserveTime", '预定时间'), (0, _defineProperty2.default)(_znCN, "reserveCancel", '取消预定'), (0, _defineProperty2.default)(_znCN, "noData", '暂无数据'), (0, _defineProperty2.default)(_znCN, "reserveMessage", '预定消息'), (0, _defineProperty2.default)(_znCN, "you", '您于'), (0, _defineProperty2.default)(_znCN, "reserve", '预订'), (0, _defineProperty2.default)(_znCN, "inputRightPhone", '请输入正确手机号码'), (0, _defineProperty2.default)(_znCN, "success", '操作成功'), (0, _defineProperty2.default)(_znCN, "selectedRightAnswer", '请选择正确答案'), (0, _defineProperty2.default)(_znCN, "answerError", '答案错误'), (0, _defineProperty2.default)(_znCN, "networkError", '网络错误'), (0, _defineProperty2.default)(_znCN, "loading", '加载中...'), (0, _defineProperty2.default)(_znCN, "seatInfo", '工位预定信息'), (0, _defineProperty2.default)(_znCN, "timeSelected", '请选择预定时间'), (0, _defineProperty2.default)(_znCN, "seatSelected", '请选择位置'), (0, _defineProperty2.default)(_znCN, "reserveDay", '可预订全天'), (0, _defineProperty2.default)(_znCN, "reserveMorning", '可预订上午'), (0, _defineProperty2.default)(_znCN, "reserveNoon", '可预订下午'), (0, _defineProperty2.default)(_znCN, "reserveFull", '已预定满'), (0, _defineProperty2.default)(_znCN, "seat", '座位'), (0, _defineProperty2.default)(_znCN, "success", '已成功'), (0, _defineProperty2.default)(_znCN, "start", '已开始'), (0, _defineProperty2.default)(_znCN, "end", '已结束'), (0, _defineProperty2.default)(_znCN, "canceled", '已取消'), (0, _defineProperty2.default)(_znCN, "userAgreement", '用户协议'), _znCN),
   'en-US': (_enUS = {
     simplifiedChinese: 'Simplified Chinese',
     english: 'English',
     language: 'Language',
     china: 'China'
-  }, (0, _defineProperty2.default)(_enUS, "english", 'Britain'), (0, _defineProperty2.default)(_enUS, "germany", 'Germany'), (0, _defineProperty2.default)(_enUS, "resetGetCode", 'Retrieve verification code'), (0, _defineProperty2.default)(_enUS, "timeOutResetGetCode", 'Retrieve verification code in seconds'), (0, _defineProperty2.default)(_enUS, "login", 'Login'), (0, _defineProperty2.default)(_enUS, "register", 'register'), (0, _defineProperty2.default)(_enUS, "inputMobile", 'Enter your phone number'), (0, _defineProperty2.default)(_enUS, "inputPassword", 'Input password'), (0, _defineProperty2.default)(_enUS, "forgetPassword", 'forgot password'), (0, _defineProperty2.default)(_enUS, "codeLogin", 'Verification code login'), (0, _defineProperty2.default)(_enUS, "getSmsCode", 'SMS verification code'), (0, _defineProperty2.default)(_enUS, "passwordLogin", 'Password login'), (0, _defineProperty2.default)(_enUS, "registerRightNow", 'Register Now'), (0, _defineProperty2.default)(_enUS, "certain", 'Confirm'), (0, _defineProperty2.default)(_enUS, "cancel", 'Cancel'), (0, _defineProperty2.default)(_enUS, "submit", 'Submit'), (0, _defineProperty2.default)(_enUS, "save", 'Save'), (0, _defineProperty2.default)(_enUS, "loginRightNow", 'Login Now'), (0, _defineProperty2.default)(_enUS, "inputCode", 'Enter verification code'), (0, _defineProperty2.default)(_enUS, "sendCode", 'Send code'), (0, _defineProperty2.default)(_enUS, "codeSendTo", 'Verification code has been sent'), (0, _defineProperty2.default)(_enUS, "codeError", 'Verification code error, re-enter'), (0, _defineProperty2.default)(_enUS, "verify", 'Verify'), (0, _defineProperty2.default)(_enUS, "jump", 'Skip'), (0, _defineProperty2.default)(_enUS, "homePage", 'Home'), (0, _defineProperty2.default)(_enUS, "startReserve", 'Book Now'), (0, _defineProperty2.default)(_enUS, "ableReserve", 'Bookable'), (0, _defineProperty2.default)(_enUS, "hadReserved", 'Already booked'), (0, _defineProperty2.default)(_enUS, "noReserve", 'Not booking'), (0, _defineProperty2.default)(_enUS, "windows", 'Window'), (0, _defineProperty2.default)(_enUS, "road", 'Aisle'), (0, _defineProperty2.default)(_enUS, "income", 'Entrance'), (0, _defineProperty2.default)(_enUS, "today", 'Today'), (0, _defineProperty2.default)(_enUS, "Monday", 'Mon'), (0, _defineProperty2.default)(_enUS, "Tuesday", 'Tue'), (0, _defineProperty2.default)(_enUS, "Wednesday", 'Wed'), (0, _defineProperty2.default)(_enUS, "Thursday", 'Thu'), (0, _defineProperty2.default)(_enUS, "Friday", 'Fri'), (0, _defineProperty2.default)(_enUS, "Saturday", 'Sat'), (0, _defineProperty2.default)(_enUS, "Sunday", 'Sun'), (0, _defineProperty2.default)(_enUS, "seatReserve", 'Reserve'), (0, _defineProperty2.default)(_enUS, "reserveMorning", 'Reserve morning'), (0, _defineProperty2.default)(_enUS, "reserveNoon", 'Reserve afternoon'), (0, _defineProperty2.default)(_enUS, "reserveDay", 'Reserve all day'), (0, _defineProperty2.default)(_enUS, "morning", 'morning'), (0, _defineProperty2.default)(_enUS, "noon", 'afternoon'), (0, _defineProperty2.default)(_enUS, "allDay", 'all day'), (0, _defineProperty2.default)(_enUS, "seatNum", 'station number'), (0, _defineProperty2.default)(_enUS, "seatStatus", 'state'), (0, _defineProperty2.default)(_enUS, "seatCertain", 'Confirm Grab a spot'), (0, _defineProperty2.default)(_enUS, "productNew", 'newest products'), (0, _defineProperty2.default)(_enUS, "seeAll", 'ALL'), (0, _defineProperty2.default)(_enUS, "productList", 'Product List'), (0, _defineProperty2.default)(_enUS, "productDetail", 'Product details '), (0, _defineProperty2.default)(_enUS, "set", 'Set up'), (0, _defineProperty2.default)(_enUS, "header", 'Avatar'), (0, _defineProperty2.default)(_enUS, "nickName", 'Nickname'), (0, _defineProperty2.default)(_enUS, "name", 'Realname'), (0, _defineProperty2.default)(_enUS, "duty", 'Position'), (0, _defineProperty2.default)(_enUS, "companyEmail", 'Email'), (0, _defineProperty2.default)(_enUS, "mobileNum", 'Phone'), (0, _defineProperty2.default)(_enUS, "personal", 'person center'), (0, _defineProperty2.default)(_enUS, "mine", 'My'), (0, _defineProperty2.default)(_enUS, "myReserve", 'My reserve'), (0, _defineProperty2.default)(_enUS, "myMessage", 'MY message'), (0, _defineProperty2.default)(_enUS, "exit", 'Exit'), (0, _defineProperty2.default)(_enUS, "reserved", 'Reserved'), (0, _defineProperty2.default)(_enUS, "proceed", 'In progress'), (0, _defineProperty2.default)(_enUS, "end", 'Ended'), (0, _defineProperty2.default)(_enUS, "canceled", 'Cancelled'), (0, _defineProperty2.default)(_enUS, "reserveTime", 'Scheduled time'), (0, _defineProperty2.default)(_enUS, "reserveCancel", 'cancellation'), (0, _defineProperty2.default)(_enUS, "noData", 'No Data'), (0, _defineProperty2.default)(_enUS, "reserveMessage", 'Reservation message'), (0, _defineProperty2.default)(_enUS, "you", 'You are'), (0, _defineProperty2.default)(_enUS, "reserve", 'book'), (0, _defineProperty2.default)(_enUS, "seatSuccess", 'Seat successful!'), (0, _defineProperty2.default)(_enUS, "inputRightPhone", 'Please enter the correct phone number'), (0, _defineProperty2.default)(_enUS, "success", 'Operation successful'), (0, _defineProperty2.default)(_enUS, "selectedRightAnswer", 'Please choose the correct answer'), (0, _defineProperty2.default)(_enUS, "answerError", 'Wrong Answer'), (0, _defineProperty2.default)(_enUS, "networkError", 'Network error'), (0, _defineProperty2.default)(_enUS, "loading", 'Loading...'), (0, _defineProperty2.default)(_enUS, "seatInfo", 'Workstation reservation information'), (0, _defineProperty2.default)(_enUS, "timeSelected", 'Please select the scheduled time'), (0, _defineProperty2.default)(_enUS, "seatSelected", 'Please choose a location'), (0, _defineProperty2.default)(_enUS, "reserveDay", 'Book a day'), (0, _defineProperty2.default)(_enUS, "reserveMorning", 'Book morning'), (0, _defineProperty2.default)(_enUS, "reserveNoon", 'Book afternoon'), (0, _defineProperty2.default)(_enUS, "reserveFull", 'Book Full'), (0, _defineProperty2.default)(_enUS, "seat", 'seat '), (0, _defineProperty2.default)(_enUS, "success", 'success'), (0, _defineProperty2.default)(_enUS, "start", 'start'), (0, _defineProperty2.default)(_enUS, "end", 'end'), (0, _defineProperty2.default)(_enUS, "canceled", 'canceled'), _enUS),
+  }, (0, _defineProperty2.default)(_enUS, "english", 'Britain'), (0, _defineProperty2.default)(_enUS, "germany", 'Germany'), (0, _defineProperty2.default)(_enUS, "resetGetCode", 'Retrieve verification code'), (0, _defineProperty2.default)(_enUS, "timeOutResetGetCode", 'Retrieve verification code in seconds'), (0, _defineProperty2.default)(_enUS, "login", 'Login'), (0, _defineProperty2.default)(_enUS, "register", 'register'), (0, _defineProperty2.default)(_enUS, "inputMobile", 'Enter your phone number'), (0, _defineProperty2.default)(_enUS, "inputPassword", 'Input password'), (0, _defineProperty2.default)(_enUS, "forgetPassword", 'forgot password'), (0, _defineProperty2.default)(_enUS, "codeLogin", 'Verification code login'), (0, _defineProperty2.default)(_enUS, "getSmsCode", 'SMS verification code'), (0, _defineProperty2.default)(_enUS, "passwordLogin", 'Password login'), (0, _defineProperty2.default)(_enUS, "registerRightNow", 'Register Now'), (0, _defineProperty2.default)(_enUS, "certain", 'Confirm'), (0, _defineProperty2.default)(_enUS, "cancel", 'Cancel'), (0, _defineProperty2.default)(_enUS, "submit", 'Submit'), (0, _defineProperty2.default)(_enUS, "save", 'Save'), (0, _defineProperty2.default)(_enUS, "loginRightNow", 'Login Now'), (0, _defineProperty2.default)(_enUS, "inputCode", 'Enter verification code'), (0, _defineProperty2.default)(_enUS, "sendCode", 'Send code'), (0, _defineProperty2.default)(_enUS, "codeSendTo", 'Verification code has been sent'), (0, _defineProperty2.default)(_enUS, "codeError", 'Verification code error, re-enter'), (0, _defineProperty2.default)(_enUS, "verify", 'Verify'), (0, _defineProperty2.default)(_enUS, "jump", 'Skip'), (0, _defineProperty2.default)(_enUS, "homePage", 'Home'), (0, _defineProperty2.default)(_enUS, "startReserve", 'Book Now'), (0, _defineProperty2.default)(_enUS, "ableReserve", 'Bookable'), (0, _defineProperty2.default)(_enUS, "hadReserved", 'Already booked'), (0, _defineProperty2.default)(_enUS, "noReserve", 'Not booking'), (0, _defineProperty2.default)(_enUS, "windows", 'Window'), (0, _defineProperty2.default)(_enUS, "road", 'Aisle'), (0, _defineProperty2.default)(_enUS, "income", 'Entrance'), (0, _defineProperty2.default)(_enUS, "today", 'Today'), (0, _defineProperty2.default)(_enUS, "Monday", 'Mon'), (0, _defineProperty2.default)(_enUS, "Tuesday", 'Tue'), (0, _defineProperty2.default)(_enUS, "Wednesday", 'Wed'), (0, _defineProperty2.default)(_enUS, "Thursday", 'Thu'), (0, _defineProperty2.default)(_enUS, "Friday", 'Fri'), (0, _defineProperty2.default)(_enUS, "Saturday", 'Sat'), (0, _defineProperty2.default)(_enUS, "Sunday", 'Sun'), (0, _defineProperty2.default)(_enUS, "seatReserve", 'Reserve'), (0, _defineProperty2.default)(_enUS, "reserveMorning", 'Reserve morning'), (0, _defineProperty2.default)(_enUS, "reserveNoon", 'Reserve afternoon'), (0, _defineProperty2.default)(_enUS, "reserveDay", 'Reserve all day'), (0, _defineProperty2.default)(_enUS, "morning", 'morning'), (0, _defineProperty2.default)(_enUS, "noon", 'afternoon'), (0, _defineProperty2.default)(_enUS, "allDay", 'all day'), (0, _defineProperty2.default)(_enUS, "seatNum", 'station number'), (0, _defineProperty2.default)(_enUS, "seatStatus", 'state'), (0, _defineProperty2.default)(_enUS, "seatCertain", 'Confirm Grab a spot'), (0, _defineProperty2.default)(_enUS, "productNew", 'newest products'), (0, _defineProperty2.default)(_enUS, "seeAll", 'ALL'), (0, _defineProperty2.default)(_enUS, "productList", 'Product List'), (0, _defineProperty2.default)(_enUS, "productDetail", 'Product details '), (0, _defineProperty2.default)(_enUS, "set", 'Set up'), (0, _defineProperty2.default)(_enUS, "header", 'Avatar'), (0, _defineProperty2.default)(_enUS, "nickName", 'Nickname'), (0, _defineProperty2.default)(_enUS, "name", 'Realname'), (0, _defineProperty2.default)(_enUS, "duty", 'Position'), (0, _defineProperty2.default)(_enUS, "companyEmail", 'Email'), (0, _defineProperty2.default)(_enUS, "mobileNum", 'Phone'), (0, _defineProperty2.default)(_enUS, "personal", 'person center'), (0, _defineProperty2.default)(_enUS, "mine", 'My'), (0, _defineProperty2.default)(_enUS, "myReserve", 'My reserve'), (0, _defineProperty2.default)(_enUS, "myMessage", 'MY message'), (0, _defineProperty2.default)(_enUS, "exit", 'Exit'), (0, _defineProperty2.default)(_enUS, "reserved", 'Reserved'), (0, _defineProperty2.default)(_enUS, "proceed", 'In progress'), (0, _defineProperty2.default)(_enUS, "end", 'Ended'), (0, _defineProperty2.default)(_enUS, "canceled", 'Cancelled'), (0, _defineProperty2.default)(_enUS, "reserveTime", 'Scheduled time'), (0, _defineProperty2.default)(_enUS, "reserveCancel", 'cancellation'), (0, _defineProperty2.default)(_enUS, "noData", 'No Data'), (0, _defineProperty2.default)(_enUS, "reserveMessage", 'Reservation message'), (0, _defineProperty2.default)(_enUS, "you", 'You are'), (0, _defineProperty2.default)(_enUS, "reserve", 'book'), (0, _defineProperty2.default)(_enUS, "seatSuccess", 'Seat successful!'), (0, _defineProperty2.default)(_enUS, "inputRightPhone", 'Please enter the correct phone number'), (0, _defineProperty2.default)(_enUS, "success", 'Operation successful'), (0, _defineProperty2.default)(_enUS, "selectedRightAnswer", 'Please choose the correct answer'), (0, _defineProperty2.default)(_enUS, "answerError", 'Wrong Answer'), (0, _defineProperty2.default)(_enUS, "networkError", 'Network error'), (0, _defineProperty2.default)(_enUS, "loading", 'Loading...'), (0, _defineProperty2.default)(_enUS, "seatInfo", 'Workstation reservation information'), (0, _defineProperty2.default)(_enUS, "timeSelected", 'Please select the scheduled time'), (0, _defineProperty2.default)(_enUS, "seatSelected", 'Please choose a location'), (0, _defineProperty2.default)(_enUS, "reserveDay", 'Book a day'), (0, _defineProperty2.default)(_enUS, "reserveMorning", 'Book morning'), (0, _defineProperty2.default)(_enUS, "reserveNoon", 'Book afternoon'), (0, _defineProperty2.default)(_enUS, "reserveFull", 'Book Full'), (0, _defineProperty2.default)(_enUS, "seat", 'seat '), (0, _defineProperty2.default)(_enUS, "success", 'success'), (0, _defineProperty2.default)(_enUS, "start", 'start'), (0, _defineProperty2.default)(_enUS, "end", 'end'), (0, _defineProperty2.default)(_enUS, "canceled", 'canceled'), (0, _defineProperty2.default)(_enUS, "userAgreement", 'User Agreement'), _enUS),
   'ge-DE': (_geDE = {
     simplifiedChinese: 'Vereinfachtes Chinesisch',
     english: 'englisch',
     language: 'Sprache',
     china: 'China'
-  }, (0, _defineProperty2.default)(_geDE, "english", 'Britain'), (0, _defineProperty2.default)(_geDE, "germany", 'Deutschland'), (0, _defineProperty2.default)(_geDE, "resetGetCode", 'Überprüfungscode erneut abrufen'), (0, _defineProperty2.default)(_geDE, "timeOutResetGetCode", 'Code nach Sekunden wiederholen'), (0, _defineProperty2.default)(_geDE, "login", 'Anmelden'), (0, _defineProperty2.default)(_geDE, "register", 'Registrieren'), (0, _defineProperty2.default)(_geDE, "inputMobile", 'Telefonnummer eingeben'), (0, _defineProperty2.default)(_geDE, "inputPassword", 'Passwort eingeben'), (0, _defineProperty2.default)(_geDE, "forgetPassword", 'Passwort vergessen'), (0, _defineProperty2.default)(_geDE, "codeLogin", 'Anmeldung zum Verifizierungscode'), (0, _defineProperty2.default)(_geDE, "getSmsCode", 'SMS-Verifizierungscode abrufen'), (0, _defineProperty2.default)(_geDE, "passwordLogin", 'Passwort Login'), (0, _defineProperty2.default)(_geDE, "registerRightNow", 'Jetzt registrieren'), (0, _defineProperty2.default)(_geDE, "certain", 'bestimmen'), (0, _defineProperty2.default)(_geDE, "cancel", 'Abbrechen'), (0, _defineProperty2.default)(_geDE, "submit", 'Absenden'), (0, _defineProperty2.default)(_geDE, "save", 'Konservierung'), (0, _defineProperty2.default)(_geDE, "loginRightNow", 'Jetzt anmelden'), (0, _defineProperty2.default)(_geDE, "inputCode", 'Verifizierungscode eingeben'), (0, _defineProperty2.default)(_geDE, "sendCode", 'Bestätigungscode senden'), (0, _defineProperty2.default)(_geDE, "codeSendTo", 'Verifizierungscode senden an'), (0, _defineProperty2.default)(_geDE, "codeError", 'Verifizierungscode-Fehler, erneut eingeben'), (0, _defineProperty2.default)(_geDE, "verify", 'Überprüfung'), (0, _defineProperty2.default)(_geDE, "jump", 'überspringen'), (0, _defineProperty2.default)(_geDE, "homePage", 'Startseite'), (0, _defineProperty2.default)(_geDE, "startReserve", 'Jetzt buchen'), (0, _defineProperty2.default)(_geDE, "ableReserve", 'Kann reserviert werden'), (0, _defineProperty2.default)(_geDE, "hadReserved", 'Bereits gebucht'), (0, _defineProperty2.default)(_geDE, "noReserve", 'Nicht buchbar'), (0, _defineProperty2.default)(_geDE, "windows", 'Neben dem Fenster'), (0, _defineProperty2.default)(_geDE, "road", 'Gang'), (0, _defineProperty2.default)(_geDE, "income", 'Eingang'), (0, _defineProperty2.default)(_geDE, "today", 'heute'), (0, _defineProperty2.default)(_geDE, "Monday", 'Mon'), (0, _defineProperty2.default)(_geDE, "Tuesday", 'Diens'), (0, _defineProperty2.default)(_geDE, "Wednesday", 'Mit'), (0, _defineProperty2.default)(_geDE, "Thursday", 'Don'), (0, _defineProperty2.default)(_geDE, "Friday", 'Frei'), (0, _defineProperty2.default)(_geDE, "Saturday", 'Sams'), (0, _defineProperty2.default)(_geDE, "Sunday", 'Sonn'), (0, _defineProperty2.default)(_geDE, "seatReserve", 'Reservierung am Arbeitsplatz'), (0, _defineProperty2.default)(_geDE, "reserveMorning", 'Reserve Morgen'), (0, _defineProperty2.default)(_geDE, "reserveNoon", 'Reserve Nachmittag'), (0, _defineProperty2.default)(_geDE, "reserveDay", 'Reserve Tag'), (0, _defineProperty2.default)(_geDE, "morning", 'Morgen'), (0, _defineProperty2.default)(_geDE, "noon", 'Nachmittag'), (0, _defineProperty2.default)(_geDE, "allDay", 'Tag'), (0, _defineProperty2.default)(_geDE, "seatNum", 'Arbeitsplatznummer'), (0, _defineProperty2.default)(_geDE, "seatStatus", 'Zustand'), (0, _defineProperty2.default)(_geDE, "seatCertain", 'Den Positionsgriff bestätigen'), (0, _defineProperty2.default)(_geDE, "productNew", 'Neueste Produkte'), (0, _defineProperty2.default)(_geDE, "seeAll", 'Alle anzeigen'), (0, _defineProperty2.default)(_geDE, "productList", 'Produktliste'), (0, _defineProperty2.default)(_geDE, "productDetail", 'Produktdetails'), (0, _defineProperty2.default)(_geDE, "set", 'einrichten'), (0, _defineProperty2.default)(_geDE, "header", 'Vorbild'), (0, _defineProperty2.default)(_geDE, "nickName", 'Spitzname'), (0, _defineProperty2.default)(_geDE, "name", 'vollständiger Name'), (0, _defineProperty2.default)(_geDE, "duty", 'Position'), (0, _defineProperty2.default)(_geDE, "companyEmail", 'Postfach'), (0, _defineProperty2.default)(_geDE, "mobileNum", 'Telefonnummer'), (0, _defineProperty2.default)(_geDE, "personal", 'Persönliches Zentrum'), (0, _defineProperty2.default)(_geDE, "mine", 'mein'), (0, _defineProperty2.default)(_geDE, "myReserve", 'Meine Reservierung'), (0, _defineProperty2.default)(_geDE, "myMessage", 'Meine Nachricht'), (0, _defineProperty2.default)(_geDE, "exit", 'Abmelden'), (0, _defineProperty2.default)(_geDE, "reserved", 'Bereits gebucht'), (0, _defineProperty2.default)(_geDE, "proceed", 'Haben in der Hand'), (0, _defineProperty2.default)(_geDE, "end", 'Beendet'), (0, _defineProperty2.default)(_geDE, "canceled", 'Abgebrochen'), (0, _defineProperty2.default)(_geDE, "reserveTime", 'Reservierungszeit'), (0, _defineProperty2.default)(_geDE, "reserveCancel", 'Reservierung stornieren'), (0, _defineProperty2.default)(_geDE, "noData", 'Keine Daten verfügbar'), (0, _defineProperty2.default)(_geDE, "reserveMessage", 'Reservierungsmeldung'), (0, _defineProperty2.default)(_geDE, "you", 'Du bist'), (0, _defineProperty2.default)(_geDE, "reserve", 'Buch'), (0, _defineProperty2.default)(_geDE, "seatSuccess", 'Sitzplatz erfolgreich!'), (0, _defineProperty2.default)(_geDE, "inputRightPhone", 'Geben Sie die richtige Telefonnummer ein'), (0, _defineProperty2.default)(_geDE, "success", 'Betrieb erfolgreich'), (0, _defineProperty2.default)(_geDE, "selectedRightAnswer", 'Bitte wählen Sie die richtige Antwort'), (0, _defineProperty2.default)(_geDE, "answerError", 'Falsche Antwort'), (0, _defineProperty2.default)(_geDE, "networkError", 'Netzwerkfehler'), (0, _defineProperty2.default)(_geDE, "loading", 'Laden läuft...'), (0, _defineProperty2.default)(_geDE, "seatInfo", 'Buchungsinformationen'), (0, _defineProperty2.default)(_geDE, "timeSelected", 'Bitte wählen Sie die geplante Zeit'), (0, _defineProperty2.default)(_geDE, "seatSelected", 'Bitte wählen Sie einen Ort'), (0, _defineProperty2.default)(_geDE, "reserveDay", 'Den ganzen Tag buchen'), (0, _defineProperty2.default)(_geDE, "reserveMorning", 'vormittags buchbar'), (0, _defineProperty2.default)(_geDE, "reserveNoon", 'nachmittags buchbar'), (0, _defineProperty2.default)(_geDE, "reserveFull", 'ausgebucht'), (0, _defineProperty2.default)(_geDE, "seat", 'Sitz'), (0, _defineProperty2.default)(_geDE, "success", 'Erfolg'), (0, _defineProperty2.default)(_geDE, "start", 'Start'), (0, _defineProperty2.default)(_geDE, "end", 'Ende'), (0, _defineProperty2.default)(_geDE, "canceled", 'Abbrechen'), _geDE)
+  }, (0, _defineProperty2.default)(_geDE, "english", 'Britain'), (0, _defineProperty2.default)(_geDE, "germany", 'Deutschland'), (0, _defineProperty2.default)(_geDE, "resetGetCode", 'Überprüfungscode erneut abrufen'), (0, _defineProperty2.default)(_geDE, "timeOutResetGetCode", 'Code nach Sekunden wiederholen'), (0, _defineProperty2.default)(_geDE, "login", 'Anmelden'), (0, _defineProperty2.default)(_geDE, "register", 'Registrieren'), (0, _defineProperty2.default)(_geDE, "inputMobile", 'Telefonnummer eingeben'), (0, _defineProperty2.default)(_geDE, "inputPassword", 'Passwort eingeben'), (0, _defineProperty2.default)(_geDE, "forgetPassword", 'Passwort vergessen'), (0, _defineProperty2.default)(_geDE, "codeLogin", 'Anmeldung zum Verifizierungscode'), (0, _defineProperty2.default)(_geDE, "getSmsCode", 'SMS-Verifizierungscode abrufen'), (0, _defineProperty2.default)(_geDE, "passwordLogin", 'Passwort Login'), (0, _defineProperty2.default)(_geDE, "registerRightNow", 'Jetzt registrieren'), (0, _defineProperty2.default)(_geDE, "certain", 'bestimmen'), (0, _defineProperty2.default)(_geDE, "cancel", 'Abbrechen'), (0, _defineProperty2.default)(_geDE, "submit", 'Absenden'), (0, _defineProperty2.default)(_geDE, "save", 'Konservierung'), (0, _defineProperty2.default)(_geDE, "loginRightNow", 'Jetzt anmelden'), (0, _defineProperty2.default)(_geDE, "inputCode", 'Verifizierungscode eingeben'), (0, _defineProperty2.default)(_geDE, "sendCode", 'Bestätigungscode senden'), (0, _defineProperty2.default)(_geDE, "codeSendTo", 'Verifizierungscode senden an'), (0, _defineProperty2.default)(_geDE, "codeError", 'Verifizierungscode-Fehler, erneut eingeben'), (0, _defineProperty2.default)(_geDE, "verify", 'Überprüfung'), (0, _defineProperty2.default)(_geDE, "jump", 'überspringen'), (0, _defineProperty2.default)(_geDE, "homePage", 'Startseite'), (0, _defineProperty2.default)(_geDE, "startReserve", 'Jetzt buchen'), (0, _defineProperty2.default)(_geDE, "ableReserve", 'Kann reserviert werden'), (0, _defineProperty2.default)(_geDE, "hadReserved", 'Bereits gebucht'), (0, _defineProperty2.default)(_geDE, "noReserve", 'Nicht buchbar'), (0, _defineProperty2.default)(_geDE, "windows", 'Neben dem Fenster'), (0, _defineProperty2.default)(_geDE, "road", 'Gang'), (0, _defineProperty2.default)(_geDE, "income", 'Eingang'), (0, _defineProperty2.default)(_geDE, "today", 'heute'), (0, _defineProperty2.default)(_geDE, "Monday", 'Mon'), (0, _defineProperty2.default)(_geDE, "Tuesday", 'Diens'), (0, _defineProperty2.default)(_geDE, "Wednesday", 'Mit'), (0, _defineProperty2.default)(_geDE, "Thursday", 'Don'), (0, _defineProperty2.default)(_geDE, "Friday", 'Frei'), (0, _defineProperty2.default)(_geDE, "Saturday", 'Sams'), (0, _defineProperty2.default)(_geDE, "Sunday", 'Sonn'), (0, _defineProperty2.default)(_geDE, "seatReserve", 'Reservierung am Arbeitsplatz'), (0, _defineProperty2.default)(_geDE, "reserveMorning", 'Reserve Morgen'), (0, _defineProperty2.default)(_geDE, "reserveNoon", 'Reserve Nachmittag'), (0, _defineProperty2.default)(_geDE, "reserveDay", 'Reserve Tag'), (0, _defineProperty2.default)(_geDE, "morning", 'Morgen'), (0, _defineProperty2.default)(_geDE, "noon", 'Nachmittag'), (0, _defineProperty2.default)(_geDE, "allDay", 'Tag'), (0, _defineProperty2.default)(_geDE, "seatNum", 'Arbeitsplatznummer'), (0, _defineProperty2.default)(_geDE, "seatStatus", 'Zustand'), (0, _defineProperty2.default)(_geDE, "seatCertain", 'Den Positionsgriff bestätigen'), (0, _defineProperty2.default)(_geDE, "productNew", 'Neueste Produkte'), (0, _defineProperty2.default)(_geDE, "seeAll", 'Alle anzeigen'), (0, _defineProperty2.default)(_geDE, "productList", 'Produktliste'), (0, _defineProperty2.default)(_geDE, "productDetail", 'Produktdetails'), (0, _defineProperty2.default)(_geDE, "set", 'einrichten'), (0, _defineProperty2.default)(_geDE, "header", 'Vorbild'), (0, _defineProperty2.default)(_geDE, "nickName", 'Spitzname'), (0, _defineProperty2.default)(_geDE, "name", 'vollständiger Name'), (0, _defineProperty2.default)(_geDE, "duty", 'Position'), (0, _defineProperty2.default)(_geDE, "companyEmail", 'Postfach'), (0, _defineProperty2.default)(_geDE, "mobileNum", 'Telefonnummer'), (0, _defineProperty2.default)(_geDE, "personal", 'Persönliches Zentrum'), (0, _defineProperty2.default)(_geDE, "mine", 'mein'), (0, _defineProperty2.default)(_geDE, "myReserve", 'Meine Reservierung'), (0, _defineProperty2.default)(_geDE, "myMessage", 'Meine Nachricht'), (0, _defineProperty2.default)(_geDE, "exit", 'Abmelden'), (0, _defineProperty2.default)(_geDE, "reserved", 'Bereits gebucht'), (0, _defineProperty2.default)(_geDE, "proceed", 'Haben in der Hand'), (0, _defineProperty2.default)(_geDE, "end", 'Beendet'), (0, _defineProperty2.default)(_geDE, "canceled", 'Abgebrochen'), (0, _defineProperty2.default)(_geDE, "reserveTime", 'Reservierungszeit'), (0, _defineProperty2.default)(_geDE, "reserveCancel", 'Reservierung stornieren'), (0, _defineProperty2.default)(_geDE, "noData", 'Keine Daten verfügbar'), (0, _defineProperty2.default)(_geDE, "reserveMessage", 'Reservierungsmeldung'), (0, _defineProperty2.default)(_geDE, "you", 'Du bist'), (0, _defineProperty2.default)(_geDE, "reserve", 'Buch'), (0, _defineProperty2.default)(_geDE, "seatSuccess", 'Sitzplatz erfolgreich!'), (0, _defineProperty2.default)(_geDE, "inputRightPhone", 'Geben Sie die richtige Telefonnummer ein'), (0, _defineProperty2.default)(_geDE, "success", 'Betrieb erfolgreich'), (0, _defineProperty2.default)(_geDE, "selectedRightAnswer", 'Bitte wählen Sie die richtige Antwort'), (0, _defineProperty2.default)(_geDE, "answerError", 'Falsche Antwort'), (0, _defineProperty2.default)(_geDE, "networkError", 'Netzwerkfehler'), (0, _defineProperty2.default)(_geDE, "loading", 'Laden läuft...'), (0, _defineProperty2.default)(_geDE, "seatInfo", 'Buchungsinformationen'), (0, _defineProperty2.default)(_geDE, "timeSelected", 'Bitte wählen Sie die geplante Zeit'), (0, _defineProperty2.default)(_geDE, "seatSelected", 'Bitte wählen Sie einen Ort'), (0, _defineProperty2.default)(_geDE, "reserveDay", 'Den ganzen Tag buchen'), (0, _defineProperty2.default)(_geDE, "reserveMorning", 'vormittags buchbar'), (0, _defineProperty2.default)(_geDE, "reserveNoon", 'nachmittags buchbar'), (0, _defineProperty2.default)(_geDE, "reserveFull", 'ausgebucht'), (0, _defineProperty2.default)(_geDE, "seat", 'Sitz'), (0, _defineProperty2.default)(_geDE, "success", 'Erfolg'), (0, _defineProperty2.default)(_geDE, "start", 'Start'), (0, _defineProperty2.default)(_geDE, "end", 'Ende'), (0, _defineProperty2.default)(_geDE, "canceled", 'Abbrechen'), (0, _defineProperty2.default)(_geDE, "userAgreement", 'Nutzungsvereinbarung'), _geDE)
 };
 var i18n = new _vueI18n.default({
   locale: 'zn-CN',

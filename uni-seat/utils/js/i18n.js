@@ -110,6 +110,7 @@ const messages = {
 		start : '已开始' ,
 		end : '已结束',
 		canceled : '已取消',
+		userAgreement: '用户协议',
 	},
 	'en-US': {
 		simplifiedChinese: 'Simplified Chinese',
@@ -217,6 +218,8 @@ const messages = {
 		start : 'start' ,
 		end : 'end',
 		canceled : 'canceled',
+		userAgreement: 'User Agreement',
+		
 	},
 	
 	'ge-DE': {
@@ -325,6 +328,7 @@ const messages = {
 		start : 'Start' ,
 		end : 'Ende',
 		canceled : 'Abbrechen',
+		userAgreement: 'Nutzungsvereinbarung',
 	},
 };
 

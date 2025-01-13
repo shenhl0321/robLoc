@@ -7,6 +7,9 @@
 			<uni-section-code-input ref="codeInput" style="margin-top: 20px;" v-model="code" @code="toGetCode"></uni-section-code-input>
 			<uni-section-input style="margin-top: 20px;" v-model="password" :placeholder="$t('inputPassword')" :password="true"></uni-section-input>
 			<button class="valid-btn" :class="{'active' : registerSetIsValid}" @click="toRegister">{{$t('certain')}}</button>
+			<view class="agreement" @click="pushToUserAgreement">
+				《<text style="text-decoration: underline;">{{$t('userAgreement')}}</text>》
+			</view>
 		</view>
 		<view class="row bottom-view">
 			<text class="text-font" @click="backToLogin">{{$t('loginRightNow')}}</text>
@@ -57,6 +60,12 @@
 				}
 			},
 			
+			pushToUserAgreement(){
+				uni.navigateTo({
+					url: '/package_login/pages/userAgreement'
+				})
+			},
+			
 			backToLogin(){
 				uni.navigateBack()
 			}
@@ -90,6 +99,14 @@
 			&.active{
 				background-color: $uni-color-primary !important;
 			}
+		}
+		.agreement{
+			display: flex;
+			margin-top: 10px;
+			font-size: 14px;
+			justify-content: center;
+			align-items: center;
+			color: $uni-text-color-grey;
 		}
 	}
 	

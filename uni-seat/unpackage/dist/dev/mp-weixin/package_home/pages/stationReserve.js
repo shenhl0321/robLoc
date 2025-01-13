@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uniAppNavBar: function () {
-      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 184))
     },
     uniPopup: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 162))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 170))
     },
   }
 } catch (e) {
@@ -184,22 +184,22 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var WeekDateSelector = function WeekDateSelector() {
   __webpack_require__.e(/*! require.ensure | package_home/components/week-date-selector/week-date-selector */ "package_home/components/week-date-selector/week-date-selector").then((function () {
-    return resolve(__webpack_require__(/*! ../components/week-date-selector/week-date-selector.vue */ 197));
+    return resolve(__webpack_require__(/*! ../components/week-date-selector/week-date-selector.vue */ 205));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SeatStationModeA = function SeatStationModeA() {
   Promise.all(/*! require.ensure | package_home/components/seat/seat-station-modeA */[__webpack_require__.e("common/vendor"), __webpack_require__.e("package_home/components/seat/seat-station-modeA")]).then((function () {
-    return resolve(__webpack_require__(/*! ../components/seat/seat-station-modeA.vue */ 204));
+    return resolve(__webpack_require__(/*! ../components/seat/seat-station-modeA.vue */ 212));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SeatReserveInfo = function SeatReserveInfo() {
   __webpack_require__.e(/*! require.ensure | package_home/components/seat-reserve-info/seat-reserve-info */ "package_home/components/seat-reserve-info/seat-reserve-info").then((function () {
-    return resolve(__webpack_require__(/*! ../components/seat-reserve-info/seat-reserve-info.vue */ 211));
+    return resolve(__webpack_require__(/*! ../components/seat-reserve-info/seat-reserve-info.vue */ 219));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var SeatReserveCalendar = function SeatReserveCalendar() {
   Promise.all(/*! require.ensure | package_home/components/seat-reserve-calendar/seat-reserve-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("package_home/components/seat-reserve-calendar/seat-reserve-calendar")]).then((function () {
-    return resolve(__webpack_require__(/*! ../components/seat-reserve-calendar/seat-reserve-calendar.vue */ 218));
+    return resolve(__webpack_require__(/*! ../components/seat-reserve-calendar/seat-reserve-calendar.vue */ 226));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

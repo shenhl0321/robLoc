@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uniAppNavBar: function () {
-      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 184))
     },
     uniPublicUpDown: function () {
-      return __webpack_require__.e(/*! import() | components/uni-public-up-down/uni-public-up-down */ "components/uni-public-up-down/uni-public-up-down").then(__webpack_require__.bind(null, /*! @/components/uni-public-up-down/uni-public-up-down.vue */ 183))
+      return __webpack_require__.e(/*! import() | components/uni-public-up-down/uni-public-up-down */ "components/uni-public-up-down/uni-public-up-down").then(__webpack_require__.bind(null, /*! @/components/uni-public-up-down/uni-public-up-down.vue */ 191))
     },
   }
 } catch (e) {
@@ -185,7 +185,7 @@ var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 48));
 var ProductBanner = function ProductBanner() {
   __webpack_require__.e(/*! require.ensure | pages/home/components/product-banner/product-banner */ "pages/home/components/product-banner/product-banner").then((function () {
-    return resolve(__webpack_require__(/*! ./components/product-banner/product-banner.vue */ 190));
+    return resolve(__webpack_require__(/*! ./components/product-banner/product-banner.vue */ 198));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

@@ -80,10 +80,10 @@ var components
 try {
   components = {
     uniAppNavBar: function () {
-      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 184))
     },
     uniTabs: function () {
-      return __webpack_require__.e(/*! import() | components/uni-tabs/uni-tabs */ "components/uni-tabs/uni-tabs").then(__webpack_require__.bind(null, /*! @/components/uni-tabs/uni-tabs.vue */ 257))
+      return __webpack_require__.e(/*! import() | components/uni-tabs/uni-tabs */ "components/uni-tabs/uni-tabs").then(__webpack_require__.bind(null, /*! @/components/uni-tabs/uni-tabs.vue */ 265))
     },
   }
 } catch (e) {
@@ -157,7 +157,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var ReseverList = function ReseverList() {
   Promise.all(/*! require.ensure | package_mine/components/reseverList */[__webpack_require__.e("common/vendor"), __webpack_require__.e("package_mine/components/reseverList")]).then((function () {
-    return resolve(__webpack_require__(/*! ../components/reseverList.vue */ 264));
+    return resolve(__webpack_require__(/*! ../components/reseverList.vue */ 272));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

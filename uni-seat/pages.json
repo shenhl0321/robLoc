@@ -59,6 +59,9 @@
 				},
 				{
 					"path": "pages/userInfoEdit"
+				},
+				{
+					"path": "pages/userAgreement"
 				}
 			]
 		}

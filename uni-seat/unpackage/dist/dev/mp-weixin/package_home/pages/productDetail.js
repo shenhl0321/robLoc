@@ -101,7 +101,7 @@ var components
 try {
   components = {
     uniAppNavBar: function () {
-      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 184))
     },
   }
 } catch (e) {

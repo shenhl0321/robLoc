@@ -101,13 +101,13 @@ var components
 try {
   components = {
     uniAppNavBar: function () {
-      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 184))
     },
     uniUserHeaderRow: function () {
-      return Promise.all(/*! import() | components/uni-user-header-row/uni-user-header-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-user-header-row/uni-user-header-row")]).then(__webpack_require__.bind(null, /*! @/components/uni-user-header-row/uni-user-header-row.vue */ 243))
+      return Promise.all(/*! import() | components/uni-user-header-row/uni-user-header-row */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-user-header-row/uni-user-header-row")]).then(__webpack_require__.bind(null, /*! @/components/uni-user-header-row/uni-user-header-row.vue */ 251))
     },
     uniLabelInput: function () {
-      return __webpack_require__.e(/*! import() | components/uni-label-input/uni-label-input */ "components/uni-label-input/uni-label-input").then(__webpack_require__.bind(null, /*! @/components/uni-label-input/uni-label-input.vue */ 250))
+      return __webpack_require__.e(/*! import() | components/uni-label-input/uni-label-input */ "components/uni-label-input/uni-label-input").then(__webpack_require__.bind(null, /*! @/components/uni-label-input/uni-label-input.vue */ 258))
     },
   }
 } catch (e) {

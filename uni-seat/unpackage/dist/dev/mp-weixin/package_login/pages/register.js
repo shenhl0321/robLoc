@@ -101,13 +101,13 @@ var components
 try {
   components = {
     uniAppNavBar: function () {
-      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 184))
     },
     uniSectionInput: function () {
-      return __webpack_require__.e(/*! import() | components/uni-section-input/uni-section-input */ "components/uni-section-input/uni-section-input").then(__webpack_require__.bind(null, /*! @/components/uni-section-input/uni-section-input.vue */ 155))
+      return __webpack_require__.e(/*! import() | components/uni-section-input/uni-section-input */ "components/uni-section-input/uni-section-input").then(__webpack_require__.bind(null, /*! @/components/uni-section-input/uni-section-input.vue */ 163))
     },
     uniSectionCodeInput: function () {
-      return __webpack_require__.e(/*! import() | components/uni-section-code-input/uni-section-code-input */ "components/uni-section-code-input/uni-section-code-input").then(__webpack_require__.bind(null, /*! @/components/uni-section-code-input/uni-section-code-input.vue */ 280))
+      return __webpack_require__.e(/*! import() | components/uni-section-code-input/uni-section-code-input */ "components/uni-section-code-input/uni-section-code-input").then(__webpack_require__.bind(null, /*! @/components/uni-section-code-input/uni-section-code-input.vue */ 288))
     },
   }
 } catch (e) {
@@ -135,7 +135,8 @@ var render = function () {
   var m1 = _vm.$t("inputMobile")
   var m2 = _vm.$t("inputPassword")
   var m3 = _vm.$t("certain")
-  var m4 = _vm.$t("loginRightNow")
+  var m4 = _vm.$t("userAgreement")
+  var m5 = _vm.$t("loginRightNow")
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -145,6 +146,7 @@ var render = function () {
         m2: m2,
         m3: m3,
         m4: m4,
+        m5: m5,
       },
     }
   )
@@ -190,6 +192,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 46));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 48));
+//
+//
+//
 //
 //
 //
@@ -286,6 +291,11 @@ var _default = {
           }
         }, _callee2);
       }))();
+    },
+    pushToUserAgreement: function pushToUserAgreement() {
+      uni.navigateTo({
+        url: '/package_login/pages/userAgreement'
+      });
     },
     backToLogin: function backToLogin() {
       uni.navigateBack();

@@ -28,7 +28,8 @@
         "pages/forgetPassword",
         "pages/register",
         "pages/registerVerify",
-        "pages/userInfoEdit"
+        "pages/userInfoEdit",
+        "pages/userAgreement"
       ]
     }
   ],

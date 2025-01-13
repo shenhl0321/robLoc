@@ -50,6 +50,14 @@
 .content .valid-btn.active.data-v-f667934a {
   background-color: #0099FF !important;
 }
+.content .agreement.data-v-f667934a {
+  display: flex;
+  margin-top: 10px;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  color: #5C6473;
+}
 .bottom-view.data-v-f667934a {
   justify-content: center;
   width: 100%;

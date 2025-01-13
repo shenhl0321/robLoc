@@ -1,6 +1,6 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["package_home/common/vendor"],{
 
-/***/ 354:
+/***/ 362:
 /*!*******************************************************************************************************!*\
   !*** /Users/shenhl/Desktop/uniapp/外包项目/robLoc/uni-seat/package_home/components/seat/seat-position.js ***!
   \*******************************************************************************************************/

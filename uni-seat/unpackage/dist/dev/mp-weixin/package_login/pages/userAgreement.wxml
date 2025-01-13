@@ -1,0 +1,1 @@
+<view class="main-view data-v-0a3bbaf7"><uni-app-nav-bar vue-id="3d3c24ef-1" mTitle="{{$root.m0}}" class="data-v-0a3bbaf7" bind:__l="__l"></uni-app-nav-bar><block wx:if="{{protocol!=null}}"><view class="rich-text-view data-v-0a3bbaf7"><rich-text id="richtext" nodes="{{protocol}}" class="data-v-0a3bbaf7"></rich-text></view></block></view>

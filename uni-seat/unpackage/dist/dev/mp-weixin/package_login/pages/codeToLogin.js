@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uniAppNavBar: function () {
-      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/uni-app-nav-bar/uni-app-nav-bar */ "components/uni-app-nav-bar/uni-app-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-app-nav-bar/uni-app-nav-bar.vue */ 184))
     },
     xtVerifyCode: function () {
-      return Promise.all(/*! import() | uni_modules/xt-verify-code/components/xt-verify-code/xt-verify-code */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/xt-verify-code/components/xt-verify-code/xt-verify-code")]).then(__webpack_require__.bind(null, /*! @/uni_modules/xt-verify-code/components/xt-verify-code/xt-verify-code.vue */ 271))
+      return Promise.all(/*! import() | uni_modules/xt-verify-code/components/xt-verify-code/xt-verify-code */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/xt-verify-code/components/xt-verify-code/xt-verify-code")]).then(__webpack_require__.bind(null, /*! @/uni_modules/xt-verify-code/components/xt-verify-code/xt-verify-code.vue */ 279))
     },
   }
 } catch (e) {
