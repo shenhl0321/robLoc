@@ -53,7 +53,7 @@
 			},
 			
 			seatNumCode(){
-				if(this.selectedSeat == null){
+				if(this.selectedSeat.seat_code == null){
 					return '未选择'
 				}else{
 					return this.selectedSeat.seat_code
@@ -61,7 +61,7 @@
 			},
 			
 			seatStatusName(){
-				if(this.selectedSeat == null){
+				if(this.selectedSeat.seat_code == null){
 					return '-'
 				}else{
 					if(this.selectedSeat.date_type == 1){
@@ -77,7 +77,7 @@
 			},
 			
 			seatStatusClass(){
-				if(this.selectedSeat == null){
+				if(this.selectedSeat.seat_code == null){
 					return 'reserve-unselected'
 				}else{
 					if(this.selectedSeat.date_type == 1){
@@ -110,14 +110,13 @@
 		},
 		
 		onUnload() {
-			this.$store.state.seat = null
+			this.$store.state.seat = {}
 			uni.$off('seatDidChange')
 			uni.$off('userInfo')
 		},
 		
 		methods:{
 			selectorDate(e){
-				console.log(e)
 				this.date = e
 				this.$refs.seatStation.date = e
 			},
@@ -145,7 +144,7 @@
 			seatCalendarClosed(val){
 				this.$refs.popupCalendar.close()
 				if(val.result == true){
-					this.$store.state.seat = null
+					this.$store.state.seat = {}
 					this.$refs.seatStation.getAllSeatListPetch()
 				}
 			},
@@ -158,8 +157,10 @@
 	
 	.bottom-view{
 		width: 100%;
-		padding: 0 20px;
+		padding: 20px;
 		box-sizing: border-box;
+		background-color: #FFF;
+		z-index: 9999;
 		margin-bottom: env(safe-area-inset-bottom);
 		.seat-reserve{
 			width: 100%;
@@ -212,7 +213,6 @@
 			color: #FFF;
 			font-size: 16px;
 			background-color: $uni-color-primary !important;
-			margin-bottom: 10px;
 		}
 	}
 	

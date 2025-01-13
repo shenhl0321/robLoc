@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     language: 'zn-CN' ,// 默认语言
 	userInfo : null,
 	
-	seat : Number,
+	seat : {},
   },
   
   mutations: {

@@ -9,7 +9,7 @@
 		<view class="row bottom" @click="didDeskTapSeat">
 			<view class="left" :class="statusClassName"></view>
 			<view class="right" :class="statusClassName"></view>
-			<!-- <view class="seat-number" :class="statusClassName">{{val.seat_code}}</view> -->
+			<view class="seat-number" :class="statusClassName">{{val.seat_code}}</view>
 		</view>
 	</view>
 </template>

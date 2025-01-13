@@ -1,4 +1,5 @@
 <template>
+	
 	<view class="station-seat" v-if="dataList.length > 0">
 		<!-- top -->
 		<view class="row seat-head-hint">
@@ -19,7 +20,7 @@
 		<!-- main -->
 		<view class="seat-main">
 			<movable-area class="vm-area">
-				<movable-view class="vm-area" :scale="true" :scale-min="0.8" :scale-max="2" :x="0" :y="0"
+				<movable-view class="vm-area" :scale="true" :scale-min="0.8" :scale-max="1.5" :x="0" :y="0"
 					direction="all" @change="onMove" @scale="onScale">
 					<view class="row main-content">
 						<view class="col">
@@ -243,10 +244,9 @@
 			width: 100%;
 			flex: 1;
 			position: relative;
-		
 			.vm-area {
-				width: 200%;
-				height: 100%;
+				width: 240%;
+				height: 140%;
 				position: absolute !important;
 				overflow: auto;
 				top: 0;
@@ -299,7 +299,7 @@
 		.bottom{
 			width: 2px;
 			background-color: #DADEE6;
-			height: 160px;
+			height: 136px;
 		}
 		.top{
 			align-items: flex-start;
@@ -347,7 +347,7 @@
 	}
 	
 	.right-door{
-		height: 346px;
+		height: 350px;
 		position: relative;
 		.top{
 			margin-top: 34px;
