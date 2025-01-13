@@ -35,7 +35,7 @@
 
 		data() {
 			return {
-				isRefresher: true, //下拉刷新状态
+				isRefresher: false, //下拉刷新状态
 				loadStatus: null,
 				dataArray: [],
 				pageNumber: 1,
@@ -124,10 +124,23 @@
 				}  
 			},
 			
+			// reseveTypeName(type){
+			// 	if(type == 1){
+			// 		return this.$t('reserve') 
+			// 	}else if(type == 2){
+			// 		return  this.$t('reserve') '进行'
+			// 	}else if(type == 3){
+			// 		return '结束'
+			// 	}else{
+			// 		return '取消'
+			// 	}
+			// },
+			
 			getReseverListPetch: async function(reload = true) {
 				if (reload) {
 					this.pageNumber = 1
 					this.dataArray = []
+					this.isRefresher = true
 				} else {
 					this.pageNumber++
 					this.loadStatus = 'loading'

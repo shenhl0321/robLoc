@@ -26,8 +26,10 @@
 /* 文章场景相关 */
 .bottom-view.data-v-538cf66c {
   width: 100%;
-  padding: 0 20px;
+  padding: 20px;
   box-sizing: border-box;
+  background-color: #FFF;
+  z-index: 99;
   margin-bottom: env(safe-area-inset-bottom);
 }
 .bottom-view .seat-reserve.data-v-538cf66c {
@@ -81,6 +83,5 @@
   color: #FFF;
   font-size: 16px;
   background-color: #0099FF !important;
-  margin-bottom: 10px;
 }
 

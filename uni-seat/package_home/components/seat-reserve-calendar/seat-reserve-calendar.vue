@@ -181,6 +181,7 @@
 		border-top-left-radius: 16px;
 		border-top-right-radius: 16px;
 		box-sizing: border-box;
+		z-index: 9999;
 	}
 
 	.top {

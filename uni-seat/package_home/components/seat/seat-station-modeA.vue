@@ -210,7 +210,6 @@
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
-		
 		.seat-head-hint {
 			width: 100%;
 			margin-top: 20px;

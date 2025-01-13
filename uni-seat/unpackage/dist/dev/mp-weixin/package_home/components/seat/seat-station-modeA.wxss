@@ -61,8 +61,8 @@
   position: relative;
 }
 .station-seat .seat-main .vm-area {
-  width: 200%;
-  height: 100%;
+  width: 240%;
+  height: 140%;
   position: absolute !important;
   overflow: auto;
   top: 0;
@@ -107,7 +107,7 @@
 .content-right .bottom {
   width: 2px;
   background-color: #DADEE6;
-  height: 160px;
+  height: 136px;
 }
 .content-right .top {
   align-items: flex-start;
@@ -151,7 +151,7 @@
   margin: 40px 20px;
 }
 .right-door {
-  height: 346px;
+  height: 350px;
   position: relative;
 }
 .right-door .top {

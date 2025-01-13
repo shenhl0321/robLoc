@@ -2,6 +2,8 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			const locale_language = uni.getStorageSync('language') || 'zn-CN'
+			this.$store.dispatch('changeLanguage', locale_language);
 			const userInfo = uni.getStorageSync('userInfo')
 			console.log(userInfo)
 			if(userInfo.token != null){

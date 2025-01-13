@@ -43,8 +43,8 @@
 	export default{
 		data(){
 			return{
-				mobile : '15157157084',
-				password : '123456',
+				mobile : '',
+				password : '',
 				currentLoginType : "password",
 				languageList : [
 					{id : 'zn-CN', name : this.$t('china')},
@@ -118,8 +118,9 @@
 			},
 			
 			languageSelected(e){
-				console.log(e)
 				this.$refs.popup.close()
+				uni.setStorageSync('language',e.id)
+				this.$store.dispatch('changeLanguage', e.id);
 			}
 			
 		}

@@ -12,7 +12,7 @@
 				</view>
 				<view class="content">
 					{{$t('you')}}<text class="value">{{item.reserve_date
- + timeTypeName(item.date_type)}}</text>{{$t('reserve')}}<text class="value">{{item.seat_code}}</text> {{$t('seatSuccess')}}
+ + timeTypeName(item.date_type)}}</text>{{$t('reserve')}}<text class="value">{{item.seat_code}}</text> {{contentStatusName(item)}}
 				</view>
 			</view>
 			
@@ -31,7 +31,7 @@
 
 		data() {
 			return {
-				isRefresher: true, 
+				isRefresher: false, 
 				loadStatus: null,
 				dataArray: [],
 				pageNumber: 1,
@@ -68,10 +68,27 @@
 				}
 			},
 			
+			contentStatusName(e){
+				switch(e.reserve_type){
+					case 1:
+					return this.$t('seat') + this.$t('success')
+					case 2:
+					return this.$t('seat') + this.$t('start')
+					case 3:
+					return this.$t('seat') + this.$t('end')
+					case 4: 
+					return this.$t('seat') + this.$t('canceled')
+					default:
+					return ''
+					break
+				}	
+			},
+			
 			getMessageListPetch: async function(reload = true) {
 				if (reload) {
 					this.pageNumber = 1
 					this.dataArray = []
+					this.isRefresher = true
 				} else {
 					this.pageNumber++
 					this.loadStatus = 'loading'

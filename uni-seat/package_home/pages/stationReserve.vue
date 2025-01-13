@@ -65,13 +65,13 @@
 					return '-'
 				}else{
 					if(this.selectedSeat.date_type == 1){
-						return '可预订下午'
+						return this.$t('reserveNoon')
 					}else if(this.selectedSeat.date_type == 2){
-						return '可预订上午'
+						return this.$t('reserveMorning')
 					}else if(this.selectedSeat.date_type == 3){
-						return '已预定满'
+						return this.$t('reserveFull')
 					}else{
-						return '可预订全天'
+						return this.$t('reserveDay')
 					}
 				}
 			},
@@ -160,7 +160,7 @@
 		padding: 20px;
 		box-sizing: border-box;
 		background-color: #FFF;
-		z-index: 9999;
+		z-index: 99;
 		margin-bottom: env(safe-area-inset-bottom);
 		.seat-reserve{
 			width: 100%;
