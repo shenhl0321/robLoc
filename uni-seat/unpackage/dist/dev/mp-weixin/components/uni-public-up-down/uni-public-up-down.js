@@ -1,11 +1,1 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/uni-public-up-down/uni-public-up-down"],{191:function(n,t,e){"use strict";e.r(t);var r=e(192),u=e(194);for(var i in u)["default"].indexOf(i)<0&&function(n){e.d(t,n,(function(){return u[n]}))}(i);e(196);var c,o=e(32),s=Object(o["default"])(u["default"],r["render"],r["staticRenderFns"],!1,null,"f69eecb8",null,!1,r["components"],c);s.options.__file="components/uni-public-up-down/uni-public-up-down.vue",t["default"]=s.exports},192:function(n,t,e){"use strict";e.r(t);var r=e(193);e.d(t,"render",(function(){return r["render"]})),e.d(t,"staticRenderFns",(function(){return r["staticRenderFns"]})),e.d(t,"recyclableRender",(function(){return r["recyclableRender"]})),e.d(t,"components",(function(){return r["components"]}))},193:function(n,t,e){"use strict";var r;e.r(t),e.d(t,"render",(function(){return u})),e.d(t,"staticRenderFns",(function(){return c})),e.d(t,"recyclableRender",(function(){return i})),e.d(t,"components",(function(){return r}));var u=function(){var n=this,t=n.$createElement;n._self._c},i=!1,c=[];u._withStripped=!0},194:function(n,t,e){"use strict";e.r(t);var r=e(195),u=e.n(r);for(var i in r)["default"].indexOf(i)<0&&function(n){e.d(t,n,(function(){return r[n]}))}(i);t["default"]=u.a},195:function(n,t,e){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r={props:{list:{type:Array,default:function(){return[]}}},data:function(){return{interval:4e3,duration:2e3,noticeList:[]}},mounted:function(){this.list.length>0&&(this.noticeList=this.list,1==this.list.length&&this.noticeList.push(this.list[0]))}};t.default=r},196:function(n,t,e){"use strict";e.r(t);var r=e(197),u=e.n(r);for(var i in r)["default"].indexOf(i)<0&&function(n){e.d(t,n,(function(){return r[n]}))}(i);t["default"]=u.a},197:function(n,t,e){}}]);
-//# sourceMappingURL=../../../.sourcemap/mp-weixin/components/uni-public-up-down/uni-public-up-down.js.map
-;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
-    'components/uni-public-up-down/uni-public-up-down-create-component',
-    {
-        'components/uni-public-up-down/uni-public-up-down-create-component':(function(module, exports, __webpack_require__){
-            __webpack_require__('2')['createComponent'](__webpack_require__(191))
-        })
-    },
-    [['components/uni-public-up-down/uni-public-up-down-create-component']]
-]);
+Component({})

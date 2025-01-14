@@ -1,0 +1,1 @@
+<view class="row notice-wrapper data-v-fea14380"><view class="public-view data-v-fea14380"><image class="pub-icon data-v-fea14380" src="/static/ic_public.png"></image></view><view class="row notice-content data-v-fea14380"><text class="notice-text data-v-fea14380">{{notice}}</text></view></view>

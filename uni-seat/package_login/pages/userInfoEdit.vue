@@ -71,6 +71,15 @@
 					this.$toast(this.$t('nameInput'))
 					return false
 				}
+				if(this.email.length == 0){
+					this.$toast(this.$t('emailInput'))
+					return false
+				}
+				
+				if(this.phone.length == 0){
+					this.$toast(this.$t('mobileInput'))
+					return false
+				}
 				return true
 			},
 

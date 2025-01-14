@@ -15,7 +15,7 @@
 	export default {
 		data() {
 			return {
-				notice: '这是滚动的公告文字这是滚动的公告这是滚动的公告文字这是滚动的公告'
+				notice: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈一'
 			}
 		}
 	}
@@ -30,6 +30,7 @@
 		height: 40px;
 		align-items: center;
 		background-color: #FFF;
+		width: 150vw;
 	}
 	
 	.public-view{
@@ -45,9 +46,9 @@
 	}
 	.notice-content {
 		height: 100%;
-		flex: 1;
 		overflow: hidden;
-		animation: scroll-notice 20s linear infinite;
+		flex : 1;
+		animation: scroll-notice 15s linear infinite;
 	}
 
 	@keyframes scroll-notice {
@@ -56,7 +57,7 @@
 		}
 
 		100% {
-			transform: translateX(-200%);
+			transform: translateX(-150%);
 		}
 	}
 

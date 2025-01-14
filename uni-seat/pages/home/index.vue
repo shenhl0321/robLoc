@@ -2,8 +2,8 @@
 	<view class="main-view" v-if="detail != null">
 		<uni-app-nav-bar :hiddenBackIcon="true" :mTitle="$t('homePage')"></uni-app-nav-bar>
 		<scroll-view class="list-view" scroll-y>
-			<!-- <uni-public-left-right></uni-public-left-right> -->
-			<uni-public-up-down :list="detail.notice_list"></uni-public-up-down>
+			<uni-public-left-right></uni-public-left-right>
+			<!-- <uni-public-up-down :list="detail.notice_list"></uni-public-up-down> -->
 			<view class="rich-text-view">
 				<rich-text id="richtext" :nodes="detail.introduce"></rich-text>
 			</view> 
