@@ -1,10 +1,10 @@
 <template>
 	<view class="col seat-group">
 		<view class="row section">
-			<SeatLeft></SeatLeft>
+			<SeatLeft :val="list[0]"></SeatLeft>
 		</view>
 		<view class="row section">
-			<SeatLeft></SeatLeft>
+			<SeatLeft :val="list[1]"></SeatLeft>
 		</view>
 	</view>
 </template>

@@ -176,6 +176,9 @@ var _default2 = {
       current: 0
     };
   },
+  onLoad: function onLoad() {
+    console.log(this.list);
+  },
   methods: {
     didToSeeAllProduct: function didToSeeAllProduct() {
       uni.navigateTo({

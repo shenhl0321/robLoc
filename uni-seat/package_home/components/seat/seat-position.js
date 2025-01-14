@@ -65,9 +65,6 @@ export default {
 			if(this.val != null &&  this.val.user != null){
 				if(this.val.user.length > 0){
 					this.list = this.val.user
-					this.list.map(function(e){
-						e.avatar = uniConfig.baseUrl + e.avatar
-					})
 					this.icon = this.list[0].avatar
 					if(this.list.length == 2){
 						this.animation = true
@@ -75,7 +72,7 @@ export default {
 					}else{
 						this.animation = false
 					}
-					
+					console.log(this.list)
 				}else{
 					this.list = this.val.user
 					this.icon = ''
@@ -95,7 +92,7 @@ export default {
 				if(that.animation == true){
 					that.iconChange()
 				}
-			}, 1000)
+			}, 500)
 		},
 		
 		didUserHeaderIcon : function(e){

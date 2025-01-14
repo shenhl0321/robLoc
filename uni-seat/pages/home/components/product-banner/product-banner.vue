@@ -45,6 +45,10 @@
 				current: 0,
 			}
 		},
+		
+		onLoad() {
+			console.log(this.list)
+		},
 
 		methods: {
 			didToSeeAllProduct() {

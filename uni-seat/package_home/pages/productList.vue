@@ -68,7 +68,7 @@
 			
 			pushToProductDetail(e){
 				uni.navigateTo({
-					url: `/package_home/home/pages/productDetail?id=${e.id}`
+					url: `/package_home/pages/productDetail?id=${e.id}`
 				})
 			}
 		}

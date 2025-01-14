@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
 	.seat-group{
 		height: 120px;
-		width: 100px;
+		
 		.section{
 			height: 100%;
 		}

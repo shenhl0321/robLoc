@@ -9886,6 +9886,13 @@ var request = function request() {
               data: response.data
             });
           } else {
+            if (response.code == 106) {
+              setTimeout(function () {
+                uni.reLaunch({
+                  url: '/pages/login/index'
+                });
+              }, 1000);
+            }
             var subMsg = res.data.msg;
             uni.showToast({
               title: subMsg,

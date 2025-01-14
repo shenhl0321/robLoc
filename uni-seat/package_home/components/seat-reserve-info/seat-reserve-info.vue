@@ -5,7 +5,7 @@
 		<text class="name">{{userInfo.nickname}}</text>
 		<view class="row phone">
 			<text>{{userInfo.phone}}</text>
-			<image class="tel-icon" src="/static/ic_tel.png"></image>
+			<image class="tel-icon" src="/static/ic_tel.png" @click="makeTelPhone"></image>
 		</view>
 		<button class="certain-btn" @click="closed()">{{$t('certain')}}</button>
 	</view>
@@ -29,6 +29,11 @@
 		methods:{
 			closed(){
 				this.$emit('closed')
+			},
+			makeTelPhone(){
+				uni.makePhoneCall({
+					phoneNumber: this.userInfo.phone,
+				})
 			}
 		}
 	}

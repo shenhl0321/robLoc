@@ -26,7 +26,6 @@
 /* 文章场景相关 */
 .seat-group.data-v-45fbf154 {
   height: 120px;
-  width: 100px;
 }
 .seat-group .section.data-v-45fbf154 {
   height: 100%;

@@ -64,7 +64,7 @@
 									</view>
 									<view class="group-col">
 										<SeatGroupModeF :list="group10"></SeatGroupModeF>
-										<text class="out-text">{{$t('road')}}</text>
+										<text class="out-text" style="margin-left: 40px;">{{$t('road')}}</text>
 									</view>
 								</view>
 							</view>
