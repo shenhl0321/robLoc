@@ -54,7 +54,7 @@
 			
 			seatNumCode(){
 				if(this.selectedSeat.seat_code == null){
-					return '未选择'
+					return this.$t('unSelected')
 				}else{
 					return this.selectedSeat.seat_code
 				}

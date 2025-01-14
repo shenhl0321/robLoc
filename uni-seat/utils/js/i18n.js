@@ -16,6 +16,7 @@ const messages = {
 		timeOutResetGetCode : '秒后重新获取验证码',
 		login: '登录',
 		register: '注册',
+		input : '请输入',
 		inputMobile: '请输入手机号',
 		inputPassword: '请输入密码',
 		forgetPassword: '忘记密码',
@@ -117,6 +118,7 @@ const messages = {
 		nameInput : '请输入姓名',
 		emailInput : '请输入邮箱',
 		mobileInput : '请输入手机号',
+		unSelected : '未选择'
 	
 	},
 	'en-US': {
@@ -148,7 +150,8 @@ const messages = {
 		codeError : 'Verification code error, re-enter',
 		verify: 'Verify',
 		jump : 'Skip',
-		
+		input : 'input',
+	
 		homePage: 'Home',
 		startReserve: 'Book Now',
 		ableReserve: 'Bookable',
@@ -172,7 +175,7 @@ const messages = {
 		morning: 'morning',
 		noon: 'afternoon',
 		allDay: 'all day',
-		seatNum : 'station number',
+		seatNum : 'number',
 		seatStatus : 'state',
 		seatCertain : 'Confirm Grab a spot',
 		productNew: 'newest products',
@@ -232,7 +235,7 @@ const messages = {
 		nameInput : 'please input name',
 		emailInput : 'please input email',
 		mobileInput : 'please input phone number',
-
+		unSelected : 'unselected'
 	},
 	
 	'ge-DE': {
@@ -264,7 +267,7 @@ const messages = {
 		codeError : 'Verifizierungscode-Fehler, erneut eingeben',
 		verify: 'Überprüfung',
 		jump : 'überspringen',
-		
+		input : 'Eingabe',
 		homePage: 'Startseite',
 		startReserve: 'Jetzt buchen',
 		ableReserve: 'Kann reserviert werden',
@@ -288,7 +291,7 @@ const messages = {
 		morning: 'Morgen',
 		noon: 'Nachmittag',
 		allDay: 'Tag',
-		seatNum : 'Arbeitsplatznummer',
+		seatNum : 'Nummer',
 		seatStatus : 'Zustand',
 		seatCertain : 'Den Positionsgriff bestätigen',
 		productNew: 'Neueste Produkte',
@@ -347,6 +350,7 @@ const messages = {
 		nameInput : 'Eingabe Name',
 		emailInput : 'Eingabe Postfach',
 		mobileInput : 'Eingabe Telefonnummer',
+		unSelected : 'Nicht ausgewählt'
 	},
 };
 

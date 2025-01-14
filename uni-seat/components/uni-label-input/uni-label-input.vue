@@ -47,7 +47,7 @@
 		},
 		methods: {
 			inputPlaceHolder() {
-				return this.placeHolder == null || this.placeHolder.length == 0 ? "请输入" : this.placeHolder
+				return this.placeHolder == null || this.placeHolder.length == 0 ? this.$t('input') : this.placeHolder
 			},
 			
 			textDidChange(e) {
