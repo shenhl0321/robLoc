@@ -106,7 +106,7 @@ const messages = {
 		reserveFull : '已预定满',
 		
 		seat : '座位',
-		success: '已成功',
+		successed: '已成功',
 		start : '已开始' ,
 		end : '已结束',
 		canceled : '已取消',
@@ -221,7 +221,7 @@ const messages = {
 		reserveFull : 'Book Full',
 		
 		seat : 'seat ',
-		success: 'success',
+		successed: 'success',
 		start : 'start' ,
 		end : 'end',
 		canceled : 'canceled',
@@ -337,7 +337,7 @@ const messages = {
 		reserveFull : 'ausgebucht',
 		
 		seat : 'Sitz',
-		success: 'Erfolg',
+		successed: 'Erfolg',
 		start : 'Start' ,
 		end : 'Ende',
 		canceled : 'Abbrechen',

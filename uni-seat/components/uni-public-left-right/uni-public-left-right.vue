@@ -13,9 +13,15 @@
 
 <script>
 	export default {
+		props :{
+			notice : {
+				type : String,
+				default : ''
+			}
+		},
 		data() {
 			return {
-				notice: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈一'
+				
 			}
 		}
 	}
@@ -30,7 +36,7 @@
 		height: 40px;
 		align-items: center;
 		background-color: #FFF;
-		width: 150vw;
+		width: 140vw;
 	}
 	
 	.public-view{

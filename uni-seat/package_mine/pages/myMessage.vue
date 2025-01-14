@@ -71,7 +71,7 @@
 			contentStatusName(e){
 				switch(e.reserve_type){
 					case 1:
-					return this.$t('seat') + this.$t('success')
+					return this.$t('seat') + this.$t('successed')
 					case 2:
 					return this.$t('seat') + this.$t('start')
 					case 3:

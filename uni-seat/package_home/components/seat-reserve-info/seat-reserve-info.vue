@@ -2,7 +2,7 @@
 	<view class="col seat-info" v-if="userInfo != null">
 		<text class="title">{{$t('seatInfo')}}</text>
 		<image class="header" :src="userInfo.avatar"></image>
-		<text class="name">{{userInfo.nickname}}</text>
+		<text class="name">{{userInfo.realname}}</text>
 		<view class="row phone">
 			<text>{{userInfo.phone}}</text>
 			<image class="tel-icon" src="/static/ic_tel.png" @click="makeTelPhone"></image>

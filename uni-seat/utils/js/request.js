@@ -37,7 +37,7 @@ const request = (url = '', data = {}, loadingText, type = 'POST') => {
 	return new Promise((resolve, reject) => {
 		uni.request({
 			method: type,
-			url: '/h5TestApi' + url,  //'/h5TestApi' + url uniConfig.baseUrl + url
+			url: uniConfig.baseUrl + url,  //'/h5TestApi' + url uniConfig.baseUrl + url
 			data: data,
 			header: header,
 			dataType: "json",

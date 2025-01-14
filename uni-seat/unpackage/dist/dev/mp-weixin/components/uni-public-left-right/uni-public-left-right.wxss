@@ -31,7 +31,7 @@
   height: 40px;
   align-items: center;
   background-color: #FFF;
-  width: 150vw;
+  width: 140vw;
 }
 .public-view.data-v-fea14380 {
   background-color: #FFF;
