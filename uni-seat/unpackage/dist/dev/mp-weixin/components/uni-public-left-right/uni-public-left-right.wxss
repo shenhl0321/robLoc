@@ -47,8 +47,8 @@
   height: 100%;
   overflow: hidden;
   flex: 1;
-  -webkit-animation: scroll-notice-data-v-fea14380 15s linear infinite;
-          animation: scroll-notice-data-v-fea14380 15s linear infinite;
+  -webkit-animation: scroll-notice-data-v-fea14380 18s linear infinite;
+          animation: scroll-notice-data-v-fea14380 18s linear infinite;
 }
 @-webkit-keyframes scroll-notice-data-v-fea14380 {
 0% {

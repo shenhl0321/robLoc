@@ -25,6 +25,9 @@ const request = (url = '', data = {}, loadingText, type = 'POST') => {
 		}
 	}
 	
+	const locale_language = uni.getStorageSync('language') || 'zn-CN'
+	header['kaide-lang'] = locale_language
+	console.log(header)
 	if (loadingText != null) {
 		uni.showLoading({
 			title: loadingText
@@ -34,7 +37,7 @@ const request = (url = '', data = {}, loadingText, type = 'POST') => {
 	return new Promise((resolve, reject) => {
 		uni.request({
 			method: type,
-			url: uniConfig.baseUrl + url,  //'/h5TestApi' + url uniConfig.baseUrl + url
+			url: '/h5TestApi' + url,  //'/h5TestApi' + url uniConfig.baseUrl + url
 			data: data,
 			header: header,
 			dataType: "json",

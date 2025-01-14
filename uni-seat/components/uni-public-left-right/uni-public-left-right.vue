@@ -48,7 +48,7 @@
 		height: 100%;
 		overflow: hidden;
 		flex : 1;
-		animation: scroll-notice 15s linear infinite;
+		animation: scroll-notice 18s linear infinite;
 	}
 
 	@keyframes scroll-notice {
