@@ -111,6 +111,9 @@ const messages = {
 		end : '已结束',
 		canceled : '已取消',
 		userAgreement: '用户协议',
+		
+		uoloadHeader: '请上传头像',
+		nickNameInput : '请输入昵称'
 	},
 	'en-US': {
 		simplifiedChinese: 'Simplified Chinese',
@@ -219,6 +222,9 @@ const messages = {
 		end : 'end',
 		canceled : 'canceled',
 		userAgreement: 'User Agreement',
+		
+		uoloadHeader: 'uoload Head',
+		nickNameInput : 'input nickname'
 		
 	},
 	
@@ -329,6 +335,8 @@ const messages = {
 		end : 'Ende',
 		canceled : 'Abbrechen',
 		userAgreement: 'Nutzungsvereinbarung',
+		uoloadHeader: 'Hochladen Avatar',
+		nickNameInput : 'Eingabe Spitznamen'
 	},
 };
 

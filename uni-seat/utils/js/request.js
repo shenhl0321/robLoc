@@ -52,7 +52,7 @@ const request = (url = '', data = {}, loadingText, type = 'POST') => {
 							data: response.data
 						})
 					} else {
-						if(response.code == 106){
+						if(response.code == 103 || response.code == 106){
 							setTimeout(function(){
 								uni.reLaunch({
 									url: '/pages/login/index'

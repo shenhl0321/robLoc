@@ -47,7 +47,7 @@
 				})
 				var timesTamp = todayDt.valueOf()
 				
-				for (var i = 1 ; i < 30 ; i ++) {
+				for (var i = 1 ; i < 14 ; i ++) {
 					timesTamp = timesTamp + 3600 * 24 * 1000
 					const date = new Date(timesTamp)
 					const year = date.getUTCFullYear()

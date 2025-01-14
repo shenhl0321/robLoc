@@ -11,7 +11,7 @@
 		</view>
 		<view class="col bottom-view">
 			<button class="submit-btn" @click="submit">{{$t('submit')}}</button>
-			<button class="jump-btn" @click="jump">{{$t('jump')}}</button>
+			<!-- <button class="jump-btn" @click="jump">{{$t('jump')}}</button> -->
 		</view>
 	</view>
 </template>
@@ -41,19 +41,33 @@
 
 		methods: {
 			async submit() {
-				let res = await this.$request('/api/up_user', {
-					avatar: this.avatar,
-					nickname: this.nickname,
-					realname: this.realname,
-					position: this.position,
-					email: this.email,
-					phone: this.phone
-				})
-				if (res.result == true) {
-					uni.reLaunch({
-						url: '/pages/home/index',
+				if(this.checkValid()){
+					let res = await this.$request('/api/up_user', {
+						avatar: this.avatar,
+						nickname: this.nickname,
+						realname: this.realname,
+						position: this.position,
+						email: this.email,
+						phone: this.phone
 					})
+					if (res.result == true) {
+						uni.reLaunch({
+							url: '/pages/home/index',
+						})
+					}
 				}
+			},
+			
+			checkValid(){
+				if(this.avatar.length == 0){
+					this.$toast(this.$t('uoloadHeader'))
+					return false
+				}
+				if(this.nickname.length == 0){
+					this.$toast(this.$t('nickNameInput'))
+					return false
+				}
+				return true
 			},
 
 			jump() {
