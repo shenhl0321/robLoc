@@ -113,7 +113,8 @@ const messages = {
 		userAgreement: '用户协议',
 		
 		uoloadHeader: '请上传头像',
-		nickNameInput : '请输入昵称'
+		nickNameInput : '请输入昵称',
+		nameInput : '请输入姓名',
 	},
 	'en-US': {
 		simplifiedChinese: 'Simplified Chinese',
@@ -224,8 +225,9 @@ const messages = {
 		userAgreement: 'User Agreement',
 		
 		uoloadHeader: 'uoload Head',
-		nickNameInput : 'input nickname'
-		
+		nickNameInput : 'input nickname',
+		nameInput : 'name input',
+	
 	},
 	
 	'ge-DE': {
@@ -336,7 +338,8 @@ const messages = {
 		canceled : 'Abbrechen',
 		userAgreement: 'Nutzungsvereinbarung',
 		uoloadHeader: 'Hochladen Avatar',
-		nickNameInput : 'Eingabe Spitznamen'
+		nickNameInput : ' Spitznamen',
+		nameInput : 'Eingabe Name'
 	},
 };
 

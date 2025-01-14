@@ -67,6 +67,10 @@
 					this.$toast(this.$t('nickNameInput'))
 					return false
 				}
+				if(this.realname.length == 0){
+					this.$toast(this.$t('nameInput'))
+					return false
+				}
 				return true
 			},
 
