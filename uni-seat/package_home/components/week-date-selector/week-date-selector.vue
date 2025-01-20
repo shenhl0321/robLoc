@@ -32,11 +32,10 @@
 			dateHandle(){
 				const weekDays = [this.$t('Sunday'),this.$t('Monday'),this.$t('Tuesday'),this.$t('Wednesday'),
 				this.$t('Thursday'),this.$t('Friday'),this.$t('Saturday')]
-			
 				const todayDt = new Date()
-				const today_y = todayDt.getUTCFullYear()
-				const today_m = ('0' + (todayDt.getUTCMonth() + 1)).slice(-2)
-				const today_d = ('0' + todayDt.getUTCDate()).slice(-2)
+				const today_y = todayDt.getFullYear()
+				const today_m = ('0' + (todayDt.getMonth() + 1)).slice(-2)
+				const today_d = ('0' + todayDt.getDate()).slice(-2)
 				const today_wk = weekDays[todayDt.getDay()]
 				this.dateList.push({
 					y : today_y,
@@ -50,9 +49,9 @@
 				for (var i = 1 ; i < 14 ; i ++) {
 					timesTamp = timesTamp + 3600 * 24 * 1000
 					const date = new Date(timesTamp)
-					const year = date.getUTCFullYear()
-					const month = ('0' + (date.getUTCMonth() + 1)).slice(-2)
-					const day = ('0' + date.getUTCDate()).slice(-2)
+					const year = date.getFullYear()
+					const month = ('0' + (date.getMonth() + 1)).slice(-2)
+					const day = ('0' + date.getDate()).slice(-2)
 					const wk = weekDays[date.getDay()]
 	
 					this.dateList.push({

@@ -1,5 +1,6 @@
 <script>
 	export default {
+		//com.neicexiahh268.sign6835
 		onLaunch: function() {
 			console.log('App Launch')
 			const locale_language = uni.getStorageSync('language') || 'zn-CN'
